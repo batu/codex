@@ -1,0 +1,36 @@
+Databases Class 3: Normalization 
+
+
+
+ 
+     - R1 (XUY)
+R  -
+     - R2 R - (XUY)
+
+There are normal forms.
+	1NF
+	2NF
+	3NF
+	BCNF
+
+Can  I always guarentee BCNF?
+	NO.
+
+Example:
+	Client has one account IN a firm. Client can have different firms.
+	Client, Firm -> Account
+
+	An account can have many clients but it exists in one firm.
+	Account -> Firm
+
+3NF allows redundancy to preserve FDs!
+
+Some people will say BCNF is too much.
+
+Unix
+
+cat name | egrep (give start | end - filters everything outside this- ) | sed (a replacement tool using regex)
+
+LEARN UNIX COMMANDS!
+
+Tableau data visualization tool with a GUI, 

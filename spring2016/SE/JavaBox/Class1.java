@@ -1,0 +1,3 @@
+f (list, key, compare){
+	
+}

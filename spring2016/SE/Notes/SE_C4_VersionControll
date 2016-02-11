@@ -1,0 +1,37 @@
+Version Control
+
+Distributed vs Centralized
+
+
+Centralized
+	SVN
+	CVS
+	RCS
+
+local - central
+
+when you commit you are actually pushing it back to the central server.
+If you happen to lose your server, tough luck.
+
+Distributed
+	git
+	
+When you check out you get ALL the changes that has been done up to that point.
+
+local - stage - github
+
+==Thought Experiment - Lets Design a Version control==
+
+We need to store the Delta.
+
+Version 1  Version 2
+Hello     <---
+Goodbye   -Goodbye +Later
+
+You can change the name but you have to store does as well.
+
+Git uses hash files to compare.
+
+!!!Homework!!!
+
+Do you want to hit? Do that in the black jack table. 

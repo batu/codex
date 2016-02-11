@@ -1,0 +1,126 @@
+Cyclic Redundancy Check
+
+
+The CRC is going to be one bit shorter than the generator polynomial.
+
+The receiver is going to remove the CRC, add the 0's, and repeat the same patter. If the CRC and the thing you get is the same then it means you have successfuly received the data.
+
+Recap STOP AND WAIT:
+
+Problem:
+	This doesnt utilize the whole bandwith if the frame if smaller than bandwith.
+
+Sender maintains three variables:
+Sending Windows Size (SWS)
+	Upper bound on the number of outsanding frames.
+Last Acknowledgement Received (LAR)
+	Last returned from receiver. This will always be sequential due to the receiver protocol
+Last Frame Sent (LFR)
+	Last sent sequence number.
+
+LFS - LAR <= SWS
+
+We need to maintain a buffer as big as the SWS because we might need to resend it.
+
+
+Receiving Window Size (RWS)
+	Upper bound on the number of out of order frames that the receiver is willing to accept.
+Largest Acceptable Frame (LAF)
+	Sequence number of the largest acceptable frame
+Last Frame Received (LFR)
+	Last !IN SEQUENCE! of the last frame received.
+
+(a duplicate can happen if an ACK is lost)
+
+SeqNum <= LFR or SeqNum > Laf
+
+
+Let SeqNumToAck be the largest sequence number not yet acknowledged.
+
+
+LFR = SNTA and adjusts
+
+Problems:
+When a timeout occures the sender is unable to advance its window.
+
+When the package is lost the bandwith goes down.
+
+How to improve this
+Negative Acknowledgement (NAK)
+	If receiver receives Frames out of sequence they send a negative acknowledgement for the lost.
+Additional Acknowledgement
+	Receiver sends the last frame in sequence if something comes out of sequence. 
+Selective Acknowledgement
+	Receiver acknowledges the frames it has received out of sequence.
+	This keep the pipe full. (additional compelxity)
+
+
+SWS = Delay x Bandwith
+
+RWS = 1 - problem as there is no buffer
+
+RWS = SWS (anything that can be out of sequence)
+
+RWS > SWS (this would be wasteful)
+
+Header is the controll information.
+
+The sequence number is to SWS + 1 < MaxSeqNum
+
+The problem with this that when the whole window is lost and resent the receiver thinks that the same window is the next window.
+
+Make the MaxSeqNum double the window size. So even if the whole window is lost (lets say 1 - 7) the receiver is waiting 8 - 14 now but when it receives the first 7 again it knows that this is not the next one but a duplicate
+
+Sliding Window Pros
+-Reliable
+-Preserves the Order
+-Frame control
+	- Receiver able to throttle the sender
+
+TCP is an example of a sliding window Protocol
+
+
+
+
+
+
+
+
+
+!!!Ethernet!!!
+Around for 40+ years.
+Uses CSMA/CD tech
+	Carrier Sense Multiple ACcess with Collision Detection
+
+Aloha!
+	A wireless protocl. Whenver you detect someone else you back of and wait for a random time between [0,n] 
+
+Inernet is numbered 802.3
+Ethernet is numbered 802.11
+
+
+The ethernet can be a max of 2500 m (500 per repeater) between a pair of hosts. If the ISP is more distance away you might need a Host in the middle to create another pair.
+
+
+
+Machester Coding:
+	Mirrors the clock cycle. 1 Flips 0 sends the clock.
+
+The Media Access Control (MAC)
+Frame format
+Premable 64bit
+Host and Destination Addess 48bit
+Packet type 16bit
+Data upto 1500byte
+CRC 32bit
+
+Ethernet Adress
+a 6 digit hexadecimal value.
+
+Ethernet adaptor receives all frames an accepts
+CHECK THE SLIDES FOR THE SUMMARY
+
+
+
+
+

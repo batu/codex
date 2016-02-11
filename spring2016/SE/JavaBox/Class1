@@ -1,0 +1,6 @@
+f (list, key, compare){
+	compare(i,key);
+}
+
+//This takes into account that there can be many i's and keys. (car, int etc)
+// in this case instead of using '==' everyone is writing their own compare function.

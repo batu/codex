@@ -1,0 +1,70 @@
+What is needed?
+Hearing
+Speech Recognition
+Speech Synthesis
+AI VS NLP
+Understanding and Mapping
+
+NLP
+
+
+Phonology - sounds
+Morphology - play played
+syntax - structure sentences
+semantics - meaning (what kind)
+Pragmatics - Context aware, this that he and she
+discourse - how to manage the onversation
+
+Worse than ambiguity is OOV (out of vocabulary)
+
+Ambiguity:
+I made her duck - What do they mean
+
+Lexical catagory - Duck can be a noun or a verb (of her)
+Lexical category - her can be possessive or dative ( for her)
+
+Non Transitive  non direct object - i slept
+Transitive takes a direct object - I cooked duck
+Ditransitive takes two 2 direct objects - I made her into a duck
+ACtion transitive takes a direct object and another verb I caused her to move her body
+
+Phonetics
+
+I mate or duck
+I maid her duck
+
+Probalistic differentiation
+Markov models and (what word does follow the other one )
+Gramatically sound
+
+
+
+I saw the man with a telescope ( pervasive)
+
+Disambiguation is in context
+
+1) Knowledge from other levels can help devide at ambiguous levels
+2) Pipeline processing that ignores ambiguity as it occurs and hopes that other levels can eliminate incorrect structures
+3) Probabilistic approaches based on making the most likely choice
+4) Don't do anything, it might not matter.
+
+
+linguistic modles like knowing that go is related to went
+then understanding the search space
+
+state machines
+rule based approaches
+logical formalisms
+probablisitc models
+
+
+
+trandusecersL algorithms that take one kind of structure as input and outpit another
+
+difficulties
+    Non standart englishg
+    segmentation issues
+    idioms
+    neologisms 
+    world knowledge (mary and sue are sisters/mothers)
+    Tricky entity names (Let It Be sold millions)

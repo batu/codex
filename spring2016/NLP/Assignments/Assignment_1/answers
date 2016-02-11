@@ -1,0 +1,81 @@
+Describe the XML.
+
+It starts with opening a TMX tag to define the version. Everything else is inside this.
+
+A self closing header follows to define the meta deta.
+
+Next a body tag opens which holds all the interesting information.
+
+For the actual content a <tu> tag defines the resolution number. In some cases <prop> tags give some extra meta data about the session and comittee.
+
+For the main content a <tuv> tag defines the language and within it a <seg> tag holds the actual content in the respective language.
+
+<tmx>
+<header/>
+  <body>
+    <tu #resoid#>
+      <prop [session|committee]></prop>
+      <tuv [language]>
+        <seg>
+	  the actual content
+        </seg>      
+      </tu>
+    </tu>
+  </body>
+</tmx>
+
+
+Disclaimer FILE RENAMED TO uncorpora.tmx
+
+Question 2:
+a)
+cat uncorpora.tmx | wc
+1501316
+
+b)
+cat uncorpora.tmx |egrep  '<seg>'| wc
+434034
+
+c)
+cat uncorpora.tmx | egrep '<.*[^seg]>' | wc
+1067270
+
+d)
+cat uncorpora.tmx | egrep '<tuv xml:lang="EN">' | wc
+72339
+
+e)
+cat uncorpora.tmx | egrep '<tuv xml:lang=".*">' | sort | uniq -c | sort -nr
+  72339       <tuv xml:lang="ZH">
+  72339       <tuv xml:lang="RU">
+  72339       <tuv xml:lang="FR">
+  72339       <tuv xml:lang="ES">
+  72339       <tuv xml:lang="EN">
+  72339       <tuv xml:lang="AR">
+
+
+Q3
+
+a)
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="EN">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' > uncorpus.eng.txt
+
+We count the number of lines in our uncorpus.eng.txt and we compare it to the number of english lines in the whole document. (answer to Q2 d) In this case the two numbers are identical. 
+cat uncorpus.eng.txt | wc
+72339 2685538 18587717
+
+b)
+cat uncorpus.eng.txt | wc -w
+2685538
+
+c)
+cat uncorpus.eng.txt |perl -pe 's/[^a-zA-Z]+/\n/g;'|egrep  '\w'|sort -u| wc
+13974
+
+
+d) 
+ cat uncorpus.eng.txt |perl -pe 's/[^a-zA-Z]+/\n/g; tr/A-Z/a-z/'| egrep '\w'| sort -u| wc
+11253
+
+e)
+cat uncorpus.eng.txt |perl -pe 's/[^\d]+/\n/g'| perl -pe  's/^\s*[\r\n]//g' | wc
+135573
