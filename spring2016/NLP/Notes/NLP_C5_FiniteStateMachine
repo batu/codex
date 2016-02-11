@@ -1,0 +1,27 @@
+Finite State Automata
+
+We can use this to define regexes.
+Generative grammer is used in linguestic to mean a grammer of formal language.
+
+
+Regular expressions - regular languages - finite automata 
+They are all rekated to each other, They can be expressed in other terms.
+
+Two circles means accepting state. 
+
+FSA Finite State Automata
+Represents the reuglar language. Does it match or not match.
+
+Finitte state Transducers
+These do a transduction. Mapping
+
+With an epsilon type you can change the state without consuming the type
+
+PAge 17. How do you represent when you can use the Epsilon?
+
+For every NFSA there exists and eqivalent DFSA (map non deterministic to deterministic)It adds a layer of abstraction
+
+An example of this, the mapping. How do you escape the infitine state?
+
+Implementation of Union
+make the accepting state the initial state of another one.
