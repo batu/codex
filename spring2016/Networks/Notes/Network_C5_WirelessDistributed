@@ -1,0 +1,165 @@
+February 15th
+Wireless and Distributed Systems
+
+Wireless links transmist electromagnetic signals
+
+Wireless links all share teh same "wire"
+Challenge is to share it efficiently.
+	2G - You share time
+	3G - You superimpose your packets in an "orthogonal" manner. When you receive it you multiply it with your code and get 1, everyone else's message returns 0
+	4G - You split the frequency.
+
+Spectrum is assigned to a system is scarce. Itis hard to support hundreds and thousands of people.
+
+There are centralization behind all that stuff. FCC (federal communications commission)
+
+Some are allocated for government use:
+	Police
+	Millitary
+
+Spefici bands are reserved for stuff
+	Am
+	FM
+	Satalite
+	Television
+
+Specific frequencies within these bands are given to organizations. You vasically sell these frequencies. (the countries do)
+
+You always try to balance fairness - throughput maximization. (Good connection more time to maximize or give the poor some time too)
+
+Devices that use license-exempt frequencies are still subject to certain restrictions
+	Limit on transmission power
+	Limit on the range
+
+Intinuation. Signal detoriates. The more distance it travels the worse it gets. 
+(friction)
+
+As the G's go up power goes down?
+
+The higher frequency you have the higher Intuniation. It is favourable to keep small frequencies. 
+
+This is one of the reasons why we cant just increase frequency. The bigger the frequency the more you can transmit. Double Check this!
+
+Spreading Specturum.
+When you send the signal you multiply it with a code with very small chipsize (which spreads the signal *think of a wider bell curve VS a very narrow bell curve)
+On the end you multiply with the same small chipsize code, the XOR cancels out and you get the initial signal. 
+If there is a noise in the way when you multiply at the receiver the noise gets spreaed out ( because it is the first XOR) but the actual data that is already been spread get narrower (because it is the second XOR)
+
+Frequency Hopping
+You are gonna divide your bandwith in a set of frequencies.
+First transmition on first frequency second transmission on second frequnecy etc
+By hopping through frequencies you hope that the noise hits you less.
+
+!! Direct Sequence - A second Spread spectrum
+This is an implementation of the Spread. You XOR with a chip twice.
+
+Wireless techs differ
+	Bandwith
+	How far can the nodes be
+
+Example - Fill this in with the slides
+	Bluetooth 10m
+	Wi-Fi 802.11 100m
+	WiMax
+	3G 10km
+
+Most wireless links are asymetric. 
+Laptop and Basestation
+
+Wifi is point to multipoint (one baseconnection but many laptops) 
+There is no direct communication, A - B communicates through the accesspoint. A - accesspoint - B
+
+Three levels of mobility
+	No mobility
+	within the range of the base
+	mobility between bases
+
+Mesh or Ad-hoc
+	Nodes are peers, messages may be forwarded via chain of peer nodes
+	a decentrilized methods
+
+IEEE 802.11
+	Similar to ethernet it is designed to be used in a limited space.
+
+Two standart radio-based physical layer both use 2.4Ghz and provide up to 2Mbps
+	Frequency hopping
+	Direct sequence (spreading using 11 bit chips)
+
+802.11b
+	Provided up to 11Bbps
+
+802.11a
+	delivers up to 54Mbps using OFDM
+	They run a licence exempt 5-hz
+
+802.11g 
+	most recent
+	backwards compatible with b
+	delivers up to 52Mbps
+	2.4Ghz
+
+802.11n
+	MOST Recent
+	up to 300Mbps sometimes 600Mbps
+
+In ethernet while you are transmitting you are also lsitening. 
+You cant do that with wireless. 
+
+A - B - C 
+A and C can talk to B but not eachother.
+If A/C sends to B 
+B can sense the collision but not A and C so they dont know the coliision. (hidden node problem)
+
+OR
+
+A - B - C - D
+If B is sending to A C can listen to it.
+It can conclude that the line is full and not send to D even though it in reality can because D will never reach A/B
+
+The solution is MACA (Multiple Access with Collision Avoidance - not collision detection as you cant listen and trasmit at the same time)
+
+
+MACA
+Sender and receiver exchange control frames.
+Sender transmits RTS (request to Send)
+Receiver replies CTS (clear to send) 
+These frames are heard with everyone.
+
+A - B - C 
+A sends RTS to B.
+B responds with CTS. 
+Even though C didnt hear the RTS it heard the CTS.
+
+A - B - C - D
+
+A sends RTS
+B responds CTS. Both A and C heard this.
+But because C didnt hear RTS he knows that it is far away.
+So C is not clear to send to B but to anyone else (because it will not interfere with A)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
