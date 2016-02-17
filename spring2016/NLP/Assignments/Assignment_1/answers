@@ -134,6 +134,36 @@ cat uncorpus.eng.txt | egrep -oh '\(i*v*i*x*i*i*v*x*v*i*\)' | wc
 
 Question 4:
 
+a)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Z](\w)*' | sort | uniq  > cap-1.txt
+
+b)
+cat uncorpus.eng.txt | perl -pe 's/([1-9]+\.|\(.+\))//g' | perl -pe 's/^\s+[A-Za-z]+//g'  | egrep -oh '[A-Z][a-z]+' | sort | uniq > cap-not1.txt
+
+c)
+wc cap-not1.txt cap-1.txt 
+3437  3437 29887 cap-not1.txt
+4154  4154 35881 cap-1.txt
+7591  7591 65768 total
+
+d)
+comm -12 cap-1.txt cap-not1.txt | wc && comm -23 cap-1.txt cap-not1.txt | wc && comm -13 cap-1.txt cap-not1.txt | wc
+
+    723     723    6023
+   3431    3431   29858
+      6       6      29
+
+
+e)
+diff -u cap-1.txt cap-not1.txt | perl -pe s/@@\.*@@//g | egrep '\-.*'  | wc && diff -u cap-1.txt cap-not1.txt | perl -pe s/@@\.*@@//g | egrep '\+.*' | wc && diff -u cap-1.txt cap-not1.txt | perl -pe s/@@\.*@@//g | egrep '\s.*' | wc
+
+    725     733    6849
+      8      16     138
+   2100    2108   20781
+
+
+
+
 Question 5:
 
 a)
@@ -160,78 +190,288 @@ cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | sort |uniq
 
 
 b)
-cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | head -10000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
-    920 the
-    650 of
-    584 and
-    359 to
-    259 in
-    172 rights
-    163 human
-    156 that
-    152 on
-    135 for
-      1 advances
-      1 adopting
-      1 addressed
-      1 active
-      1 across
-      1 acknowledged
-      1 achieved
-      1 according
-      1 access
-      1 accelerating
+cat uncorpus.eng.txt  | head -10000 | perl -pe 's/^\s+//g'  | egrep -oh '[A-Za-z]+' |sort |uniq -c |sort -nr | (head -10 && tail -10)
+  37008 the
+  24516 of
+  17903 and
+  13350 to
+   9235 in
+   4649 on
+   4495 for
+   3071 a
+   3059 that
+   2862 its
+      1 abject
+      1 abilities
+      1 abiding
+      1 abhorrent
+      1 abductions
+      1 abducting
+      1 abductee
+      1 abatement
+      1 abandon
+      1 AA
+
 
 
 c)
-cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | tail -10000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
-    765 the
-    671 and
-    587 of
-    371 to
-    258 in
-    124 as
-    118 United
-    113 on
-    113 Nations
-     99 forest
-      1 accountable
-      1 according
-      1 accomplishments
-      1 accomplishing
-      1 accessible
-      1 acceding
-      1 above
-      1 abduction
+cat uncorpus.eng.txt | tail -10000 | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+'  |sort |uniq -c |sort -nr | (head -10 && tail -10)
+  37771 the
+  24992 of
+  20865 and
+  14649 to
+   9579 in
+   5209 on
+   4577 for
+   3629 that
+   3001 its
+   2963 as
+      1 abridgement
+      1 abortions
+      1 abolishing
+      1 abided
+      1 Abduction
       1 abducting
+      1 abductees
       1 abductee
+      1 abducted
+      1 abandonment
+
 
 
 d)
-cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | head -35000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
-   3434 the
-   2458 of
-   1952 and
-   1333 to
-    943 in
-    486 on
-    399 for
-    391 rights
-    353 human
-    352 that
-      1 academic
-      1 Abuse
-      1 abuse
-      1 abroad
-      1 abolished
-      1 abolish
-      1 able
-      1 abhorrent
-      1 abductions
-      1 abducted
+cat uncorpus.eng.txt | head -35000 | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+'  |sort |uniq -c |sort -nr | (head -10 && tail -10)
+ 129363 the
+  84704 of
+  63949 and
+  46485 to
+  31703 in
+  17044 on
+  15766 for
+  10927 that
+  10465 a
+  10053 United
+      1 absorbing
+      1 absorbed
+      1 absorb
+      1 abolishing
+      1 Abkhazian
+      1 abject
+      1 aberrations
+      1 abatement
+      1 abandoned
+      1 abandon
+
 
 
 e) Not surprised. The average holds for the main just like the sub sections. BLergh!
+
+
+
+Question 6:
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="EN">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 578773 
+ 267940 the
+ 175497 of
+ 136607 and
+  99545 to
+  66802 in
+  35910 on
+  32327 for
+  22534 that
+  21181 its
+  20349 with
+  20126 a
+  20006 United
+  19973 as
+  17251 by
+  16995 Nations
+  13933 at
+  12827 all
+  12061 international
+  11986 States
+  11173 their
+
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="AR">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 578717 
+  92683 في
+  45238 من
+  38530 على
+  34817 -
+  34466 إلى
+  24225 أن
+  18986 التي
+  18947 وإذ
+  17776 الأمم
+  16764 المتحدة
+  15046 عن
+  11324 الدول
+  10979 أو
+  10175 المؤرخ
+   9476 كانون
+   9413 مع
+   9163 جميع
+   8916 بما
+   8800 العام
+   8770 العامة
+ 578733 
+ 
+
+at
+From
+On
+-
+to me
+that
+Which
+Taking
+Nations
+United
+About
+Countries
+or
+Of
+December
+With
+all
+Including
+Year
+the public
+
+
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="FR">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 193343 de
+ 130416 et
+ 125977 la
+ 101017 des
+  88358 les
+  79556 à
+  66261 le
+  62859 du
+  47545 en
+  31134 pour
+  30407 que
+  28848 ;
+  28542 dans
+  25194 sur
+  24075 aux
+  22570 au
+  18033 par
+  17579 Nations
+  16853 qui
+  13941 Unies
+
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="ES">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 578719 
+ 313375 de
+ 177307 la
+ 131113 y
+  93456 en
+  86469 los
+  82328 el
+  77855 las
+  77003 a
+  69299 que
+  52778 del
+  37328 para
+  28287 con
+  22750 su
+  21639 por
+  21407 al
+  20266 sobre
+  18446 Naciones
+  15557 se
+  14062 Estados
+  13952 Unidas
+
+    from
+    the
+    Y (and)
+    in
+    the
+    he
+    the
+    to
+    than
+    of the
+    for
+    with
+    his
+    by
+    to the
+    on
+    Nations
+    is
+    United
+    You joined
+
+
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="ZH">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 578863 
+   2545 1.
+   2518 2.
+   2245 3.
+   2111 大会，
+   2024 4.
+   1837 5.
+   1602 6.
+   1428 7.
+   1319 8.
+   1204 9.
+   1158 未经表决而通过
+   1086 10.
+    989 11.
+    979 (a)
+    974 (b)
+    928 ㈠
+    912 12.
+    806 13.
+    730 14.
+    702 (c)
+
+cat uncorpora.tmx | egrep -a1 '<tuv xml:lang="RU">\s*' | egrep '<seg>.*</seg>' | perl -pe 's/<\/?seg>//g' |perl -pe 's/\s/\n/g;'|sort |uniq -c |sort -nr | head -21
+ 578727 
+ 135693 и
+ 100876 в
+  37886 по
+  37178 на
+  28031 с
+  19152 Объединенных
+  18190 Организации
+  18148 о
+  15609 для
+  14885 от
+  14180 что
+  13804 к
+  13361 Наций
+  11698 также
+  10911 года,
+   9245 декабря
+   9233 года
+   8520 их
+   8379 призывает
+   7816 или
+
+and
+   at
+    by
+    on
+    from
+    united
+    organizations
+    about
+    for
+    from
+    what
+    to
+    nations
+    also
+    of the year,
+     December
+     of the year
+     their
+    urges
+     or
 
 
 
