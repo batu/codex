@@ -1,0 +1,125 @@
+17.02.2016
+
+switching Routing
+
+Routing: If you wanna send a package from A to B the network will figure out the route.
+
+Store-and-Forward Switches
+
+Switch!
+A mechanism that allows us to interconnect links to form a large network.
+
+Example: Start topology. The point to point connection, all connects to one AC.
+
+Properties:
+	You can build large networks. 
+	Switches have a fixed number of input and output but you can connect switches to switches.
+	Adding a new host is easy, it shouldnt get a performance hit.
+
+These days you are usually having a 1 to 1 connection. 
+
+You are switching and forwarding at the same time. I tcomes to you and you decide where to send it and send it.
+
+How does it decide which output port?
+
+Two approaches
+	Datagram or Connectionless - the main dog
+	Virtual circuit or Connection-oriented - low usage
+	(?) Source routing - low usage
+
+Assumptions:
+	1) Every host has a globally unique address (Mac address for Ethernet)
+	2) There is some way to identify the unput and output ports of each switch
+		a)numbers - More often used
+		b)names
+
+Datagrams:
+	Every packet contains enough information to enable ny switch to decide how to get it to destination. Every packet (even every frame) contains the complete destination address.
+
+Routing Table in the Switch:
+	HUGE table acting like an address book. 
+
+The switch looks at the package, checks the address in the Routing table and decide on which output port. 
+
+Propoerties:
+	Host can send a packet anywhere at any time
+		You dont know anything about the source (is it up, available etc) 
+		You just send it and hope for the best.
+	Each packet is forwarded independent of the previous packets. The route can change based on loads etc.
+	A switch or link failure is not that catastrophic. YOu can find a different route.
+
+The address is based on the protocol
+	MAC address for ethernet
+	IP for internet.
+
+
+
+Virtual Circuit Switching
+	Widely used technique for packet switching
+	Uses the concept of virtual circuit (VC)
+	Also called a connection-oriented model
+	First set up a virtual connection from the source host to the destination host and then send the data
+	
+
+It has to establish a connection and then data transfer/
+	1) Connection setup
+	2) Data Transfer
+
+When you establish the connection setup you figure out the individual steps. A - B B - C a doesnt know C.
+Every switch has a VC table.
+	
+	The entries contaion:
+	VCI (virtual circuit identifier)
+	An incoming interfeace - packets come here
+	An outgiong interface - packets leave here
+	A potentially different VCI will be used for output. These are not global but locak.
+
+
+When a conneciton is established you need to create the VC table.
+
+Two connection states:
+	A permanent virtual circuit PVC 
+	Created by network admin
+
+	The signal information sets up the VC
+	This is automatic when A want to reach B a table is created
+
+A VC can be made manual but in real life LOL NOPE
+
+Signalling to create VC
+	The set up message contains the full destination address. 
+	From the lookup table you know where to go.
+	When you jump to the second switch you create the half of the VC is created. 
+	When the final host receives the coming signal it sends a ACK returns from the same route completing the other half of the CV table.
+	
+
+Charactheristics 
+	You can not send data immediately, you need to wait AT LEAST 1 RTT. (establishing the connection)
+	Data packets contain small identifier. Unique on one link. 
+	If a switch or connection fails TOUGH LUCK, a new conneciton is needed.
+	
+	By the time the host gets the go ahead to send data you know a lot
+		You know that the route exists
+		You know that the receiver is willing
+	It is possible to reserve some resources to the specific connection. VC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+17.02.2016 - Wednesday
+
+Uses License Exempt Frequency:
+Commercial Use - Shared Frequencies. Wifi-Bluetooth
+Protected Frequencies: AM/FM/3G etc... Police/Military
+
+Used for very short range.
+Up to 10m
+2.45GHz
+Power consumption is very low.
+
+Bluetooth is specified by and industry Bluetooth Special Interest Group.
+
+Bluetooth has profiles.
+Bluetooth network configuration is called a piconet.
+
+You can have 7 slave for 1 master. 
+You can have 255 parked which are dormant and the master can wake em up.
+None of the slaves can transmit without the masters permission.
+
+Spread Specturum (Widen it up to reduce noise) and Frequency Hopping(Divides the stuff and distributes it ot frequence)
+
+
+ZigBee - IEEE 802.15.4 - Competition to Bluetooth
+For situations:
+1)Bandwith requirement is low
+2) Power consumption ver low
+3) Long battery life
+Basically weaving a net. So they should self organize.
+
+Encoding:
+	Switching Data to transmitable to 0 and 1
+Framing:
+	The frame structure. The length, header when does it end when does it start. Control field data field etc. Bits - Bytes
+Error Detecting:
+	Detect maybe fix them. 
+		a) Error that result in corruption in the package. Identify it (if you need, correct it but this is extremely expensive)
+Reliability:
+	Yeah.. Dont let it crash.
+Multiple Access Link:
+	You are sharing the space with others. So you need a protocol of sharing. Ethernet / 802.11
+
+In ethernet 30% utilization is really high (due to collissions etc)
+
+
+
+

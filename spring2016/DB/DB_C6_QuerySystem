@@ -1,0 +1,160 @@
+17.02.2016
+
+The internals of the Database
+
+First you have decide what the process model.
+
+Kernel Tread vs User Level Thread
+User level thread doesnt get tHread of execution. The threading occurs in the process level.
+
+The operating system gets the scedule Kernel Level Threads but the process schedules user level threads.
+
+Pro
+Thread per worker. It will result in context switches. The overhead in the long run doesnt matter.
+
+If there are 10 running as process then the bottleneck would be IO.
+
+a process model is better when it comes to security, ability to deal with failures. Process programming is generally easier. 
+
+Each process has a lot overhead and harder to share stuff among eachother.
+
+Threading level:
+Share created tables.
+If you have transaction that are hitting the same data you want to have threadng. Because you want the share the table.
+
+Generally we prefer multithreaded (not process) to help share the resources / memory.
+Initial bottleneck is IO 
+
+Admission Controll !!
+
+Thrashing - For any query to run it needs a mininum number of pages and a bit of memory to materilze the results. The thrash = Keep requesting the IO. 
+
+Thrashing: It needs something to be in memory. When it needs to operate on that thing it isnt in memory.
+
+This occurs a lot in DB becase they swap in and out stuff. 
+One solution is to leave it to the OS. If there is thrashing in the DB the OS will resolve it.
+
+OS: Deals with trashing by killing with the processes. Or it will kill others. But usually it kills the biggest process (which is usually the DB)
+
+So instead of getting offed by the OS you need to gracefully degrade.
+
+Mission control - glorified load balancer.
+
+
+Query Processing
+
+Parser      SQL
+Rewriter    Parse Tree
+Planner
+Optimizer   Query plan
+Executer
+
+
+Parser: Parse the sql into a parse three which is made out of relational algebra
+Rewriter: Rewrites the parse tree and cleans it up
+Planner: Puts elements of the query plan, how to access the unduces.
+Optimizer: Optimizes joins and others stuff. I am going to do a sequential scan or index access. If you are accessing EVERY key in your table no need to do the index.
+Executor:
+
+Rewriter:
+View Rewrite
+	a view in general does not materilize. But everytime I read from the view you reconstruct it (but it doesnt already exists)
+Eliminate Constants
+	1.0 + 2.5 becomes
+	3.5
+Inject predicates
+	Such as implied predicates
+Remove redundant predicates
+	x > 3 and x > 2 | no need for the second part
+Flatten sub-queries
+	rewrite the query without subqueries
+
+
+
+Query Optimizer:
+Levels of optimization
+-Logical
+	Ordering of operators
+-Physical
+	Selecting the actial implementation of the operators
+
+We use heuristics to lower the search space.
+
+I thought Postgres had a context aware general AI. Like it knows we are in NYUAD Saadiyat from IP and assumes how many faculty there are and grabs the average salary and combines these to make an assumptoin/
+
+
+A way to get tuples:
+Heap:
+the header of the page stores the end point of each tuple and a flag one.
+
+What is an index:
+Usually it is on the page level. ( because when you read a record you get the page anyway)
+It supports
+	insert tuple
+	Create a pointer to the record
+
+Heap scan vs index scan
+	sequential order vs all traversing the leaves of the index
+Cluster the index - rewrite your data / sort your data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

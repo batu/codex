@@ -79,3 +79,163 @@ d)
 e)
 cat uncorpus.eng.txt |perl -pe 's/[^\d]+/\n/g'| perl -pe  's/^\s*[\r\n]//g' | wc
 135573
+
+f) !!!
+cat uncorpus.eng.txt | egrep -oh '([0-9]*[^\w\s\d]+[0-9]+|[0-9]+[^\w\s\d]+[0-9]*)([^\w\s\d]+[0-9]+)*' | wc
+223501
+
+g)
+cat uncorpus.eng.txt | egrep -oh '[A-Z]+[a-zA-Z]*' | wc
+464874
+
+h)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '^[A-Za-z]+' | sort |uniq -c |sort -nr | head -15
+   4821 Recalling
+   2377 The
+   2166 Adopted
+   2090 Noting
+   2054 RESOLUTION
+   1674 Recognizing
+   1669 Reaffirming
+   1350 Taking
+   1251 Welcoming
+    845 Having
+    719 Bearing
+    687 Article
+    592 Expressing
+    590 Emphasizing
+    507 Stressing
+
+
+i)
+cat uncorpus.eng.txt | perl -pe 's/^\s+[A-Za-z]+//g' | egrep -oh '[A-Z][a-z]+' | sort |uniq -c |sort -nr | head -15
+  20064 United
+  19188 Nations
+  17685 General
+  15092 States
+   9302 December
+   9088 Secretary
+   8621 Assembly
+   7013 Committee
+   5771 Convention
+   5719 International
+   3912 Declaration
+   3868 Commission
+   3728 Conference
+   3713 Requests
+   3694 Rights
+
+j)
+cat uncorpus.eng.txt | egrep -oh '\(i*v*i*x*i*i*v*x*v*i*\)' | wc
+966
+
+
+
+
+Question 4:
+
+Question 5:
+
+a)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | sort |uniq -c |sort -nr | (head -10 && tail -10)
+268153 the
+ 176014 of
+ 138294 and
+  99763 to
+  66988 in
+  36024 on
+  32461 for
+  24039 that
+  21550 a
+  21181 its
+      1 absorbing
+      1 Abkhazian
+      1 abject
+      1 abiotic
+      1 abided
+      1 aberrations
+      1 Abdullah
+      1 abductees
+      1 abatement
+
+
+b)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | head -10000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
+    920 the
+    650 of
+    584 and
+    359 to
+    259 in
+    172 rights
+    163 human
+    156 that
+    152 on
+    135 for
+      1 advances
+      1 adopting
+      1 addressed
+      1 active
+      1 across
+      1 acknowledged
+      1 achieved
+      1 according
+      1 access
+      1 accelerating
+
+
+c)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | tail -10000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
+    765 the
+    671 and
+    587 of
+    371 to
+    258 in
+    124 as
+    118 United
+    113 on
+    113 Nations
+     99 forest
+      1 accountable
+      1 according
+      1 accomplishments
+      1 accomplishing
+      1 accessible
+      1 acceding
+      1 above
+      1 abduction
+      1 abducting
+      1 abductee
+
+
+d)
+cat uncorpus.eng.txt | perl -pe 's/^\s+//g' | egrep -oh '[A-Za-z]+' | head -35000 |sort |uniq -c |sort -nr | (head -10 && tail -10)
+   3434 the
+   2458 of
+   1952 and
+   1333 to
+    943 in
+    486 on
+    399 for
+    391 rights
+    353 human
+    352 that
+      1 academic
+      1 Abuse
+      1 abuse
+      1 abroad
+      1 abolished
+      1 abolish
+      1 able
+      1 abhorrent
+      1 abductions
+      1 abducted
+
+
+e) Not surprised. The average holds for the main just like the sub sections. BLergh!
+
+
+
+
+
+
+

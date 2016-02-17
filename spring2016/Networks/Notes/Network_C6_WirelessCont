@@ -1,0 +1,81 @@
+17.02.2016
+
+Hidden Node Problem:
+A-B-C 
+C doesnt see A. So A and C can collide.
+
+Exposed Node Problem:
+A-B-C-D
+B sending to A blocks C from moving in reality it can send to D.
+
+Solution:
+RTS (ready to send)
+CTS (clear to send)
+
+Using these two signals nodes handle these.
+
+802.11 has no collission detection, this RTF-CTS is used avoid collisions.
+
+Some nodes are connected to each other with wires.
+Access Point (AP) 
+
+Even if you dont have direct communication between nodes your data can travel through other hosts.
+
+How to select the Access point - Scanning
+
+Node sends a Probe frame.
+All APs reply with Probe Response
+Usually you chose the highest signal to interference ratio.
+You send a request for Association Request frame.
+AP replies with an association Response frame.
+
+This happens when the node first connects to the network.
+Or moves so another AP has a better Signal to Interference ratio.
+
+Active: Node periodically scans.
+Passive: The APs push a header telling the S/I ratio
+This doesnt change the IP address so you dont lose your YouTube video.
+
+(Certain standarts you use multiple nodes 4G+)
+
+Frame Format:
+Source and Destinations Addresses: each 48bit
+Data: up to 2312 bytes
+CRC: 32 bit
+Control Field: 16 bit
+	This has 6 bit Type
+	1 bit distributed
+	ToDS
+	FromDS
+
+4 Address:
+
+In 1 on 1 it is fine. Add 1 is source, Add 2 is destionation.
+But in distributed systems:
+Add1 Ultimate destionation
+Add2 Immediate Sender
+Add3 Immediate Destination
+Add4 Originial Source
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
