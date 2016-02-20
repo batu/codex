@@ -1,0 +1,73 @@
+18.02.2017
+
+Assignment 1 is due today.
+Assignment 2 is die 18th March.
+
+Computational Morphology
+
+Lexicon
+The list of morphemes together with basic information.
+main categories / sub categories etc
+
+Morphotactics
+The additional morphem,e irdering that explains which classes of morphesmes can follwo other classe of morphemes.
+For example in Englush S mostly makes things plural.
+
+FSA (Finite Stae Automata)
+-Accept strings that are in the language
+-Reject strings that are not 
+-And do it in a way that doesnt require an exhaustive list
+
+
+FSM (finite state machine)
+We want to model
+X+PL (word + plural)
+
+Multi-tape finite state machines
+
+Cat - intermediate - cats
+fox - intermediate - foxes
+
+Intermediate step is where you decide es vs s
+
+FSA = This only matches
+FSM = has input and output
+
+Parsing/Generation vs Recognition
+
+You can inver the FSM. 
+
+
+Finite State Transducers (FST)
+
+Instead of the letter mapping to themselves the latters map to something else.
+
+Build a machine that when you see 
+C->C / A->A / T->T / +N+PL -> s
+cat+N+PL -> cats
+(this can go either way)
+
+We usually apply this in two steps. Start to intermediate. Intermediate to final.
+Make sure that everything default passes through.
+
+Ambiguity 
+Problem with parsing is that sometimes you dont know what the word is without context. (verb or noun etc?)
+
+So one option is to check context.
+One is to cascade and  give everything.
+
+Shibboleth - identifier.
+
+Multi Tape Machine (MTM)
+# means end of word
+
+epsilon' -> e / {x,s,z} ^ __ s#
+it means do the transformation / {start} transformation here endoftheword# 
+
+
+
+
+
+
+
+
