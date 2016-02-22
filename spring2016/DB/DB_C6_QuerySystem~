@@ -54,7 +54,7 @@ Parser: Parse the sql into a parse three which is made out of relational algebra
 Rewriter: Rewrites the parse tree and cleans it up
 Planner: Puts elements of the query plan, how to access the unduces.
 Optimizer: Optimizes joins and others stuff. I am going to do a sequential scan or index access. If you are accessing EVERY key in your table no need to do the index.
-Executor: Runs the query. Executes it.
+Executor:
 
 Rewriter:
 View Rewrite

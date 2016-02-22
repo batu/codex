@@ -1,0 +1,155 @@
+22.02.2016
+
+Query Systems Cont.
+
+There exists iterators.
+
+Scan operation:
+cursor
+filename := heapfile
+open(){
+	open(filename);
+	cursor to first position
+	page #, offset
+}
+close(){
+
+}
+
+hasNext(){
+if cursor not @ end of file:
+	return true
+else:
+	return 
+}
+
+next(){
+	t = tuple@cursor
+	forward cursor
+	return t;
+}
+
+project - filter - scan - tuple (this is called pipeline, instead of the whole table)
+
+Sometimes you cant do that for example in a sort.
+
+Bushy VS Left deep.
+
+Bushy
+
+
+		x
+	X		X
+    A      B       C        D
+
+hard to pipeline beacuse it has to store one join table or recompute every time. 
+
+
+Left Deep
+
+				X
+			X           D
+		X          C 
+	    A      B
+
+Here you dont have to save any tables. You get a table, compare with a tuple. 
+
+Useful because you can chain stuff. 
+
+Optimizer
+-Heuristics
+-Cost based
+
+What causes cost?
+-Loops
+-IO (read and writes)
+-IO (network)
+
+Units. Time per tuple/
+
+You try to figure out where the bottleneck is?
+-you need to balance stuff. 100% CPU and 20% disk you know where the problem is.
+
+
+The Time Graph
+
+1 	ns	as instruction
+100 	ns 	accessing memory
+10	ms	Disk Seek
+20	ms	Read 1mb sequentially from disk
+
+
+CPU - 1ns/op
+I/O - 10ns/byte (just reading assumign seeked)
+Random I/O - (1pg read + 1 seek) = 10ms/seek
+
+seek 1 byte = waste 1000000 ops!
+
+Generally the bottleneck is the disk.
+
+
+
+1 page = 10kb = 100 tuples
+tuple = 100 byte
+Memory fits 10 pages
+10ms seek time
+100MB/sec I/O
+100 houses = 1 page
+10K faculty = 100 pages
+30k children = 300 pages
+
+
+
+Nested Loop
+
+		X
+	A		B
+      Outer 	      Inner
+
+for every To in outer:
+	for every Ti in inner
+		if(pred(To,Ti);
+			emit(to,ti);
+
+
+	X
+Houter	   Finner
+
+
+CPU Cost
+	100 x 10K
+
+IO Cost
+	(1+100) 101 seeks
+	(2+100) 
+	100 x 100
+
+	X
+Fouter	   Hinner
+
+IO
+	(100 seek for faculty)
+	(1 seek for housing)
+	100 x 1
+Because you dont have to evict the house from the buffer.
+
+General rule is that small table is inner. Especially if you can fit in the memory.
+If you cant fit it in then memory the block stuff.
+
+Some caching procedures will change will stuff.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
