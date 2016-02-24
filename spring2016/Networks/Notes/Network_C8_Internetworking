@@ -1,0 +1,185 @@
+24.02.2016
+
+
+Internetworking
+
+Internetwork
+
+Switches - The problem is that they share the address space. Ethernet - Wifi is close enough but other might not be.
+
+
+They all should use the same network protocol - IP but other things can be different.
+
+Transport portocol - TCP / UDP 
+IP is accross the entire nodes. Common denominator.
+802.11 
+
+Each protocol shoudl have a corresponding communication on the other side. 
+
+IP (Internet Protocol)
+-Key to building scaleable and hetergenous
+-It runs on all the nodes in a collection of networks.
+-Datagram
+
+Packet Delivery Mode
+-Connectionless model for data delvery
+-Best-effor delivery
+--lost Packets
+--out of order
+--Duplicates
+--Long delays
+
+Global Adressing SCheme
+-Provides a way to identify all hosts.
+
+Ethernet Addressing Scheme
+-Manufacturer-Host(unique)
+-Ethernet ensures uniqueness but doesnt give any clue on where this is gonna reside.
+
+Packet Format
+
+Version(4):	 currently 4
+Hlen(4):	 number of 32-bit words in header
+TOS(8):		 type of service 
+Length(16):	 Number of bytes in this datagram
+Ident(16):	 used by fragmentation - Split the package in several small packages. Identifier. This will be used for all fragments.
+Flags/Offset(16):used by fragmentaion. Flag 1 means it is a fragment and there are more to follow. Offset gives you where it starts.
+TTL(8):		 number of hops this datagram has traveled, TTL (default 64)
+Protocol(8):	 demux key - TCP = 6 / UDP = 17 (Which higher level protocol)
+Checksum(16):	 of the header only - Same idea used in the CRC.
+DestAddr(32):	 Destination full address
+SrcAddrs(32):	 Source full address
+
+IP Fragmentation and Reassembly
+
+Each network has some MTU (Maximum Transmission Unit)
+Ethernet 1500bytes
+FDDI 4500bytes
+
+If you receive FDDI and you pass it on the Ethernet you need to divide the packet into smaller chunks. 
+
+Reassembly at the receiver.
+
+Ident = Identifier of the fragments. All the fragments have the same Ident(ifier)
+Flag = 1/0 Is this a fragment? Is there something coming after this. Last fragment has 0.
+Offset = Where does this fragment fit in the overall data. Offset 0 means it is the start. Offset X means in the overall package it starts at X. 
+
+!!Global Address!!
+
+Globally unique
+Hierarchical: network + host
+4 Billion Ip adress, half are A type, 1/4 is B type, and 1/8 is C type.
+
+Format
+a) 0   | Network x 7  | Host x 24
+b) 10  | Network x 14 | Host x 16
+c) 110 | Network x 21 | Host x 6
+
+decimal.decimal.decimal.decimal
+
+IP Datagram Forwarding
+-Everydatagram contains destionations address
+-if directly connected to destination network then forward to host
+-if not directly connected to destination network then forward to some router
+-forwarding table mpas network number into next hop
+-each host has a default router
+-each router maintains a forwarding table
+
+
+When a router receives a datagram:
+If networkNumber of the destination == NetworkNum of one of my interfaces:
+	Deliver packet to destination over the interface by making the correct address (IP to mac for example)
+else
+	if(network num of is in my forwarding table):
+		deliver the packet to the NextHop based on the forwarding table
+	else
+		deliver the packet to default router.
+
+
+Host if it doesnt have forwarding table
+	If networkNum of destination == My NetworkNum:
+		deliver packet to destination directly
+	else:
+		deliver packet to default router.
+
+
+B is too big
+C is too small
+
+nothign in between. Lets subnet
+
+Subnetting
+-Add another level to address/routing hierarchy
+-Use a subnet mask
+
+255.255.255.0
+
+Routing Table now has the SubnetNumber and the Subnet Mask (and next hop)
+
+
+When you get an address use the subnet mask to check the subnet number. If the subnet number matches send it there, if not pass it along. 
+
+This is a way to dividie the big chunks into smillar to groups.
+
+-Would use default router if nothing matches
+-Not necessary for all one in subnet mask to be contionous
+-Can put multiple subents on one physical network
+-Subnets are not visible from the rest of te internet (if it were visible the routing tables would explode in size)
+
+CIDR (Classless Inter-Domain Routing)
+helps with scaling
+
+-Routing tables grow and grow
+-32bit address space can fill up
+
+
+Address assignment efficiency
+-The ABC structure results in lots of wasted shit.
+
+Solution
+- NO to B unless you show need for 64k
+- Instead gıve em more C
+*Problem
+--Now a single company might have 3 entires of C in the routing table
+--Which means it gets much bigger
+
+
+CIDR tries to balance the desire to minimize the number of routes to the nmber of needs to know against the need to hand out address sufficiently.
+
+
+Instead of handing out Class C's randomly you give them sequentially blocks.
+
+like 192.4.16
+     192.4.31
+
+So the first 20 bits are the same which can be used as a shorthand
+
+you use /X after te address to represent the X long prefix.
+
+Match the longest prefix if ther are two prefixes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

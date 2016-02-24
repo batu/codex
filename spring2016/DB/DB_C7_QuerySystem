@@ -139,6 +139,102 @@ If you cant fit it in then memory the block stuff.
 Some caching procedures will change will stuff.
 
 
+-----------------------------------------------------------------
+Class 8
+
+Prefetch
+
+Bandwith I/O = 100MB/s
+Seek Time = 10ms
+
+Computational Cost = 10k x 100 in any arrangement
+-Disk bandwith << CPU Bandwith
+!! Not always the case !! 
+
+
+
+	X
+Houter		Finner
+
+Houses
+100 X ( seektime +  readtime)
+100 x ( 10ms + 10Kb/ 100Mb/s)
+100 X ( 10ms + 0.1ms)
+
+Faculty
+
+100 X ( 10ms + (100x10Kb) / 100MB/s)
+
+
+	X
+Fouter		Hinner
+
+1st read (10ms + 10KB / 100MB/s) - faculty
+2st read (10ms + 10KB / 100MB/s) - housing
+
+10ms + (10KB X 99) / 100MB/s
+
+100x faster.
+
+100 houses
+10k Faculty
+30k children
+
+You dont have to wait F X H to finish to start comparing to C. Pipelining.
+
+
+Left is Outer Right is inner
+
+		X
+	X(filter)     	C
+     F     H
+
+Left deep
+
+
+
+	X
+C		X
+	     F     H
+
+Right deep. In this case it needs to compute the righter join every time or store it somewhere
+
+
+DBMin:
+Eviction policy
+Buffer management.
+
+
+4 Pages but only 3 Mpgs available.
+
+LRU (Last Recent Used)
+123 423 413 412 etc no hits
+
+MRU (Most Recent Used)
+123 124 (1 and 2 is hit!) 123 124 (1 and 2 is hit) 123
+
+buffer
+PG ID | Locks | Pts(which points to memmory)
+
+DBMIN : Different policies per access method per file.
+	Aka different policies per file instance. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
