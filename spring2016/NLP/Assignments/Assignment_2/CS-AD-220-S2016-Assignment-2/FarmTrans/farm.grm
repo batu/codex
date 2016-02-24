@@ -1,0 +1,25 @@
+#######################################################
+# Farm Machine Translation
+#
+#Sheep:	baa+! ->mAA+!
+#Cat:	meo+w! -> myA+w!
+#Dog:	woo+f! -> Eaw+!
+#Cow:	moo+!  -> muww+!
+#######################################################
+
+#define an FSA for English sheep language
+sheep_en = "ba" "a"+ "!";
+
+#load an FST dictionary to map English to Arabic sheep languages
+animal_en2ar_dict = StringFile['farm.dict'];
+
+#define an FSA for Arabic sheep language
+sheep_ar = "mA" "A"+ "!";
+
+#create an FST from composing (with @ operator) the three FSMs
+sheep_trans = sheep_en @ animal_en2ar_dict* @ sheep_ar ;
+
+#export, i.e., make viewable, the sheep_trans as FARMTRANS_en2ar
+export FARMTRANS_en2ar = Optimize[ sheep_trans ];
+
+#######################################################

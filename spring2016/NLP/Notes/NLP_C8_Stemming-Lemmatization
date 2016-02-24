@@ -1,0 +1,49 @@
+23.02.2016
+
+Stemming and Lemmatization.
+
+Stemming
+-Reduce morphological variation in a text by mapping the words to their common stem. 
+
+Tend to be a shallow alogrithm using cascade rewrite rules.
+-Score, scored, scores, scoring -> scor
+-be, is, was, were, am, being, been -> be,i,wa,wer,am*
+-play,playful -> play
+
+Lemmatization
+-Reduce morphological variation in a text by mapping the words to their lemma (aka dictinioary form (mastar))
+
+Tend to be more complex than stemming.
+-Score, scored, scores, scoring -> score
+-be, is, was, were, am, being, been -> be
+-play,playful -> play, playful(playNoun + fulAD)
+
+The Porter Stemmer(Porter, 1980)
+-one of the best stemmers out there.
+
+http://tartarus.org/martin/PorterStemmer/
+
+Definitions:
+-Constonants: Sessiz
+-Vowel: Sesli
+
+C?(VC)^mV?
+C = string of one or more consonants
+V = string of one or more vowels
+m = the measure of the string
+
+Tree = 0
+Troubled = 2
+
+Check the rules.
+
+Minimum Edit Distance
+
+The minimum number of editing operations needed to transform on e string into another.
+
+Spell Correct
+Computational Biology
+
+
+
+
