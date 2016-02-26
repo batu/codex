@@ -219,11 +219,27 @@ PG ID | Locks | Pts(which points to memmory)
 DBMIN : Different policies per access method per file.
 	Aka different policies per file instance. 
 
+List different access patterns:
 
+-Sequential Scan
+-Random Access Hierarchical)
 
+-Looping  (over and over again, keep the data in buffer)
+-Straight (only once, no need to keep das data)
 
+-Clustered (helps when the thing is sorted)
 
+StraightHierarchical  - 1pg / NA
 
+LoopingSequential - min(how much I can allocate/page size) / MRU
+
+LoopingHierarchical - as many pages for index(top levels)  /
+
+StraightSequential - 1pg / NA 
+
+Double buffering is a problem. DB gets pages to buffer. OS also buffers. WASTE.
+Be too smart. Even if you want 1 page, it can prefetch a lot.
+Write to a page in buffer and you flush it to disk. OS also controls it and it doesnt always flush it instantly. So you think its saved but isnt.
 
 
 

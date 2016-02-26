@@ -644,3 +644,4 @@ Fontconfig error: Cannot load default config file
 ", source: chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/core/vendor/jquery.min.js (2)
 [2249:2249:0223/014857:ERROR:CONSOLE(2)] "Uncaught SecurityError: Failed to read the 'contentDocument' property from 'HTMLIFrameElement': Blocked a frame with origin "https://www.google.ae" from accessing a frame with origin "chrome-search://most-visited".  The frame requesting access has a protocol of "https", the frame being accessed has a protocol of "chrome-search". Protocols must match.
 ", source: chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/core/vendor/jquery.min.js (2)
+Created new window in existing browser session.
