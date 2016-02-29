@@ -1,0 +1,139 @@
+29.02.2016
+
+
+Interworking
+
+
+Classless Addressing
+
+Instead of the ABC style. (too restrictive, too big/small)
+
+-Subnets (with a mask)
+-Group lots of C class ones. (continues blocks and use the prefix)
+
+Address Translation Protocol (ARP)
+
+MAP IP addresses into physical addresses
+-destionation host
+-next hop router
+
+Solutions
+-Encode physical address in the h<F10>ost part of IP address? Not good
+
+ARP (Address Resolution Protocol)
+-table of IP to physical address bindings
+-broadcast request if IP addres not in table
+-target machine responds with its physical table
+-table entries are discared if not refreshed
+
+Bascially build the table as you go. The first time you want to talk to a host you will do the ARP request. There is a timeout for each entry. The IP can change, the mac can change (less prominent)
+
+Hosts that are not communicating can also build the table from the response. If you they have an entry they will update it, if it doesnt exist they will discard it. 
+
+The person replying to ARP, will also capture the address and put it in the APR talbe.
+
+Hardware Hype
+Protocol Type
+HLen
+PLen
+Operation
+SourceHardwareAddr
+SourceHard
+
+!!!How to configure the IP address.
+We need a automated ip address config.
+
+DHCP (Dynamic Host Configuration Protocol)
+
+DHCP server is responsible for providing the config infor to hosts.
+There is at least one DHCP server for an administrative domain
+This server maintains a pool of available addresses.
+
+When a new host comes in you just send out a broadcast to figure out who the DHCP is. (255.255.255.255)
+
+ICMP (Internet Control Message Protocol)
+
+Defines a collection of error messages that are sent back to the source host whenever a router or host is unable to process an IP datagram successfully.
+- Destination ost was unreachable
+- Reassembly process faield
+- Time to Live has reached 0
+- IP Checksum failed
+
+
+
+ROUTING
+
+Forwarding: To select an output port based on destination address and routing table
+Routing: Build the routing table that is used by the forwarding.
+
+Forwarding table: 
+-Used when a packet is being forwardded ad so must contain enough information to accomplish the forwarding function.
+-A row in the forwarding table contains the mapping from a netw
+
+Routing table:
+Cluster Sequential - min(sizeofCluster/howmuchIcanallocate)/ 
+
+- Forwarding information from prehops(next hop) only.
+- CHECK THE SLIDES!
+
+
+Forwarding table hold more information
+
+Network as a Graph:
+Basic problem of routing is to find the lowerst cost path between any two nodes.
+
+Calculating shortest path is not good enough because the networks are not reliable and not dynamic. (no changing edge costs, node changes etc)
+
+We need a distributed and dynamic protocol.
+
+DISTANCE VECTOR
+Every node creates a vector containing the costs to all other nodes that it is immediately connected to. Then it distributes it to all its neighbours.
+
+At first you only know your own neighbours. When this information is shared you start creating a larger spanning understanding of the network.
+
+Whnever you realize a smaller cost to a node you will update if it is higher it will be discarded.
+
+It reacts well to good news.
+It reacts very badly to bad news ( node drop etc)
+
+Because the bad propagation takes time there can be events when two hosts keep updating teachother. Count to infinity problem. 
+
+Split horizon. 
+When sharing the routing information you are going to NOT SEND the routes it learned from its neighbours.
+
+Split Horizion +  Poison
+Send it back but give it a NEGATIVE step. So it never uses that route to travel.
+
+Link State Routing
+Strategy: Send all nodes not just neighbors inforamation about directly connected links not entire routing table.
+
+Reliable flooding:
+Store it flood to network. DO NOT Send it back.
+
+So each route creates its own table from the information it realizes.
+
+Tentative / Confirmed List
+
+Tentative list is used to create a temporary value until you iterate through the path. So when you are done you know that the value in the tnetative list is the shortest (because as you go you update it with shorter paths) and in the end you commit that node to the confirmed list and delete it from the tentative list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
