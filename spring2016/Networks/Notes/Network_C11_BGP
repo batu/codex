@@ -1,0 +1,122 @@
+02.03.2016
+
+Networks and Distributed Systems
+
+MIDTERM 14.03.2016
+
+Last lecture:
+Routing Protocol - 
+Vectorbased: One knows the full path to everyone.
+LinkState: Only share the entire thing only with the neighbours.
+
+Keep sharing information.
+
+
+Problem:
+Scaling is not feasable. 
+Flooding would not work on a global scale.
+
+
+How do we build a routing systemt to connect the internet.
+
+IPV4 - Even though you have 4 bln addresses the utilization is not efficient. Even if that were the case 4 bln would be depleted at one point anyhow.
+
+Split the Domain to areas.
+The backbone area that is connected to other areas.
+Some routers that are on the borders are area border routers.
+
+Forwarding. If it matches the prefix you can broadcast.
+	If not maybe you know some parts.
+	Default, if you know nothing you should send it there. Which in this case it is the area border router.
+
+You usually dont have hosts ocnnected to backbone area.
+
+Interdomain Routing
+
+Border Gateway Protocol(BGP)
+
+Internet is organized as autonomous.
+
+Exterior Gateway Protocol(EGP)
+Assumes that the internet is an arbitrarily interconnected set of Autonomous Systems. 
+It assumes that the initial "Tree Like" Structure. Assumes no interconneciton.
+
+
+BGP
+Assumes teh internet is an arbitrarily interconnected set of ASs.
+These are connected to each other in arbitrary ways.
+
+BGP-4
+It assumes arbitrary connections,
+Define local traffic as traffic originates as or terminates on ndoes within an AS, and transit traffic as traffic passes through an AS.
+
+Three types of AS
+Stub AS: An AS that only has a single connection to on other AS. This will carry local traffic.
+
+Multihimed AS: An AS that has connections to more than one other AS but refuse to carry transit traffic.
+
+Transit AS: an AS that has connections to more than one other AS, and is designated to carry both transit and local traffic. 
+
+The goal of inter-domain routing is to find any path to the indended destination that is loop free.
+We are concerned with reachability rather than optimality
+Finding a path anywhere close to optimal is great.
+
+It is somewhat impossible to do it.
+
+Scalability: An internet backbone router must be able to forward any packet destined anywhere in the internet.
+
+Autonomous nature of the domains
+It  is impoosible to calculate meaningful path costs for a path that crosses multiple AS
+A cost of 100 acress on providr might imply a great path but it might mean an unacceotabke bad one from another provider
+
+Issues of trust
+Provider A might be unwilling to believe certain advertisements from provider B
+
+
+Each AS has:
+one bgp speaker that advertises
+-local networks
+-other reachable networks (transit AS only)
+-gives path information 
+
+
+Creaeting a treelike hierarchy.
+
+Why do you need full address?
+-Policy based.
+-You can get rid of loops if you see yourself in the advertisement you can get rid of it due to a loop.
+
+The identifier for the AS should  be unique.
+
+iBGP = internal
+eBGP = external
+
+IPV4 32 bit
+IPV6 128 bit
+
+We are changing shit might as well go big.
+
+
+Mutlicast
+real-time service
+authentication and security
+auto config
+end to end fragmentation
+enhanced routing functionality, support for mobile hosts
+
+
+Classless routing
+x:x:x:x:x:x:x:x
+contiguous 0s are compressed
+45CD::A456:0124
+IPv6 compatible IPv4 address ::128.42.1.87
+Address assignment 
+provider based
+geographic
+
+
+40byte header
+fragmentaiton
+source routing
+authentication and security
+other options
