@@ -1,0 +1,38 @@
+01.03.2016
+
+Models of Evaluation
+
+Extrinsic vs Intrinsic evaluations
+
+Extrinsic: How is it evaluated in the context. Application.
+Intrinsic: Inherent metric.
+
+Helicopter evaluation model.  Translate the manual and get them to land the helicopter with the new thing.
+
+Intuition of Perplexity
+
+The Shannon Game:
+How well can we predcit the next world.
+
+Unigrams are terrible. (1 word)
+because there is no context
+
+Perplexity
+The best language model is one that best predicts an unseen test set
+Gives the highest P(sentence)
+
+Inverse of the probability normalized for the number of words.
+
+The test set has to be the same.
+
+Minimizin perplexity is the same as maximizing probability.
+
+Average weighted branching factor
+
+Where can I go? Lower perplexity the better model! 
+
+Instead of sending you to 30000 random places on expeted you have 53 outcomes.
+
+
+
+
