@@ -60,5 +60,17 @@ Optimize[
 
 numbers_to_999 = Optimize[zero | numbers_to_99 | numbers_100_to_999];
 
-export NUMBERS = Optimize[numbers_to_999];
+thousands = units ins_space ("" : "thousand") | teens ins_space ("" : "thousand") | numbers_20_to_99 ins_space ("" : "thousand") | numbers_to_999 ins_space ("" : "thousand");
+
+numbers_1000_to_9999 = Optimize[thousands del_zero del_zero del_zero | 
+								thousands del_zero del_zero ins_and units |
+								thousands del_zero del_zero ins_and decades |
+								thousands del_zero ins_and numbers_20_to_99 |
+								thousands del_zero ins_and teens |
+								thousands ins_space numbers_100_to_999 
+								 ];
+
+one_million = ("1000000" : "one million");
+
+export NUMBERS_9999 = Optimize[ numbers_to_999 | numbers_1000_to_9999 | one_million];
 

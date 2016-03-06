@@ -1,0 +1,88 @@
+# Based on Richard Sproat's numbers.grm with modifications
+# English Numbers from 0 to 999
+
+# French Numbers from 0 to 100
+
+
+
+ins_space = "" : " ";
+
+ins_hyphen = "" : "-";
+
+ins_and = "" : " and ";
+
+ins_s = "" : "s";
+
+ins_etun = "1" : " et un";
+ins_etonze = "1" : " et onze";
+
+del_zero = "0" : "";
+
+zero  = "0" : "zéro";
+
+units =   ("1" : "un")
+	| ("2" : "deux")
+	| ("3" : "trois")
+	| ("4" : "quatre")
+	| ("5" : "cinq")
+	| ("6" : "six")
+	| ("7" : "sept")
+	| ("8" : "huit")
+	| ("9" : "neuf")
+;
+
+teens =   ("10" : "dix")
+	| ("11" : "onze")
+	| ("12" : "douze")
+	| ("13" : "treize")
+	| ("14" : "quatorze")
+	| ("15" : "quinze")
+	| ("16" : "seize")
+	| ("17" : "dix-sept")
+	| ("18" : "dix-huit")
+	| ("19" : "dix-neuf")
+;
+
+teens_70_99 =   ("0" : "dix")
+	| ("1" : "onze")
+	| ("2" : "douze")
+	| ("3" : "treize")
+	| ("4" : "quatorze")
+	| ("5" : "quinze")
+	| ("6" : "seize")
+	| ("7" : "dix-sept")
+	| ("8" : "dix-huit")
+	| ("9" : "dix-neuf")
+;
+
+decades_to_60 =   ("2" : "vingt")
+	  | ("3" : "trente")
+	  | ("4" : "quarante")
+	  | ("5" : "cinquante")
+	  | ("6" : "soixante")
+;
+
+# decades_70_99 = ("7" : "soixante")
+# 			    | ("8" : "quatre-vingt")
+# 			    | ("9" : "quatre-vingt");
+
+
+decades_70_79 = ("7" : "soixante");
+decades_80_89 = ("8" : "quatre-vingt");
+decades_90_99 = ("9" : "quatre-vingt");
+
+hundred = ("100" : "cent");
+
+
+numbers_20_to_69 = decades_to_60 del_zero | decades_to_60 ins_hyphen units | decades_to_60 ins_etun;
+
+numbers_70_to_99 = decades_70_79 ins_etonze 
+				 | decades_70_79 ins_hyphen teens_70_99 
+				 | decades_80_89 del_zero   ins_s 
+				 | decades_80_89 ins_hyphen units 
+				 | decades_90_99 ins_hyphen teens_70_99;
+
+numbers_to_99 = Optimize[zero | units | teens | numbers_20_to_69 | numbers_70_to_99];
+
+export NUMBERS = Optimize[ numbers_to_99 | hundred];
+

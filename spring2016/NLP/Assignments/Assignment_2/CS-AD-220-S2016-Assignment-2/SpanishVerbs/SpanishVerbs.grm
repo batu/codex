@@ -36,13 +36,31 @@ Word_inter = Compose[ Analysis, Lexicon ];
 
 delete_plus = CDRewrite["+" : "","","",alpha_star];
 
+change_j_to_g   = CDRewrite[	"g" : "j", 	"o", 	("a" | "o"), 	alpha_star];
+change_c_to_z   = CDRewrite[	"c" : "z", 	"n", 	("a" | "o"), 	alpha_star];
+change_z_to_c   = CDRewrite[	"z" : "c", 	"u", 	"e",			alpha_star];
+
+add_u_to_pagar  = CDRewrite[	""  : "u", 	"pag",	"e",			alpha_star];
+add_u_to_llegar = CDRewrite[	""  : "u",	"eg",	"e",			alpha_star];
+
+
+
 Word = Word_inter @ delete_plus;
+
+vencerSub = Word @ change_z_to_c;
+cruzarSub = vencerSub @ change_c_to_z;
+cogerSub = cruzarSub @ change_j_to_g;
+pagarSub = cogerSub @ add_u_to_pagar;
+final = pagarSub @ add_u_to_llegar;
+
+
+
 
 ##########################################################
 #Rewrite rules 
 ##########################################################
 
-export SpanishVerb = Optimize[ Word ] ;
+export SpanishVerb = Optimize[ final  ] ;
 
 
 ##########################################################

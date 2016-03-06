@@ -1,0 +1,36 @@
+Check it in the RFC. Reference handbook.
+
+MAKE FILE. Copy from the client make file.
+
+Each message is prexied with a number. 
+
+No channel.
+403 and then message.
+
+Remember to the add the numbers. 
+
+rtlib.c fill
+
+DPRINTF
+debug.ch - different levels of printing.
+
+
+
+NICK Wiz
+USER guest tolmoon tolsun :Ronnie Reagan
+JOIN #foobar
+PRIVMSG Angel
+
+
+// First you create a socket with "socket"
+// then you connect it to a port with "bind"
+// to activating the port "listen"
+// accept creates a new connection/socket for "accept"
+
+
+select is non blocking. 
+accept is blocking
+
+hostname copy ip address.
+
+inbuf!!!
