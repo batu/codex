@@ -1,0 +1,102 @@
+07.03.2016
+
+Nat and Multicast
+
+Network Address Translation
+
+Origin IP Model
+Every host has an unique IP address
+
+Any host can find other host 
+Any host can communicate with any other host
+Any host can act as a server
+
+NAT is the final gateway that connects you to the outside.
+
+Client 10.2.2.2 wants to connect to server 198.2.4.5:80
+
+Firewall acts as proxy for client
+It replaces the source IP wiith the public IP address and source port to NAT Port
+All hosts in the group is masked under the set IP of the NAT. Differentiation is done via the ports. The entries are unique for the host recorded in the NAT table.
+
+The internal IP addresses are not GLOBAL. 
+ifconfig IP is different than the browser found iP address.
+
+NAT at home is usually the router.addr:10.225.67.159
+
+You put a permanent mapping for the default addresses *
+
+NAT
+Advantages
+-Hides the IP addresses
+--Easy to change ISP: only the NAT box needs to have a live IP.
+--Fewer registered IP addresses required
+
+Basic protection against remote attack
+-Doesnt expose internal structure
+-Can control what packets come in and come out
+-Can reliably determine wheter packet form inside or outside
+
+Disadvantages
+-Goes against the open adddressing scheme
+-Hard to support peer to peer
+
+Breaks FTP, they have IP in the payload. So NAT working on the headesr can not change the payload.
+
+Internet Multicast
+-All up to this point unicast.
+Class D is reserved for Multicast.
+
+One-to-many
+radio station broadcast
+
+many to many
+multiplayer games
+
+Using IP multicast to send the identical packet to each member of the group
+- a host sends only one copy to everyone who is subscribed to the channel
+
+Routers have the multicast table and they know that they have to send it to a fe of their interfaces. 
+
+The content provider has to purchase the channel.
+
+-A host signals its desire to join or leave a multicast group bu communicating with its local router using a speical protocol.
+	In IPV4 = IGMP (group management protocol)
+	In IPv6 = MLD  (Multicast listener Discovery)
+
+A routers unicast forwarding table unducates any ip address which link to use a forward the unicast packet
+
+unicast fofrwarding tables collectively specify a set of paths
+mutlicast forwading tables collectively specify " CHECK THE SLIDES"
+
+Distance - Vector Multicast
+Each router already knows that shortest path to source S goest through router N
+
+When receive multicast packet from S, forward on all outgoing link(except the one on which the packet arrived) if packet arrived from N.
+
+Forward the packet (flood) only if the packet came with the optimal path.
+
+Eliminate duplicate packets by only forwarding the optimal.
+
+Reverse Path Broadcast (RPB)
+
+Goal: prune networkds
+
+step1 : Determine if LAN is a leaf with no members in G.
+- Leaf if parent is only router on the LAN
+- DEtermine any hosts are members of G using IGMP
+
+Step 2: Propogate "no members of G here" information
+- augment Destinatio nCost to send neighnoirs with set of groups for which this network si interested in receiving multicast packets.
+
+
+Protocol Independent Multicast (PIM)
+
+Determine a Randevou Point.
+RP creates a table for G.
+Tunnel to Randevou - because it knows whats up. Others on the path dont know the G.
+
+After the initial tunnel in the path routers you create a entry in the host entry. So from now on they routers on the path know that the messages from that host must go to RP. No need for future tunnelling
+
+
+
