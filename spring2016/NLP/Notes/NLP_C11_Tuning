@@ -1,0 +1,33 @@
+08.03.2016
+
+
+Good Tuning Discounting
+
+You look at the frequency of frequency.
+
+Sam I am I am Sam I do not eat
+
+n3 = 1 There is only one word that papears three times
+n2 = 2 two words appear two times.
+
+The fishing stuff.
+
+Backoff and interpolation
+
+Sometimes it helps to use less context
+-condition on less context for context you havent learned much about.
+
+If I dont have a four gram can I look at the three grams in it to estimate the fourgram.
+
+Smoothing summed up
+
+add one smoothing
+-easy but shit
+-increment normailztion by 1
+good tuning
+-re estimate amount of probability mass for zero
+backoff
+- when a count for an ngram is 0 back off to the count for n-1 gram and fix
+many other we didnt talk about
+
+
