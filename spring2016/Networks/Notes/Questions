@@ -1,0 +1,5 @@
+Why is there 2 sync headers in bisync.
+
+DDCPM 2 syn sentinel 8 bits.
+
+Why does ethernet use manchester? Is it because the broadcasting and exponential step back (such that 30% utilization is good) there is broadband to spare?

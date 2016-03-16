@@ -1,0 +1,172 @@
+Application Programs
+Process-to-process channels
+host-to-host connectivity
+hardware
+
+Use services from the lower layer, and lower layers will figure out the rest. Exposing the API style.
+
+OSI Model
+
+App          - The application
+Presentation - not important shifted
+Session      - Not important  
+Transport - After midterm TCP / UDP
+Network   - IP
+Data link - the protocols that would generate stuff Ethernet 802.11 - framing is started here
+Physical  - bits to signals
+
+Routers
+Network   - routers
+Data link - switches
+Physical
+
+
+Concepts required for physical layer
+
+-Encoding = 0s and 1s tranform them into sort of signals (radio, light etc)
+-Framing = create a predetermined frame that you understand. Header + payload. some additional stuff address  ( error correction - protect data and the headers)
+
+Encoding
+
+Non return to zero
+Clocks have to be syncrinozed
+If there are too many consequive one and zeroes it will not be able to correct the clock
+Also the treshold is automatically corrected so if there is too many zeroes and ones the treshold will move
+
+
+Solutions:
+
+Manchester present 0 as low to high, present 1 as high to low.
+NRZI whenever there is a transition invert it.
+4B/5B
+
+
+Framing
+Byte oriented - insert flags
+Bit oriented - insert flags
+
+
+
+Error Detection
+
+CRC
+Get the message add a generator polynomial. Add 0000s the same length of the gen poly (actually 1 less) divide the message with gen poly and subtract the remainder from the mes+00s. When on the otherside the whole thing should be divisible by the generator poly. The same one
+
+Check sum
+Add everything using ones compliment. Send the check sum as well. the receiver does the same.
+
+
+
+Two dimensional parity
+every 7 bits you add parity bit (even parity / odd parity add one or zero based on whether it is odd or even)
+in the end add a parity byte that acts as a vertical check. so index[0] of all first 7 to check the parity
+
+Internet check sum - sequence of 16bit integer add them together using complement arithmetic and takes ones compliment. 
+Used in IP.
+
+CRC
+
+Present your data in a high level polynoimial. You have generator code. Hand picked, number of generator code, each one tailored for a purpose. 
+You do a long division between the generator code and your data. you want to get a remainder of zero. But our division will probably not get a rmeainder ofzero. So subtract the remiander and then it should definitely get 0 after division. so you send it original + crc remainder and other side you checks if the division is 0 all is good. 
+
+
+Reliable Transmission
+
+Send acknowledgment
+
+Stop and wait. One by one
+-Promlems with this is that if the receiver sends and ack but before that the sender timeouts it will send the same frame so the same frame will be the next one.
+- you can only use a single bit to check sequence in this one
+
+
+Sliding window protocol.
+Send a full window and for every acknowledgement you get you send a new one.
+The receiving end needs to buffer to out of order data.
+For sender it is the same. If you get an ACK you delete the corresponding packet from the buffer.
+
+Sequence number must be the double of the window size. If window size is 7 it will use 1-7 for the second one it will use 8- 14 so you will always know which window you are at
+
+Ethernet
+Everythıng works like a broadcast style. 
+Every machine ethernet protocol has a unique address given by the manufacturer.
+MAC address.
+
+Ethernet adaptor recives all frames but accepts their own.
+
+While you are sending you are also listening for collissions. If you detect a colission you send a preamble message. and back off for sometime
+You derive MAC from IP
+
+WIFI is similar to Ethernet. 
+You can not detect congession but avoidance.
+
+
+Hidden terminal - a - b - c ab doesnt see but fucks with b
+Exposed terminal - reduces efficency
+
+
+RTS request to send
+CTS clear to send
+
+If you head a clear to send but not a request to send you know that the specific node is listening to someone else and you back the fuck away.
+it also fixes the other problem
+
+
+
+Two types of datagram
+Datagram you send it and hpe for the best
+Virtual circuit you establish a path and negotiate. between every two communicating path you get the idea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

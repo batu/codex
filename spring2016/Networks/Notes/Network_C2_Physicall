@@ -1,0 +1,141 @@
+
+
+
+Hosts - ISP - Peering point 0 rest of the internet
+
+
+C = Link capacity is how much data you can send. (the medium)
+
+
+Shannon Hartley Theorem  = upper boundCapacity
+C = Blog2(1+S/N) 
+    S is the signal power
+    N Average noise
+    B bandwith max Hz - min Hz (Set of frequency is what you can achieve)
+
+
+All practical links rely on some sort of stuff propagate.
+
+How do we send 0 and 1. How do you convert from bits to signals.
+
+You can use:
+Amplitude, frequency, wavelength, phase.
+
+NRZ (non return to zero encoding)
+When you receive a 0 low voltage
+when you receive a 1 high voltage
+
+The threshold is dynamically adjusted as you never know what the exact voltages will be (distance, noise etc)
+
+
+The problems:
+    As it is dynamic by listening to the voltages consecutive hits can mess the average treshold up.
+    Because they infer the clock from the ups and downs consecutive 0s or 1s make it hard to infer time.
+
+Solutions:
+    NRZI: Everytime you get a one you invert. So the ones are never consequtive. 
+
+Manchester: 0 you send the exact clock, 1 you send the inverse of the clock. 
+    This is not efficient You are sending two bits for each bit of information. It reduces your actual throughput by half. 
+
+4B/5B
+    Insert extra buts into bit stream as to break up the long sequence of 0s and 1s
+    No more than one zero of beginning and no more than 2 0s at the end. Max of 3 consecutive ones or zeroes.
+
+42 = 16 with 4 bits
+52 = 32 we map that 16 into this 32. 
+11111 - line is idle
+00000 - line is dead
+00100 - to mean halt
+7 are invalid (problem with 0s)
+6 for extra control signals
+
+
+
+
+Two different protocols to sync Frames
+    Byte Oriented Protocols
+    Bit oriented Protocols
+
+Byte 
+BISYNC - sentinel Approach
+    A start and end message
+    SYN Predetermined 8 bit word both the sender and receiver. Main initialization 
+    SOH - Start of Header
+    STX - Start of Body. 
+    ETX - End of Text. Data has finished
+    CRC - two byte long (a safety check)
+     If there is a ETX In the body you add in a escape character (Like a backslash)  This is all done by the protocol in the encoding.
+
+PPP - another sentinel Flag
+    A special sentinel (flag) is put in the beginning and to the end 0 1 1 1 1 1 1 0 
+    Flag - Address - Control (multiplexing key, where does this payload belong to) - Protocol (defining what kind of protocol this thing belongs to) - Payload - Checksum - Flag
+          (Header here is divided into Flag - Addess - Control - Protocol) 
+
+How is this updated? If a new protocol is introduced and you need to change the protocol 16 bits how do you push this to everyone?
+
+The earlier you catch the solve the problem the faster (but maybe you want only 1 level of reliability) 
+
+DDCMP - A improved version of BISYNC
+    
+Bit
+HDLC: High Level Data Link
+    you have a flag of 0 1 1 1 1 1 1 0 (End of frame)
+    If you have a 5 ones  you will add a 0 after that and discard it on decoding
+    When you see 6 ones you look at the next one. If it is a 0 then it is end of frame. If it is a 1 it is an Err0r (you should never see
+1 1 1 1 1 1 1 )
+    
+
+Error Detection
+    CRC (Cyclic Redundancy Check)
+          Used in HDLC, DDCMP, CSMA/CD, Token Ring
+    Other approaches
+
+
+Add redundant information to a frame that can be used to determine if error. 
+    Stupid Case
+          Send it twice, if they are identical no error.
+          Problems:
+              Too redundant
+              Errors can go undetected if you have the same error
+
+    In general we add k redundant bit
+
+
+Two dimensional Parity
+    Divide it into 7 bits. The last bit makes the group even (or odd) 1 0 0 0 0 0 0 (you add 1 to make it even)
+    In the end you get a vertical parity.
+
+
+Check Sum 
+    Invert first
+    Add
+    Invert 
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

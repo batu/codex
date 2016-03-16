@@ -1,0 +1,54 @@
+Ethernet
+
+Broadcast system, everything goes to everyone.
+
+
+4 repeaters 5 hosts a total of 2500.
+
+Default you send it to the MAC adress of the router and the router only reads that message. This is set in the header.
+Broadcast is sent to everyone.
+Multicast you send it to a group.
+Promiscous mode.
+
+Furthest apart 2 nodes are 500m. 
+
+
+Ethernet Transmission Algorithm.
+	t = transmision start
+	d = link latency
+	First bit of frame A arrive to B = t + d
+	Before t+d B starts its own transmission
+	The frames will collide and it will be detected by B
+	Host B will send a 32-bit jammin signal
+	Host A will not know that the collision occured until Bs frame reaches it, it will be at t + 2d
+
+
+Example:
+	Roundtrip time 51.2 ms (2d)
+	which on 10Mbps to 512 bit
+	If the frame is smaller than 512 then the transmission will end early and it will not receive the collision and jamming signal
+
+!!!When a collision is detected
+Each time you transmit and fail it doubles the amount you wait. 
+Exponential Backoff
+The adaptor first delay is 0 or k * 51.2 ms selected at random and at the begining k is = 1
+If it collides k increses by the virtue of k = 2^n - 1 and a random k between 0 and k is selected and it waits 0 or k * 51.2ms
+k = 2^n - 1
+
+51.2 = this is the RTT. Waiting for this makes sure you skip one cycle.
+
+Ethernet works best under light loads (due to reasons above)
+Max hosts is 1024 but mostly they have 200 hosts.
+
+Most ethernetes are shorter than 2500m with the roundtrip delay going down to 5ms.
+
+They are easy to maintain and inexpensive. You broadcast to everyone so everyone will get it eventually.
+
+
+
+
+
+
+
+
+

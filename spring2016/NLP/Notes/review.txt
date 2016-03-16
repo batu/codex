@@ -1,0 +1,110 @@
+Know about pars of speech taggin in its simplicity
+
+
+No Unix command
+
+Regex.
+Draw FSM
+Explain finite state machine.
+
+Beginning lots of concepts.
+
+Applications, underlying technolgies. Know what they are for.
+
+Non deterministic to deterministic "dont worry about it"
+
+Minimum edit distance
+
+The distance between to strings
+Find the distance between two strings. Modifications
+Deletions, substution, insertion, (Sub is weighted differently sometimes)
+* is epsilon
+the cost is a parameter you can decide.
+Mostly - one for each 
+
+Usefull for different applications. Generating a particular sequence
+Searching for a path (sequence of edits) because you know where you want to go restrict the space
+dynamic programming
+
+You define the problem in a recursive way. Solve the problem of the substring. 
+
+D(i, 0) = i; as you can delete i from i to get 0 or add j to 0 to get j
+D(0, j) = j
+
+The algorithm
+
+D(i - 1, j    ) + 1
+D(i    , j - 1) + 1
+D(i - 1, j - 1) + { 2; if X(i) != Y(j)
+		  { 0; if X(i)  = Y(j)
+
+
+
+o(nm) time 
+o(nm) space
+
+Not all edits are equal
+
+Keyboard arrangement also is important
+or mouth shape
+
+
+
+You know all the possibilites
+Good Turing Discounting
+Moving the sums around
+The fact that one appeared is not that far from those that didnt appear.
+
+Looking at the 
+
+
+c* = (c+1)Nc+1/Nc
+
+Nc = number of words that appear c times
+
+Nc + 1/Nc we expect to be smaller
+
+
+Take shakespear corpus and multiply it 10 times to make it bigger to fit a bigger corpus
+
+** AMBIGUITY **
+I saw the man with a telescope
+think about moving it around 
+
+a man with a telescope has seen by me
+With a telescop I saw a man
+
+Form: How do you put things together
+Funciton: Meaning
+
+Write +er -e : This is form. How do you put together. No meaning information.
+if you add this morpheme to that morpheme you do stuff (er changes verb to a noun)
+
+
+Morpheme - smallest word that has a meaning to it.
+
+Affixes - prefix Stem Suffix
+Infix - in the middle
+Circumfix - A-X-A
+
+Reduplication
+bili - bibili
+
+Ablaut and suppletion
+fall - fell
+Think - thought
+go - went
+
+Allomophy
+more than one expression of one morpheme
+cats, dogs, foxes /s/ /z/ /iz/
+
+Clitics
+syntanticly independant and phonologically dependant
+
+Contractions
+
+
+
+
+

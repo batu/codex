@@ -72,5 +72,5 @@ numbers_1000_to_9999 = Optimize[thousands del_zero del_zero del_zero |
 
 one_million = ("1000000" : "one million");
 
-export NUMBERS_9999 = Optimize[ numbers_to_999 | numbers_1000_to_9999 | one_million];
+export NUMBERS = Optimize[ numbers_to_999 | numbers_1000_to_9999 | one_million];
 
