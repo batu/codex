@@ -1,0 +1,108 @@
+package impl;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+import javafx.beans.binding.Bindings;
+import util.Chip;
+
+import java.util.Observable;
+
+import api.Game;
+import impl.GameController;
+import impl.ConnectFourGame;
+
+
+
+public class GraphicalView extends Application{
+	
+	ConnectFourGame connectFour;
+	GameController controller;
+    Circle[][] board;
+    Bindings fillBinding;
+    int rowCount = 6;
+    int columnCount = 9;
+/*	
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		this.render((Game) arg0);
+	}
+	*/
+    Pane pane = new Pane();
+//	GameController controller = new GameController(connectFour);
+    
+    public GraphicalView() {
+    	super();
+    	connectFour = new ConnectFourGame();
+    	controller = new GameController(connectFour);
+    	this.board = new Circle[rowCount+1][columnCount+1];
+	}
+
+
+	@Override // Override the start method in the Application class
+    public void start(Stage primaryStage) {    
+    	
+
+    	double radius = 40.0f;
+	    double padding = 5.0f;
+
+
+		
+	    double width, height;
+	    width = (columnCount) * (padding + radius * 2) + 10;  
+	    height = (rowCount + 1) * (padding + radius * 2) + 30;  
+	    int row, column;
+	      	    
+	    Circle winnerChip =  new Circle(radius + padding, radius + padding, radius);
+	    winnerChip.setStroke(Color.BLACK); 
+	    winnerChip.setFill(Color.RED);
+	    winnerChip.setStrokeWidth(7);
+	    pane.getChildren().add(winnerChip);
+	    
+		for(row = 0; row < 6; row++){
+			for(column = 0; column < 9; column++){
+				
+				double xlocation = padding * (column + 1) + radius * (2 * column + 1);
+				double ylocation = padding * (row + 3) + radius * (2 * row + 3);
+				Circle chip = new Circle(xlocation, ylocation, radius);
+				this.board[row][column] = chip;
+
+				chip.setStroke(Color.BLACK); 
+				chip.setFill(Color.WHITE);
+		        pane.getChildren().add(chip);
+		        final int rowPlacement = row;
+		        final int columnPlacement = column;
+
+		        chip.setOnMouseClicked(e -> {  
+		        	controller.handlePlaceDisk(rowPlacement, columnPlacement);
+	            });
+			}
+		}
+		
+		this.board[rowCount][columnCount] = winnerChip;
+		connectFour.setBoard(board);
+        Scene scene = new Scene(pane, width, height);
+        primaryStage.setTitle("ConnectFour with VISUALS"); 
+        primaryStage.setScene(scene); 
+        primaryStage.show(); 
+    }
+    
+    public void ColorChip(Pane npane){
+    	this.pane = npane;
+    }
+	
+    public void getPane(Pane npane){
+    	this.pane = npane;
+    }
+  
+    /**
+     * The main method is only needed for the IDE with limited
+     * JavaFX support. Not needed for running from the command line.
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
