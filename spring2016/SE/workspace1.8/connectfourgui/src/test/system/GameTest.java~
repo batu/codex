@@ -17,5 +17,16 @@ public class GameTest {
 	Game game = new ConnectFourGame();
 	GameController gameController = new GameController(game);
 	view.launch(GraphicalView.class);
-	}
+
+	
+	while (!game.isGameOver()) {
+		try {
+		    Chip winner = game.getWinningPlayer();
+		    String gameEnd = "Game over. The winner is " + winner;
+		    System.out.println(gameEnd);
+		}
+		catch (GameStateException e) {
+		    System.out.println("It was a tie!");
+		}
+    }
 }

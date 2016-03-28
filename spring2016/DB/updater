@@ -1,0 +1,9 @@
+for i in xrange(1000):
+	f = open("counter.txt", "r+")
+	x = f.readline();
+	counter = int(x)
+	counter  = counter + 1
+	f.seek(0)
+	f.write(str(counter));
+	f.close;
+

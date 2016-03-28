@@ -73,7 +73,7 @@ public class ConnectFourGame extends Game {
 					board[rowCount][columnCount].setFill(currentPlayer.get());
 				}
 				
-				if(this.isGameOver() && currentPlayer.is(Color.RED)){
+				if(!this.isGameOver() && currentPlayer.is(Color.BLUE)){
 					board[rowCount][columnCount].setFill(Color.BLUE);
 				}else{
 					board[rowCount][columnCount].setFill(Color.RED);
@@ -81,9 +81,6 @@ public class ConnectFourGame extends Game {
 				
 				setChanged();
 			    notifyObservers();
-
-			    			    
-	    
 				return;
 			}
 		}
@@ -114,23 +111,23 @@ public class ConnectFourGame extends Game {
 		Chip currentChip = surface[row][col];
 		if (currentChip.is(Color.TRANSPARENT)){return false;}	
 		try{
-			for(int i = 1; i < checkCount; i++){
-				if(!surface[row + i][col].is(currentChip.getValue())){
-					return false;
-				};
+			if( row < (this.getRows() - checkCount) + 1){
+				for(int i = 1; i < checkCount; i++){
+					if(!surface[row + i][col].is(currentChip.getValue())){
+						return false;
+					};
+				}
+	
+				for(int i = 0; i < checkCount; i++){
+					board[row + i][col].setStrokeWidth(7);
+				}
+				winner = currentChip;
+				return true;
 			}
-
-			
-			
-			for(int i = 0; i < checkCount +1; i++){
-				board[row + i][col].setStrokeWidth(7);
-			}
-			winner = currentChip;
-			return true;
 		}catch(ArrayIndexOutOfBoundsException e){
 			return false;
 		}
-
+		return false;
 	}
 	
 
@@ -140,7 +137,7 @@ public class ConnectFourGame extends Game {
 		Chip currentChip = surface[row][col];
 		if (currentChip.is(Color.TRANSPARENT)){return false;}	
 		try{
-			if( col < (this.getColumns() - checkCount) - 1){
+			if( col < (this.getColumns() - checkCount) + 1){
 				for(int i = 1; i < checkCount; i++){
 					if(!surface[row][col + i].is(currentChip.getValue())){
 						return false;
