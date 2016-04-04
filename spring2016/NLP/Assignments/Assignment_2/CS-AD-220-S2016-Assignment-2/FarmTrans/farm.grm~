@@ -23,5 +23,6 @@ farm_trans = farm_en @ animal_en2ar_dict* @ farm_ar ;
 
 #export, i.e., make viewable, the sheep_trans as FARMTRANS_en2ar
 export FARMTRANS_en2ar = Optimize[ farm_trans ];
+export FARMTRANS_ar2ar = Invert[FARMTRANS_en2ar];
 
 #######################################################

@@ -1,0 +1,25 @@
+Combinatoial Setting
+
+P = Set of dots
+We get a subset defined by a rectangular are.
+
+If there are 
+What is the upper bound.
+
+Shrink the box until it touches the dots.
+
+N choose 4 + n choose 3 + n choose 2 + n choose 1
+O(n^4)
+
+
+Learning is possible because it is not exponential, 
+
+How many rectangles. 
+Efficiently learnable objects. If you are in polynomial.
+
+Epsilon Net Problem.
+
+VC  - Size of the largest set that can be shattered. Only one is enough not all.
+
+ 
+

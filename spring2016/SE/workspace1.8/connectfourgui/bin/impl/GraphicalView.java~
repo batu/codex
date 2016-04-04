@@ -32,22 +32,18 @@ public class GraphicalView extends Application{
     	super();
     	connectFour = new ConnectFourGame();
     	controller = new GameController(connectFour);
-    	connectFour.setController(controller);
     	this.board = new Circle[rowCount+1][columnCount+1];
 	}
 
-    public void fillColor(int row, int col, Color color){
-		this.board[row][col].setFill(color);
-    }
-    
-    
+
 	@Override // Override the start method in the Application class
     public void start(Stage primaryStage) {    
     	
-		controller.setView(this);
 
     	double radius = 40.0f;
 	    double padding = 5.0f;
+
+
 		
 	    double width, height;
 	    width = (columnCount) * (padding + radius * 2) + 10;  

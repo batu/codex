@@ -12,13 +12,19 @@ import util.Chip;
 public class GameController implements Controller{
 	
 	private Game connectFour;
+	GraphicalView view; 
 	
 	public GameController(Game game){
 		connectFour = game;
 	}
 	
-	public void printTest(){
-		System.out.println("I am called");
+	
+	public void handleFillColor(int row, int col, Color color){
+		view.fillColor(row, col, color);
+	}
+	
+	public void setView(GraphicalView view){
+		this.view = view;
 	}
 	
 	@Override

@@ -1,0 +1,40 @@
+Descriptive vs Prescriptive Grammer
+Descriptive is rules based
+Prescriptive is reality based
+
+
+used in these areas:
+grammer checkers
+dialogue management
+question asnwering
+information extraction
+machine translation
+
+Key notions
+Constituency 
+Dependency
+
+Key formalism : context free grammers
+
+Resources: treebanks
+Parsing Algorithms: constituency'/ Dependency
+
+Constituency
+Grouping of words
+A book about china
+about china
+
+the fact that two things are next to eachother it doesnt mean they are in a constituency
+
+SOV
+SVO
+
+We talk about two things.
+What goes inside a constitituency
+How does different groups relate to eachother
+
+
+Terminals and parts of speach
+Non terminals - Markes of the constituent like noun 
+
+

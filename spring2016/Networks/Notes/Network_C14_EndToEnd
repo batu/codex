@@ -1,0 +1,72 @@
+30.03.2016
+
+Up untill this point is host to host.
+You need process to process.
+
+Simple Demultiplexer (UDP) 
+Reliable Bute Stream (TCP)
+
+
+UDP:
+Just hose the target with information. Dont care about wheter each individual packet has received/
+
+TCP
+You care about every packet and guarentee that everything has transfered.
+
+End-to-End means process to process
+-Dlievery, Order
+
+Limitations of the network
+- Can drop messages
+- Can reorder messages
+- Deliver duplicates
+- Limit msesages to some finite size
+- deliver messages after a delay
+
+
+UDP
+Extends host to host delivery 
+
+SrcPort - DstPort (identifies processes) host and process adress
+Length- Checksum
+Data
+
+Based on which port number you push it to the correct application que.
+
+IP(network) layer tells whether TCP / UDP ?
+
+Every kayer should have some sort of demultiplexing.
+
+
+TCP:
+reliable
+Connection oriented
+byte-stream service
+
+IP doesnt controll how much data.
+It just figures out and sends it
+Sliding window comes into effect in transport.
+
+Flow Control vs Congestion Controll
+
+Flow: How to prevent the sender from overrunning the receiver. Dont send more data thatn the reciver could handle.
+
+Congestion: Deals with the network iself. If you are sending 1gbps but somewhere in between you have to go through 1 mbps most of your data will be lost. So you ahve to care for that too
+
+In TCP sliding window it has to adress issues that come from the INTERNET.
+RTT changes.
+
+Buffer at the TCP layer. When the buffer is big enough, just send it to the next step. The receiver in the sender. The app in the reveiver.
+
+Adverise window is the receiver telling how much it can send.
+
+SYN and FIn flags are used when establishing and terminating connection
+Ack is acknowledgement is valid
+if you wanna abort and reset after a series of failed attempts
+
+
+
+
+
+
+
