@@ -1,0 +1,86 @@
+TCP
+Reliable end to end transmission/transportation protocol
+
+The Sliding window Max was the bandwith delay product
+
+1) It guarentees relaible delivery of data - because of acknowledgements
+	Keep the receiver as dumb as possible. Most complexity in sender.
+2) Ensures order
+3) Ensures flow control between the sender and the receiver
+
+The receiver it just acknowledges the last IN ORDER packet it has received. If something comes out of order. It buffers and waits.
+
+
+Sender:
+LastByteAcked - LastByteSent(within the network) - LastByteWritten
+
+Receiver:
+LastByteRead - NextByteExpected - LastByteRcvd
+
+Receivers Advertised Window:
+The receiver dictaes the amount of data that needs to be send. The window isze is not fixed.
+The receiver advertises and adjustable window size (advertisedwindow fiel in TCP header)
+
+Sender is limited to having no more than advertised window bytes of uncACKed data at any time.
+
+
+ReceiverSide:
+Receiver:
+LastByteRcvd - LastByteRead <= MaxRcvBuffer
+AdvertisedWindow = MaxRcvBuffer - (LastByteRcvd - LastByteRead) : this gives you the opening that exists in the buffer
+
+Sender:
+LastByteSent - LAstByteAcked <= Advertised Window
+EffectiveWindow = AdvertisedWindow - (LastByteSent - LastByteAcked)
+
+Advertised Window = effectively becomes the empty space in the receiver.
+EffectiveWindow
+
+What happens in the start? There is Advertisement before the first ACK.
+Whenever a 0 advertised window the sender will prod with a 1byte package just to get another acknowledgement.
+
+If (lastButeWritten - LastByteAcked) + newWritten > MacSendBuffer
+This means that the sending buffer is full. TCP just sends a message up saying dude Stahp.
+
+
+These are the TCP Packet size
+SequenceNum: 32bits
+AdvertisedWindow: 16 bits
+
+2^32 >> 2 x 2^16
+
+MaximumSequenceLength = 120s (the max time packets survive in the network)
+32bit is not enough anymore because you can wrap around. 
+you send seq#1 then you send up to seq# 2^32 and then it warps around to 1. But as MSL is 120 seconds maybe seq#1 didnt arrive yet so you can have 2 seq#1 in the network. PROBLEM.
+
+Solution: Define a timestamp, if you get the same seq num you check the timestamps.
+
+If we use the originial 16 buts of advertised window we wint be able to keep the pipeline full. As Delay x Bandwith Product is more than that. 
+
+Define a window scaling. This is the number you will be shifting your advertised window by that much (which means you grow the window size by a lot)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

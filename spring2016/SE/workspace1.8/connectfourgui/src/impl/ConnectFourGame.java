@@ -8,13 +8,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import util.Chip;
-
-
+import api.Controller;
 import api.Game;
 
 public class ConnectFourGame extends Game {
 	
 	Random random = new Random();
+	GameController controller;
 	
 	Chip currentPlayer;
 	Chip winner;
@@ -24,6 +24,11 @@ public class ConnectFourGame extends Game {
 	
 	static int rowCount = 6;
 	static int columnCount = 9;
+	
+	void setController(GameController controller){
+		this.controller = controller;
+	}
+	
 	public ConnectFourGame() {
 		super(rowCount, columnCount);
 		
@@ -44,9 +49,8 @@ public class ConnectFourGame extends Game {
             }
         }
 	}
-
-	@Override
-	public void placeDisk(int col) throws GameStateException, IllegalMoveException {
+	
+	public void placeDiskConnectFour(int col) throws GameStateException, IllegalMoveException {
 		// TODO Auto-generated method stub
 	    if(this.isGameOver()){
 	    	return;
@@ -62,38 +66,90 @@ public class ConnectFourGame extends Game {
 			Chip currentChip = this.surface[currentRow][col];
 			if (currentChip.is(Color.TRANSPARENT)){
 				this.surface[currentRow][col].setValue(currentPlayer);
-				board[currentRow][col].setFill(currentPlayer.get());
+				controller.handleFillColor(currentRow, col, currentPlayer.get());
 				
 				if(currentPlayer.is(Color.RED)){
 					currentPlayer = bluePlayer;
-					board[rowCount][columnCount].setFill(currentPlayer.get());
+					controller.handleFillColor(rowCount, columnCount, currentPlayer.get());
 				}
 				else{
 					currentPlayer = redPlayer;
-					board[rowCount][columnCount].setFill(currentPlayer.get());
+					controller.handleFillColor(rowCount, columnCount, currentPlayer.get());
 				}
 				
 				if(!this.isGameOver() && currentPlayer.is(Color.BLUE)){
-					board[rowCount][columnCount].setFill(Color.BLUE);
+					controller.handleFillColor(rowCount, columnCount, Color.BLUE);
 				}else{
-					board[rowCount][columnCount].setFill(Color.RED);
+					controller.handleFillColor(rowCount, columnCount, Color.RED);
 				}
-				
-				setChanged();
-			    notifyObservers();
 				return;
 			}
 		}
-		 throw new IllegalMoveException();
-		
-		
+		 throw new IllegalMoveException();	
 	}
 
-
-
 	@Override
-	// isGameOver iterate all instead of calling it once and being done with it.
-	public boolean isGameOver() {
+	public void placeDisk(int col) throws GameStateException, IllegalMoveException {
+		// TODO Auto-generated method stub
+
+		if(this.isGameOver()){
+	    	return;
+	    }	
+	    
+		if (col >= this.getColumns() || col < 0){
+			throw new IllegalMoveException();
+		} 
+		
+		Color tempToken = null, tempToken2 = null;
+		int currentRow = this.getRows() - 1;
+
+		for (; currentRow >= 0; currentRow--){
+			Chip currentChip = this.surface[currentRow][col];
+			if (currentChip.is(Color.TRANSPARENT)){
+				this.surface[currentRow][col].setValue(currentPlayer);
+				controller.handleFillColor(currentRow, col, currentPlayer.get());
+				
+				if(currentPlayer.is(Color.RED)){
+					currentPlayer = bluePlayer;
+					controller.handleFillColor(rowCount, columnCount, currentPlayer.get());
+				}
+				else{
+					currentPlayer = redPlayer;
+					controller.handleFillColor(rowCount, columnCount, currentPlayer.get());
+				}
+				
+				if(!this.isGameOver() && currentPlayer.is(Color.BLUE)){
+					controller.handleFillColor(rowCount, columnCount, Color.BLUE);
+				}else{
+					controller.handleFillColor(rowCount, columnCount, Color.RED);
+				}
+				return;
+			}
+		}
+		if(currentRow == -1){
+			currentRow = 0;
+			tempToken = this.surface[currentRow][col].getValue();
+			this.surface[currentRow][col].set(currentPlayer.getValue());
+			controller.handleFillColor(currentRow, col, currentPlayer.getValue());
+			currentRow++;
+			for (; currentRow < this.getRows(); currentRow++){
+				if(currentRow % 2  == 1){
+					tempToken2 = this.surface[currentRow][col].getValue();
+					this.surface[currentRow][col].set(tempToken);
+					controller.handleFillColor(currentRow, col, tempToken);
+				}else{
+					tempToken = this.surface[currentRow][col].getValue();
+					this.surface[currentRow][col].set(tempToken2);
+					controller.handleFillColor(currentRow, col, tempToken2);
+				}
+			}
+			this.isGameOver();
+		}
+
+		 throw new IllegalMoveException();	
+	}
+
+	public boolean isGameOverConnectFour() {
 		// TODO Auto-generated method stub
 		for (int row = 0; row < this.getRows(); row++) {
             for (int col = 0; col < this.getColumns(); col++) {
@@ -103,6 +159,40 @@ public class ConnectFourGame extends Game {
             }
         }
 		return false;
+	}
+
+	@Override
+	// isGameOver iterate all instead of calling it once and being done with it.
+	public boolean isGameOver() {
+		// TODO Auto-generated method stub
+		int redWinCount=0, blueWinCount=0;
+		for (int row = 0; row < this.getRows(); row++) {
+            for (int col = 0; col < this.getColumns(); col++) {
+                if(checkVertical(row, col) || checkHorizontal(row,  col) || checkDiagonal(row,  col)){
+                	if(this.surface[row][col].getValue() == Color.RED){
+                		redWinCount++;
+                	}else{
+                		blueWinCount++;
+                	}
+                }
+            }
+        }
+		if(redWinCount != blueWinCount){
+			if(redWinCount > blueWinCount){
+				controller.handleFillColor(rowCount, columnCount, Color.RED);
+			}else{
+				controller.handleFillColor(rowCount, columnCount, Color.BLUE);
+			}
+			return true;
+		}else{
+			for(int row = 0; row < this.rowCount; row++){
+				for(int col = 0; col < this.columnCount; col++){
+					board[row][col].setStrokeWidth(1);
+				}
+			}
+			return false;
+		}
+		
 	}
 
 	public boolean checkVertical(int row, int col){

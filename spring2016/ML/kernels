@@ -1,0 +1,31 @@
+Keep the functions linear because of computational
+
+
+Feature map
+Map the space of points to a higher dimention.
+
+Featuremap one of the three ways of getting into them.
+PD = positive definite kernel
+RKHS = reproducsing kernel hikbert space
+
+Kernel is a similarity measure.
+dot product is what we use.
+
+define the same operations (dot product) in functions.
+
+We dont want negative similarity. so we need positive definitiveness. 
+
+We need the K matrix to be symetric as otherview K(xi,xj) != K(kj,ki)
+
+Hilbert Space (HS): Is a complete possibly infinite dimensional linear space with an innter product.
+Every sequence converges to a point with in the definiton. 
+
+kernels are basically functions and they take two inputs. One fixes it the other one defines a point otn it.
+
+Def an evaluational functional over the HS of function of ElementH isa  linear function.
+
+We are doing this to work with infinite input spaces.
+
+The norm of the function.
+
+some point in H that depends on T.

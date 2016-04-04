@@ -1,0 +1,42 @@
+Tree banks
+Inter annatotar Agreement (IAA)
+Get two people working on the same dataset. Divide the work %60 %60
+And also a third piece on a "Lead Judge"
+
+Treebanks implicityly define a grammer for the language.
+Take the local rules and combine them tadaa you have grammer.
+Take all the structures that Happened!
+
+Dependency trees includes heads: the one with head first
+Free structure/ Contigency : the tree one.
+
+
+Syntaxtix analysis.
+
+Colorless green ideas sleep furiously. (Syntacticly solid, meaning wise very unreasonable)
+
+
+I ate the spaghetti with chopsticks
+I ate the (spagethhi with meatballs)
+
+The parsers are different in these case. 
+In the second case you shouldnt divide spahethi with meatballs
+
+Spagethi with meatballs was eaten by X
+Spagethi was eaten by X with chopstics  - different!
+
+Training | Development | Testing banks
+
+Top down parsing: Take a look at the S structures, just try to fir the words into your tags. Going iver all the allowed rules.
+
+Bottom up parsing: start with words and attach tags. Check on the local level if it works. You can have trees that are not plausable.
+
+TD: Never explores options that will not lead to  a full parse, but can explore 
+
+You always start with an S
+
+
+CNF (a more restrictive form)
+Non terminal goes to 2 things, or they go to the terminal.
+
+The algorithms dont exactly have to use teh same grammer. Intermediate steps don thave to be identical.
