@@ -1,0 +1,2156 @@
+t0e0s1f1
+
+t1e1s1f1
+POS Accuracy = 38418 / 40117 = 95.76%
+
+t1e1s1f11
+POS Accuracy = 38409 / 40117 = 95.74%
+
+t1e1s1f21
+POS Accuracy = 38411 / 40117 = 95.75%
+
+t1e1s1f31
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e1s1f41
+POS Accuracy = 38404 / 40117 = 95.73%
+
+t1e1s11f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s11f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s11f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s11f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s11f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s21f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s21f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s21f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s21f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s21f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s31f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s31f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s31f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s31f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s31f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s41f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s41f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s41f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s41f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s41f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e2s1f1
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e2s1f11
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e2s1f21
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e2s1f31
+POS Accuracy = 38411 / 40117 = 95.75%
+
+t1e2s1f41
+POS Accuracy = 38406 / 40117 = 95.73%
+
+t1e2s11f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s11f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s11f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s11f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s11f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s21f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s21f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s21f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s21f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s21f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s31f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s31f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s31f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s31f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s31f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s41f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s41f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s41f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s41f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s41f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e3s1f1
+POS Accuracy = 38389 / 40117 = 95.69%
+
+t1e3s1f11
+POS Accuracy = 38386 / 40117 = 95.69%
+
+t1e3s1f21
+POS Accuracy = 38390 / 40117 = 95.70%
+
+t1e3s1f31
+POS Accuracy = 38386 / 40117 = 95.69%
+
+t1e3s1f41
+POS Accuracy = 38380 / 40117 = 95.67%
+
+t1e3s11f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s11f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s11f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s11f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s11f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s21f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s21f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s21f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s21f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s21f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s31f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s31f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s31f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s31f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s31f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s41f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s41f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s41f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s41f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s41f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s1f1
+POS Accuracy = 38391 / 40117 = 95.70%
+
+t1e4s1f11
+POS Accuracy = 38382 / 40117 = 95.68%
+
+t1e4s1f21
+POS Accuracy = 38382 / 40117 = 95.68%
+
+t1e4s1f31
+POS Accuracy = 38380 / 40117 = 95.67%
+
+t1e4s1f41
+POS Accuracy = 38373 / 40117 = 95.65%
+
+t1e4s11f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s11f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s11f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s11f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s11f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e4s21f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s21f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s21f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s21f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s21f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e4s31f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s31f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s31f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s31f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s31f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e4s41f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s41f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s41f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s41f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s41f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e5s1f1
+POS Accuracy = 38386 / 40117 = 95.69%
+
+t1e5s1f11
+POS Accuracy = 38373 / 40117 = 95.65%
+
+t1e5s1f21
+POS Accuracy = 38373 / 40117 = 95.65%
+
+t1e5s1f31
+POS Accuracy = 38371 / 40117 = 95.65%
+
+t1e5s1f41
+POS Accuracy = 38362 / 40117 = 95.63%
+
+t1e5s11f1
+POS Accuracy = 38398 / 40117 = 95.72%
+
+t1e5s11f11
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e5s11f21
+POS Accuracy = 38396 / 40117 = 95.71%
+
+t1e5s11f31
+POS Accuracy = 38394 / 40117 = 95.71%
+
+t1e5s11f41
+POS Accuracy = 38388 / 40117 = 95.69%
+
+t1e5s21f1
+POS Accuracy = 38398 / 40117 = 95.72%
+
+t1e5s21f11
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e5s21f21
+POS Accuracy = 38396 / 40117 = 95.71%
+
+t1e5s21f31
+POS Accuracy = 38394 / 40117 = 95.71%
+
+t1e5s21f41
+POS Accuracy = 38388 / 40117 = 95.69%
+
+t1e5s31f1
+POS Accuracy = 38398 / 40117 = 95.72%
+
+t1e5s31f11
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e5s31f21
+POS Accuracy = 38396 / 40117 = 95.71%
+
+t1e5s31f31
+POS Accuracy = 38394 / 40117 = 95.71%
+
+t1e5s31f41
+POS Accuracy = 38388 / 40117 = 95.69%
+
+t1e5s41f1
+POS Accuracy = 38398 / 40117 = 95.72%
+
+t1e5s41f11
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e5s41f21
+POS Accuracy = 38396 / 40117 = 95.71%
+
+t1e5s41f31
+POS Accuracy = 38394 / 40117 = 95.71%
+
+t1e5s41f41
+POS Accuracy = 38388 / 40117 = 95.69%
+
+t2e1s1f1
+POS Accuracy = 38575 / 40117 = 96.16%
+
+t2e1s1f11
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t2e1s1f21
+POS Accuracy = 38562 / 40117 = 96.12%
+
+t2e1s1f31
+POS Accuracy = 38561 / 40117 = 96.12%
+
+t2e1s1f41
+POS Accuracy = 38563 / 40117 = 96.13%
+
+t2e1s11f1
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t2e1s11f11
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s11f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s11f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e1s11f41
+POS Accuracy = 38585 / 40117 = 96.18%
+
+t2e1s21f1
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t2e1s21f11
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s21f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s21f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e1s21f41
+POS Accuracy = 38585 / 40117 = 96.18%
+
+t2e1s31f1
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t2e1s31f11
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s31f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s31f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e1s31f41
+POS Accuracy = 38585 / 40117 = 96.18%
+
+t2e1s41f1
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t2e1s41f11
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s41f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t2e1s41f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e1s41f41
+POS Accuracy = 38585 / 40117 = 96.18%
+
+t2e2s1f1
+POS Accuracy = 38587 / 40117 = 96.19%
+
+t2e2s1f11
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e2s1f21
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e2s1f31
+POS Accuracy = 38584 / 40117 = 96.18%
+
+t2e2s1f41
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t2e2s11f1
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s11f11
+POS Accuracy = 38613 / 40117 = 96.25%
+
+t2e2s11f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t2e2s11f31
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s11f41
+POS Accuracy = 38606 / 40117 = 96.23%
+
+t2e2s21f1
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s21f11
+POS Accuracy = 38614 / 40117 = 96.25%
+
+t2e2s21f21
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t2e2s21f31
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t2e2s21f41
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s31f1
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s31f11
+POS Accuracy = 38614 / 40117 = 96.25%
+
+t2e2s31f21
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t2e2s31f31
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t2e2s31f41
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s41f1
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e2s41f11
+POS Accuracy = 38614 / 40117 = 96.25%
+
+t2e2s41f21
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t2e2s41f31
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t2e2s41f41
+POS Accuracy = 38607 / 40117 = 96.24%
+
+t2e3s1f1
+POS Accuracy = 38559 / 40117 = 96.12%
+
+t2e3s1f11
+POS Accuracy = 38552 / 40117 = 96.10%
+
+t2e3s1f21
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t2e3s1f31
+POS Accuracy = 38556 / 40117 = 96.11%
+
+t2e3s1f41
+POS Accuracy = 38551 / 40117 = 96.10%
+
+t2e3s11f1
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s11f11
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s11f21
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t2e3s11f31
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t2e3s11f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t2e3s21f1
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s21f11
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s21f21
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t2e3s21f31
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t2e3s21f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t2e3s31f1
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s31f11
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s31f21
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t2e3s31f31
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t2e3s31f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t2e3s41f1
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s41f11
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e3s41f21
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t2e3s41f31
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t2e3s41f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t2e4s1f1
+POS Accuracy = 38575 / 40117 = 96.16%
+
+t2e4s1f11
+POS Accuracy = 38578 / 40117 = 96.16%
+
+t2e4s1f21
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t2e4s1f31
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t2e4s1f41
+POS Accuracy = 38578 / 40117 = 96.16%
+
+t2e4s11f1
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s11f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t2e4s11f21
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s11f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t2e4s11f41
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s21f1
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s21f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t2e4s21f21
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s21f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t2e4s21f41
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s31f1
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s31f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t2e4s31f21
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s31f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t2e4s31f41
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s41f1
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s41f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t2e4s41f21
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e4s41f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t2e4s41f41
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t2e5s1f1
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t2e5s1f11
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t2e5s1f21
+POS Accuracy = 38574 / 40117 = 96.15%
+
+t2e5s1f31
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t2e5s1f41
+POS Accuracy = 38572 / 40117 = 96.15%
+
+t2e5s11f1
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t2e5s11f11
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t2e5s11f21
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e5s11f31
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t2e5s11f41
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t2e5s21f1
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t2e5s21f11
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t2e5s21f21
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e5s21f31
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t2e5s21f41
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t2e5s31f1
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t2e5s31f11
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t2e5s31f21
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e5s31f31
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t2e5s31f41
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t2e5s41f1
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t2e5s41f11
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t2e5s41f21
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t2e5s41f31
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t2e5s41f41
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t3e1s1f1
+POS Accuracy = 38587 / 40117 = 96.19%
+
+t3e1s1f11
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t3e1s1f21
+POS Accuracy = 38586 / 40117 = 96.18%
+
+t3e1s1f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t3e1s1f41
+POS Accuracy = 38581 / 40117 = 96.17%
+
+t3e1s11f1
+POS Accuracy = 38609 / 40117 = 96.24%
+
+t3e1s11f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e1s11f21
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s11f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s11f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e1s21f1
+POS Accuracy = 38609 / 40117 = 96.24%
+
+t3e1s21f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e1s21f21
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s21f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s21f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e1s31f1
+POS Accuracy = 38609 / 40117 = 96.24%
+
+t3e1s31f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e1s31f21
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s31f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s31f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e1s41f1
+POS Accuracy = 38609 / 40117 = 96.24%
+
+t3e1s41f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e1s41f21
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s41f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t3e1s41f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e2s1f1
+POS Accuracy = 38605 / 40117 = 96.23%
+
+t3e2s1f11
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t3e2s1f21
+POS Accuracy = 38613 / 40117 = 96.25%
+
+t3e2s1f31
+POS Accuracy = 38616 / 40117 = 96.26%
+
+t3e2s1f41
+POS Accuracy = 38616 / 40117 = 96.26%
+
+t3e2s11f1
+POS Accuracy = 38633 / 40117 = 96.30%
+
+t3e2s11f11
+POS Accuracy = 38632 / 40117 = 96.30%
+
+t3e2s11f21
+POS Accuracy = 38633 / 40117 = 96.30%
+
+t3e2s11f31
+POS Accuracy = 38630 / 40117 = 96.29%
+
+t3e2s11f41
+POS Accuracy = 38629 / 40117 = 96.29%
+
+t3e2s21f1
+POS Accuracy = 38633 / 40117 = 96.30%
+
+t3e2s21f11
+POS Accuracy = 38634 / 40117 = 96.30%
+
+t3e2s21f21
+POS Accuracy = 38635 / 40117 = 96.31%
+
+t3e2s21f31
+POS Accuracy = 38631 / 40117 = 96.30%
+
+t3e2s21f41
+POS Accuracy = 38630 / 40117 = 96.29%
+
+t3e2s31f1
+POS Accuracy = 38633 / 40117 = 96.30%
+
+t3e2s31f11
+POS Accuracy = 38634 / 40117 = 96.30%
+
+t3e2s31f21
+POS Accuracy = 38635 / 40117 = 96.31%
+
+t3e2s31f31
+POS Accuracy = 38631 / 40117 = 96.30%
+
+t3e2s31f41
+POS Accuracy = 38630 / 40117 = 96.29%
+
+t3e2s41f1
+POS Accuracy = 38633 / 40117 = 96.30%
+
+t3e2s41f11
+POS Accuracy = 38634 / 40117 = 96.30%
+
+t3e2s41f21
+POS Accuracy = 38635 / 40117 = 96.31%
+
+t3e2s41f31
+POS Accuracy = 38631 / 40117 = 96.30%
+
+t3e2s41f41
+POS Accuracy = 38630 / 40117 = 96.29%
+
+t3e3s1f1
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t3e3s1f11
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e3s1f21
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t3e3s1f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t3e3s1f41
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t3e3s11f1
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s11f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e3s11f21
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s11f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s11f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s21f1
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s21f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e3s21f21
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s21f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s21f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s31f1
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s31f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e3s31f21
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s31f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s31f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s41f1
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s41f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+t3e3s41f21
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t3e3s41f31
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e3s41f41
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t3e4s1f1
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t3e4s1f11
+POS Accuracy = 38576 / 40117 = 96.16%
+
+t3e4s1f21
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t3e4s1f31
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t3e4s1f41
+POS Accuracy = 38570 / 40117 = 96.14%
+
+t3e4s11f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e4s11f11
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s11f21
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t3e4s11f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s11f41
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t3e4s21f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e4s21f11
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s21f21
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t3e4s21f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s21f41
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t3e4s31f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e4s31f11
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s31f21
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t3e4s31f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s31f41
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t3e4s41f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e4s41f11
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s41f21
+POS Accuracy = 38589 / 40117 = 96.19%
+
+t3e4s41f31
+POS Accuracy = 38590 / 40117 = 96.19%
+
+t3e4s41f41
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t3e5s1f1
+POS Accuracy = 38573 / 40117 = 96.15%
+
+t3e5s1f11
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t3e5s1f21
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t3e5s1f31
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t3e5s1f41
+POS Accuracy = 38575 / 40117 = 96.16%
+
+t3e5s11f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e5s11f11
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t3e5s11f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t3e5s11f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t3e5s11f41
+POS Accuracy = 38594 / 40117 = 96.20%
+
+t3e5s21f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e5s21f11
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t3e5s21f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t3e5s21f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t3e5s21f41
+POS Accuracy = 38594 / 40117 = 96.20%
+
+t3e5s31f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e5s31f11
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t3e5s31f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t3e5s31f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t3e5s31f41
+POS Accuracy = 38594 / 40117 = 96.20%
+
+t3e5s41f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t3e5s41f11
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t3e5s41f21
+POS Accuracy = 38595 / 40117 = 96.21%
+
+t3e5s41f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t3e5s41f41
+POS Accuracy = 38594 / 40117 = 96.20%
+
+t4e1s1f1
+POS Accuracy = 38591 / 40117 = 96.20%
+
+t4e1s1f11
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t4e1s1f21
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t4e1s1f31
+POS Accuracy = 38593 / 40117 = 96.20%
+
+t4e1s1f41
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t4e1s11f1
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t4e1s11f11
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e1s11f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s11f31
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s11f41
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t4e1s21f1
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t4e1s21f11
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e1s21f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s21f31
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s21f41
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t4e1s31f1
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t4e1s31f11
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e1s31f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s31f31
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s31f41
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t4e1s41f1
+POS Accuracy = 38608 / 40117 = 96.24%
+
+t4e1s41f11
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e1s41f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s41f31
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e1s41f41
+POS Accuracy = 38612 / 40117 = 96.25%
+
+t4e2s1f1
+POS Accuracy = 38622 / 40117 = 96.27%
+
+t4e2s1f11
+POS Accuracy = 38635 / 40117 = 96.31%
+
+t4e2s1f21
+POS Accuracy = 38634 / 40117 = 96.30%
+
+t4e2s1f31
+POS Accuracy = 38635 / 40117 = 96.31%
+
+t4e2s1f41
+POS Accuracy = 38634 / 40117 = 96.30%
+
+t4e2s11f1
+POS Accuracy = 38642 / 40117 = 96.32%
+
+t4e2s11f11
+POS Accuracy = 38654 / 40117 = 96.35%
+
+t4e2s11f21
+POS Accuracy = 38653 / 40117 = 96.35%
+
+t4e2s11f31
+POS Accuracy = 38654 / 40117 = 96.35%
+
+t4e2s11f41
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e2s21f1
+POS Accuracy = 38642 / 40117 = 96.32%
+
+t4e2s21f11
+POS Accuracy = 38655 / 40117 = 96.36%
+
+t4e2s21f21
+POS Accuracy = 38653 / 40117 = 96.35%
+
+t4e2s21f31
+POS Accuracy = 38654 / 40117 = 96.35%
+
+t4e2s21f41
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e2s31f1
+POS Accuracy = 38642 / 40117 = 96.32%
+
+t4e2s31f11
+POS Accuracy = 38655 / 40117 = 96.36%
+
+t4e2s31f21
+POS Accuracy = 38653 / 40117 = 96.35%
+
+t4e2s31f31
+POS Accuracy = 38654 / 40117 = 96.35%
+
+t4e2s31f41
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e2s41f1
+POS Accuracy = 38642 / 40117 = 96.32%
+
+t4e2s41f11
+POS Accuracy = 38655 / 40117 = 96.36%
+
+t4e2s41f21
+POS Accuracy = 38653 / 40117 = 96.35%
+
+t4e2s41f31
+POS Accuracy = 38654 / 40117 = 96.35%
+
+t4e2s41f41
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e3s1f1
+POS Accuracy = 38596 / 40117 = 96.21%
+
+t4e3s1f11
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e3s1f21
+POS Accuracy = 38611 / 40117 = 96.25%
+
+t4e3s1f31
+POS Accuracy = 38614 / 40117 = 96.25%
+
+t4e3s1f41
+POS Accuracy = 38613 / 40117 = 96.25%
+
+t4e3s11f1
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e3s11f11
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s11f21
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s11f31
+POS Accuracy = 38622 / 40117 = 96.27%
+
+t4e3s11f41
+POS Accuracy = 38621 / 40117 = 96.27%
+
+t4e3s21f1
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e3s21f11
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s21f21
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s21f31
+POS Accuracy = 38622 / 40117 = 96.27%
+
+t4e3s21f41
+POS Accuracy = 38621 / 40117 = 96.27%
+
+t4e3s31f1
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e3s31f11
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s31f21
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s31f31
+POS Accuracy = 38622 / 40117 = 96.27%
+
+t4e3s31f41
+POS Accuracy = 38621 / 40117 = 96.27%
+
+t4e3s41f1
+POS Accuracy = 38618 / 40117 = 96.26%
+
+t4e3s41f11
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s41f21
+POS Accuracy = 38620 / 40117 = 96.27%
+
+t4e3s41f31
+POS Accuracy = 38622 / 40117 = 96.27%
+
+t4e3s41f41
+POS Accuracy = 38621 / 40117 = 96.27%
+
+t4e4s1f1
+POS Accuracy = 38581 / 40117 = 96.17%
+
+t4e4s1f11
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t4e4s1f21
+POS Accuracy = 38588 / 40117 = 96.19%
+
+t4e4s1f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t4e4s1f41
+POS Accuracy = 38587 / 40117 = 96.19%
+
+t4e4s11f1
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t4e4s11f11
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e4s11f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e4s11f31
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t4e4s11f41
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e4s21f1
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t4e4s21f11
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e4s21f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e4s21f31
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t4e4s21f41
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e4s31f1
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t4e4s31f11
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e4s31f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e4s31f31
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t4e4s31f41
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e4s41f1
+POS Accuracy = 38598 / 40117 = 96.21%
+
+t4e4s41f11
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e4s41f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e4s41f31
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t4e4s41f41
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e5s1f1
+POS Accuracy = 38584 / 40117 = 96.18%
+
+t4e5s1f11
+POS Accuracy = 38581 / 40117 = 96.17%
+
+t4e5s1f21
+POS Accuracy = 38579 / 40117 = 96.17%
+
+t4e5s1f31
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t4e5s1f41
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t4e5s11f1
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s11f11
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e5s11f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s11f31
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s11f41
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e5s21f1
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s21f11
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e5s21f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s21f31
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s21f41
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e5s31f1
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s31f11
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e5s31f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s31f31
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s31f41
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t4e5s41f1
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s41f11
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t4e5s41f21
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s41f31
+POS Accuracy = 38600 / 40117 = 96.22%
+
+t4e5s41f41
+POS Accuracy = 38599 / 40117 = 96.22%
+
+t5e1s1f1
+POS Accuracy = 38515 / 40117 = 96.01%
+
+t5e1s1f11
+POS Accuracy = 38522 / 40117 = 96.02%
+
+t5e1s1f21
+POS Accuracy = 38517 / 40117 = 96.01%
+
+t5e1s1f31
+POS Accuracy = 38519 / 40117 = 96.02%
+
+t5e1s1f41
+POS Accuracy = 38519 / 40117 = 96.02%
+
+t5e1s11f1
+POS Accuracy = 38533 / 40117 = 96.05%
+
+t5e1s11f11
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s11f21
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s11f31
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s11f41
+POS Accuracy = 38538 / 40117 = 96.06%
+
+t5e1s21f1
+POS Accuracy = 38533 / 40117 = 96.05%
+
+t5e1s21f11
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s21f21
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s21f31
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s21f41
+POS Accuracy = 38538 / 40117 = 96.06%
+
+t5e1s31f1
+POS Accuracy = 38533 / 40117 = 96.05%
+
+t5e1s31f11
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s31f21
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s31f31
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s31f41
+POS Accuracy = 38538 / 40117 = 96.06%
+
+t5e1s41f1
+POS Accuracy = 38533 / 40117 = 96.05%
+
+t5e1s41f11
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s41f21
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s41f31
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e1s41f41
+POS Accuracy = 38538 / 40117 = 96.06%
+
+t5e2s1f1
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e2s1f11
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e2s1f21
+POS Accuracy = 38571 / 40117 = 96.15%
+
+t5e2s1f31
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e2s1f41
+POS Accuracy = 38568 / 40117 = 96.14%
+
+t5e2s11f1
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t5e2s11f11
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t5e2s11f21
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s11f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t5e2s11f41
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s21f1
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t5e2s21f11
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t5e2s21f21
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s21f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t5e2s21f41
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s31f1
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t5e2s31f11
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t5e2s31f21
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s31f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t5e2s31f41
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s41f1
+POS Accuracy = 38592 / 40117 = 96.20%
+
+t5e2s41f11
+POS Accuracy = 38597 / 40117 = 96.21%
+
+t5e2s41f21
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e2s41f31
+POS Accuracy = 38603 / 40117 = 96.23%
+
+t5e2s41f41
+POS Accuracy = 38601 / 40117 = 96.22%
+
+t5e3s1f1
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t5e3s1f11
+POS Accuracy = 38567 / 40117 = 96.14%
+
+t5e3s1f21
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e3s1f31
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e3s1f41
+POS Accuracy = 38565 / 40117 = 96.13%
+
+t5e3s11f1
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t5e3s11f11
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s11f21
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s11f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s11f41
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s21f1
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t5e3s21f11
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s21f21
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s21f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s21f41
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s31f1
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t5e3s31f11
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s31f21
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s31f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s31f41
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s41f1
+POS Accuracy = 38580 / 40117 = 96.17%
+
+t5e3s41f11
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s41f21
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e3s41f31
+POS Accuracy = 38583 / 40117 = 96.18%
+
+t5e3s41f41
+POS Accuracy = 38582 / 40117 = 96.17%
+
+t5e4s1f1
+POS Accuracy = 38543 / 40117 = 96.08%
+
+t5e4s1f11
+POS Accuracy = 38552 / 40117 = 96.10%
+
+t5e4s1f21
+POS Accuracy = 38551 / 40117 = 96.10%
+
+t5e4s1f31
+POS Accuracy = 38552 / 40117 = 96.10%
+
+t5e4s1f41
+POS Accuracy = 38546 / 40117 = 96.08%
+
+t5e4s11f1
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e4s11f11
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s11f21
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s11f31
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s11f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s21f1
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e4s21f11
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s21f21
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s21f31
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s21f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s31f1
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e4s31f11
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s31f21
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s31f31
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s31f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s41f1
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e4s41f11
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s41f21
+POS Accuracy = 38566 / 40117 = 96.13%
+
+t5e4s41f31
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e4s41f41
+POS Accuracy = 38569 / 40117 = 96.14%
+
+t5e5s1f1
+POS Accuracy = 38529 / 40117 = 96.04%
+
+t5e5s1f11
+POS Accuracy = 38543 / 40117 = 96.08%
+
+t5e5s1f21
+POS Accuracy = 38539 / 40117 = 96.07%
+
+t5e5s1f31
+POS Accuracy = 38541 / 40117 = 96.07%
+
+t5e5s1f41
+POS Accuracy = 38537 / 40117 = 96.06%
+
+t5e5s11f1
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t5e5s11f11
+POS Accuracy = 38564 / 40117 = 96.13%
+
+t5e5s11f21
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s11f31
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s11f41
+POS Accuracy = 38561 / 40117 = 96.12%
+
+t5e5s21f1
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t5e5s21f11
+POS Accuracy = 38564 / 40117 = 96.13%
+
+t5e5s21f21
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s21f31
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s21f41
+POS Accuracy = 38561 / 40117 = 96.12%
+
+t5e5s31f1
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t5e5s31f11
+POS Accuracy = 38564 / 40117 = 96.13%
+
+t5e5s31f21
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s31f31
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s31f41
+POS Accuracy = 38561 / 40117 = 96.12%
+
+t5e5s41f1
+POS Accuracy = 38554 / 40117 = 96.10%
+
+t5e5s41f11
+POS Accuracy = 38564 / 40117 = 96.13%
+
+t5e5s41f21
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s41f31
+POS Accuracy = 38560 / 40117 = 96.12%
+
+t5e5s41f41
+POS Accuracy = 38561 / 40117 = 96.12%
+
+t1e1s1f1
+POS Accuracy = 38418 / 40117 = 95.76%
+
+t1e1s1f11
+POS Accuracy = 38409 / 40117 = 95.74%
+
+t1e1s1f21
+POS Accuracy = 38411 / 40117 = 95.75%
+
+t1e1s1f31
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e1s1f41
+POS Accuracy = 38404 / 40117 = 95.73%
+
+t1e1s11f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s11f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s11f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s11f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s11f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s21f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s21f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s21f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s21f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s21f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s31f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s31f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s31f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s31f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s31f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e1s41f1
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s41f11
+POS Accuracy = 38435 / 40117 = 95.81%
+
+t1e1s41f21
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e1s41f31
+POS Accuracy = 38432 / 40117 = 95.80%
+
+t1e1s41f41
+POS Accuracy = 38426 / 40117 = 95.78%
+
+t1e2s1f1
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e2s1f11
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e2s1f21
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e2s1f31
+POS Accuracy = 38411 / 40117 = 95.75%
+
+t1e2s1f41
+POS Accuracy = 38406 / 40117 = 95.73%
+
+t1e2s11f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s11f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s11f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s11f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s11f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s21f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s21f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s21f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s21f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s21f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s31f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s31f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s31f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s31f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s31f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e2s41f1
+POS Accuracy = 38441 / 40117 = 95.82%
+
+t1e2s41f11
+POS Accuracy = 38445 / 40117 = 95.83%
+
+t1e2s41f21
+POS Accuracy = 38440 / 40117 = 95.82%
+
+t1e2s41f31
+POS Accuracy = 38439 / 40117 = 95.82%
+
+t1e2s41f41
+POS Accuracy = 38433 / 40117 = 95.80%
+
+t1e3s1f1
+POS Accuracy = 38389 / 40117 = 95.69%
+
+t1e3s1f11
+POS Accuracy = 38386 / 40117 = 95.69%
+
+t1e3s1f21
+POS Accuracy = 38390 / 40117 = 95.70%
+
+t1e3s1f31
+POS Accuracy = 38386 / 40117 = 95.69%
+
+t1e3s1f41
+POS Accuracy = 38380 / 40117 = 95.67%
+
+t1e3s11f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s11f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s11f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s11f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s11f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s21f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s21f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s21f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s21f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s21f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s31f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s31f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s31f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s31f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s31f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e3s41f1
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s41f11
+POS Accuracy = 38420 / 40117 = 95.77%
+
+t1e3s41f21
+POS Accuracy = 38415 / 40117 = 95.76%
+
+t1e3s41f31
+POS Accuracy = 38413 / 40117 = 95.75%
+
+t1e3s41f41
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s1f1
+POS Accuracy = 38391 / 40117 = 95.70%
+
+t1e4s1f11
+POS Accuracy = 38382 / 40117 = 95.68%
+
+t1e4s1f21
+POS Accuracy = 38382 / 40117 = 95.68%
+
+t1e4s1f31
+POS Accuracy = 38380 / 40117 = 95.67%
+
+t1e4s1f41
+POS Accuracy = 38373 / 40117 = 95.65%
+
+t1e4s11f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s11f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s11f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s11f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s11f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e4s21f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s21f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s21f21
+POS Accuracy = 38405 / 40117 = 95.73%
+
+t1e4s21f31
+POS Accuracy = 38403 / 40117 = 95.73%
+
+t1e4s21f41
+POS Accuracy = 38397 / 40117 = 95.71%
+
+t1e4s31f1
+POS Accuracy = 38407 / 40117 = 95.74%
+
+t1e4s31f11
+POS Accuracy = 38412 / 40117 = 95.75%
+
+t1e4s31f21
+POS Accuracy = 38405 / 40117 = 95.73%
+

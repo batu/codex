@@ -1,0 +1,17 @@
+fine = open("en-universal-dev_fine.conll","r")
+coarse = open("en-universal-dev_coarse_tag.conll", "r+")
+new = open("universal_dev_double.txt", "w")
+counter = 0
+
+for line in fine:
+    if line != "\n":
+        writable = line.strip("\n") + "-";
+        coarseLine = coarse.readline()
+        writable += coarseLine
+        new.write(writable)
+        counter = counter + 1
+    else: 
+        coarseLine = coarse.readline()
+        new.write("\n")
+        
+	

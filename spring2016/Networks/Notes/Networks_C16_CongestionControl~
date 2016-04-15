@@ -1,0 +1,116 @@
+Congestion Controll
+
+The wired protocls are not working for the wirless ones.
+In wired on congesstion means usually that one router has its bugger is full.
+
+Resource allocation. Some routers have importance ordering. 
+
+How to effectively and fairly allocate resuources among a collection of competiing users.
+
+Issues in Resource Allocation
+
+Precision is very hard as in one line in 12 hops you can be sharing with 10 people in one hop and 2 people in the next hop etc.
+
+We will be talking about routers. The large scale.
+
+Verious queing disicplines can bu used to control the order in which packets get transmitted and which packets get dropped.
+
+If the router runs out of spcae the routera lso decides which packtes to drop. 
+
+Network Mode: Packet Switched Network
+
+A source may have more than enough capacith on the immediate outgoing link but somehwere in the network, in the middle, there might be a congestion. 
+
+You dont know the full path, even if you know the nearby routers you dont know what happens far far in between. 
+
+Even in datagrams, which is stateless, there is a flow. It means the most likely path the packets ttake from one source to another. 
+
+Flows can be defined at process to process level or host to host.
+
+Because multiple related packets flow thoguht each router it makes sense to meainstain a soft state.
+
+Soft vs hard state: the soft state need not always be explicityly creted and removed by signalling.
+
+soft state repserent a middle ground between conectionless and full conection.
+The operation of the network does not depend on soft state present.
+
+
+Router-centric vs host-centric
+
+Router-centric: Routers try to decide who to discard who to do what.
+
+Host Centric: Network never takes part, the end hosts need to decide. If there is packet loss the sender should slow down, sometimes they look at the delay, You inferr these from the acknowledgements.
+
+Rserveation vs Feedback
+
+Reservation:
+In a reservation based sytem the end hosts ask t he network for a certain capacity to be allocated for a flow. each router then allocates enough resources to satisfy this request.
+
+Feedback based:
+End host send data without reservation and they start to adjust based on the info they get. Feedback can be explicit (slow down message) or implicit (congestion etc)
+
+TCP just does congestional.
+
+
+Window-based vs Rate Based
+Window advertisement is used within the network to sererve buffer space
+Control sendr's ehaviour using a rate, how many bit per second the receiver ot noetwork is able to absorb
+
+CHECK THIS EvALUYATION CRITERIA
+
+
+Fair Resource Allocation
+The effective utilization of not the only criteria for judging a resource allocation scheme
+We must alos consieder the issue of fiarness.
+reservation based sharing system creates an explicit way to do things.
+
+
+Equal Shares might not be fair shares.
+
+Raj Jain mathematical metric: Jain Fairness Index
+
+x1, x2 ... xn flows. X is the throughput.
+
+sum all the x's and the square them 
+Divide by
+n*sum all the x^2
+
+if it is 1 amazing! if it is 0 suuucks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+Phrase Structure Parsing:
+Contituency parsing
+
+Dependency Parsing
+
+
+Chunking
+
+
+Regular CFG doesnt have probability. Context free grammer.
+Probabiistic CFG (PCFG)
+you assign probabliities of how likely the contructions appear.
+
+You create this by counting. Similar to bigrams.
+
+You just keep numbes as you are computing in CKY.
+Three things you use to generate the enxt number. The two adjecent one, and the inteherent one.
+
+Different languages look similar in different lanugages.
+
+Main predicate (main piece of information) at the top, usually the verb. Defines a relationship between verbs.
+
+Go look at the documentation for the assignment. 
+Convert to the other type. 
+
+Deterministic Parsing. 
+
+ID, place in sentence,
+Word - word
+CPOS: Coarse POS. 
+FOIS: Fine POS
+give you two different levels of representing.
+parentID: shows who is the parrent
+
+
+
+Try other ones.
+
+Transition based dependency parse.
+Shift
+and the arrow is the output.
+
+subject(sold,maker)
+Shift : Takes a word form the buffer buts it on stack.
+Reduce: If it is linked to something we can drop it out of the stack. Already connected to the tree.
+Left-Arc: word on the stack and looking at the word on the buffer 
+You basically introduce a new link.
+Right-Arc: We add the connection and we them to the stack.
+
+left and right are different. Left is done, right is open to more connections.
+projectivity constraint. 
+
+
+
+
+
+
+
+
+
+Bottom up?
+The kansas examplem how do you find the proijection immediately?

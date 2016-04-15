@@ -1,0 +1,5 @@
+Game- Abstract
+Game Template - Abstract extends Game
+	CreateTable(C4Table) / ComplicaTable 4x7
+CoonectFour
+Complica

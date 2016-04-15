@@ -62,6 +62,40 @@ Define a window scaling. This is the number you will be shifting your advertised
 Triggering Transmission
 How does TCP decide to transmit a segment. It is up to tcp to pull the trigger.
 
+MSS: Maximum SEgment Size
+1) TCP maintains a variable MSS and sends a segment as soon as it has collected MSS butes form the sending process
+	MSS is usually set to the sie of the largest segment TCP can send without causing local IP to fragment
+	MSS: MTU of directly connected netwrok - (TCP header + IP information)
+2) SEnding process has explicityly asked tcp to send it
+3) When a timer fires
+
+Silly Window Syndrome
+When the sender agressivly sends stuff based on the advertisement even if its samller than MSS the ack will probably send back a small advertisement again and thus it will just create a trickling effect.
+
+
+NAGLES ALgo:
+If everything is cool available data and and advertisement is > MSS
+	semd tje segment
+else
+	if there is an unacked data in flight
+		Buffer the new data untill an ACK arrives
+	else
+		send all the new data now
+
+When new ack comes check wehether everything is cool as well.
+
+
+
+Adaptive Retransmission
+Originial Algorithm:
+	Measure the SampleRTT
+	Compute the weighted average of RTT.
+	EstRTT = a X EstRTT + (1-a) X SampleRTT
+	
+
+
+Karn/Partridge
+If you have a retransmission DO NOT take it into account do to EXTRA LARGE or minimal differences.
 
 
 

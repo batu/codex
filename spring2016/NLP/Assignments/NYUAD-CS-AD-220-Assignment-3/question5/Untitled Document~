@@ -1,0 +1,4 @@
+When I look at the first 20 entries of the results from user trained POS/Parser and compare it to the gold results I see the following:
+
+Only 1/20 crude Tags were off which results in 95% accuracy in the crude tagging.
+

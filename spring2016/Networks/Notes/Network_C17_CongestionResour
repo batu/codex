@@ -1,0 +1,92 @@
+Flow control is about managing buffer space.
+	You dont want the sender to overun the receiver.
+Congestion control is about the intermediate steps.
+	Cares only about the network. This is the main bottleneck. Shared medium. Sharing most of the buffer resources. If more data comes in to a router than the output of the router network will be congested.
+
+Queuing disciplines:
+	These cause the congestion in the network.
+
+FIFO (first in first out)
+	Data comes in and in the same order they leave. 
+	Tail drop is when you reach the maximum capacity and the discarding the next packate. You will discard from the tail.
+	Has nothing to do WITH a loss.
+	(you can discard something from the middle not only the tail )
+	In here you are not avoiding congestion. 
+
+TCP doesnt need any help from the network. 
+
+Priority queuing:
+	Mark each packet with priority. For example in the ip header.
+	Have many queues. Always start serving from the highest que.
+	This sucks.
+
+Fair Queuing
+	Create a queue for each flow. 
+	Round robin server for each one.	
+	Not that fair when the packet sizes change.
+	If you server it in a round robin 1000packet and anotherone with 500 packet the allocation will be 1/3 to 2/3
+	So mathematically formulate how long it would send each packet and based on that use that information in the weight allocaiton.
+	Every packet will exactly have the time it will finish and you send that.
+
+!Flow is a 4 element touple. RecevierPort, SenderPort, ReceiverIP, SenderIP
+
+
+TCP Congestion Controll:
+-Introduced by Van Jacobson
+-in 1980 no congestion controll.
+
+
+A) You dont know the bottleneck link
+B) You dont know who is sharing it 
+c) The others can come and go 
+
+
+We can use the acknowledgmenets to pace the congestion. (self clocking)
+
+CongestionWindow - The amount of stuff I can send to the without congestiong the network.
+
+!! You will always work under CongestionControlWindow or AdvertisedWindow (flow control vs congestion controll)
+
+How do we set the congestion window?
+	1) Additive Increase Multiplicative Decrease
+	2) Slowstart
+
+AIMD:
+	TCP needs to learn the appropriate value for congestion window from the network.
+	Advertised window is easy: It is the buffer that is left in the receiver.
+	
+	TCP infers from the situation of the network. If you get an indication that congestion is increasing you decrease the window. If the congestion frees you increase the window.
+
+!!how tdoes the source determine that the network is congested?
+	Based on observations: PACKET LOSS.
+	We assume for the most part when there is a packet drop it is related to congestion.
+	(TCP if I dont get an ACK in T I will assume this is dropped. Calculate the RTT low pass filter average, double that and also 4 times the round trip variation.)
+	You increase slower (additive) but back off faster (multiplative)
+	You increase the window size when all window is done. 50 window. after the 50th ack you start a 51 big window (everytime you get an ack increment = 1/congestionwindow).
+	If you see a congestion you back off by half.
+	Doesnt work in celular as you cant diffrenciate between packet loss due to congestion or any other thing.
+	The startup very slow. This works well if you are already at near max capacity.	
+
+
+Slow Start:
+	TCP uses this.
+	Reach the first loss very fast.
+	Whenever you get an ACK you increment by 1 (instead of 1/window size) effectively doubling the size, increasing exponentially.
+	At the very beginning  you use SLOW Start.
+	After the first treshold you swtich to addetive.
+	In certain cases the recevier can send a cumulative ACK of the whole window and you get a timeout.
+	If you timeout and reset you do another slow start up to half of the previous congestion.
+	At the second slow start you ramp up to the half of the bottleneck and switch to additive.
+
+
+
+
+
+
+Second Slow start?
+
+
+
+
+
+

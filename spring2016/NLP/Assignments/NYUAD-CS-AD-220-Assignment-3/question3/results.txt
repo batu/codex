@@ -1,0 +1,27 @@
+t4e2s20f15
+POS Accuracy = 38656 / 40117 = 96.36%
+
+t4e2s20f10
+POS Accuracy = 38656 / 40117 = 96.36%
+
+t4e2s10f10
+POS Accuracy = 38655 / 40117 = 96.36%
+
+t4e2s20f20
+POS Accuracy = 38655 / 40117 = 96.36%
+
+t4e2s150f150
+POS Accuracy = 38648 / 40117 = 96.34%
+
+t4e2s150f50
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e2s50f50
+POS Accuracy = 38650 / 40117 = 96.34%
+
+t4e2s47f14
+POS Accuracy = 38659 / 40117 = 96.37%
+
+t4e2s46f14
+POS Accuracy = 38659 / 40117 = 96.37%
+

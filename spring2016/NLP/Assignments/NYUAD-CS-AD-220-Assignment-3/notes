@@ -1,0 +1,12 @@
+Create two parts of speech tagging one for Coarse ad fine. They have to agree.
+
+Dev has all of the answers
+On the test file you cant evaluate.
+When you are evaluating you need to have the gold and predicting. 
+For the test you never have the gold.
+Test is set up he will evaluate. 
+
+THE TEST YOU DONT KNOW.
+
+You have to generate them both. 
+

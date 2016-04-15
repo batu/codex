@@ -1,0 +1,10 @@
+java -jar -Xmx5000m -Xms5000m maltparser-1.8.1/maltparser-1.8.1.jar -c [parser-name] -i qusetion1/[learning.conll] -m learn
+
+
+
+java -jar -Xmx5000m -Xms5000m maltparser-1.8.1/maltparser-1.8.1.jar -c [pasrser-to-use] -i [en-universal-dev.conll] -o output.conll -m parse
+
+
+
+NYUAD-CS-AD-220-Assignment-3$ cat question3/train_double.txt | hunpos-1.0-linux/hunpos-train -t2 -e2 -s10 -f10 train.model
+

@@ -1,0 +1,16 @@
+
+perl conll-eval.pl -g en-universal-dev.conll -s Q2default.conll -q > question2/results.txt
+
+perl conll-eval.pl -g en-universal-dev-test.conll -s Q2nivreeager.conll -q >> question2/results.txt
+
+perl ../../conll-eval.pl -g Q4gold-result.conll -s t4e2s47f14.eval.conll -q >> results.txt
+
+perl ../../conll-eval.pl -g Q4batu-tagger-result.conll -s t4e2s47f14.eval.conll -q >> results.txt
+
+
+perl conll-eval.pl -g en-universal-dev.conll -s Q2stackeager.conll -q >> question2/results.txt
+
+perl conll-eval.pl -g en-universal-dev.conll -s Q2stacklazy.conll -q >> question2/results.txt
+
+perl conll-eval.pl -g en-universal-dev.conll -s Q2stackproj.conll -q >> question2/results.txt
+

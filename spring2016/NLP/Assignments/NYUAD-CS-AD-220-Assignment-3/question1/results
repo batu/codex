@@ -1,0 +1,24 @@
+4
+  Labeled   attachment score: 2206 / 35324 * 100 = 6.25 %
+  Unlabeled attachment score: 3721 / 35324 * 100 = 10.53 %
+  Label accuracy score:       3563 / 35324 * 100 = 10.09 %
+
+40
+  Labeled   attachment score: 7980 / 35324 * 100 = 22.59 %
+  Unlabeled attachment score: 8900 / 35324 * 100 = 25.20 %
+  Label accuracy score:       11558 / 35324 * 100 = 32.72 %
+
+400
+  Labeled   attachment score: 17930 / 35324 * 100 = 50.76 %
+  Unlabeled attachment score: 19485 / 35324 * 100 = 55.16 %
+  Label accuracy score:       23349 / 35324 * 100 = 66.10 %
+
+4000
+  Labeled   attachment score: 25120 / 35324 * 100 = 71.11 %
+  Unlabeled attachment score: 26428 / 35324 * 100 = 74.82 %
+  Label accuracy score:       28840 / 35324 * 100 = 81.64 %
+
+All 
+  Labeled   attachment score: 31244 / 35324 * 100 = 88.45 %
+  Unlabeled attachment score: 31894 / 35324 * 100 = 90.29 %
+  Label accuracy score:       32891 / 35324 * 100 = 93.11 %

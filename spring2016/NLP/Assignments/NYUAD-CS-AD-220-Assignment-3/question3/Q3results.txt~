@@ -1,0 +1,28 @@
+Hightest:
+t4e2s21f11
+POS Accuracy = 38655 / 40117 = 96.36%
+
+Lowest:
+t1e5s1f41
+POS Accuracy = 38362 / 40117 = 95.63%
+
+Default
+t2e2s11f11
+POS Accuracy = 38613 / 40117 = 96.25%
+
+Min:
+t1e1s1f1
+POS Accuracy = 38418 / 40117 = 95.76%
+
+Example1:
+t3e2s11f11
+POS Accuracy = 38632 / 40117 = 96.30%
+
+Example2:
+t3e1s11f11
+POS Accuracy = 38602 / 40117 = 96.22%
+
+
+
+
+
