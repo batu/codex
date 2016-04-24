@@ -1,0 +1,59 @@
+Guarenteed service:
+Upper bound and a delay
+Emulate the
+
+Router:
+Emulate a lightly loaded flows
+Admiission control is a part of this.
+
+Because you have two nodes. You still need to signal and request. Sender sends the path messages, the client send the re
+
+Admisison control peaks.
+How the trafic looks like, and the Rspec which is whart the service is. Tspec is you will use a docking bucket to indicate.
+
+After 30 seconds the soft state will expire. 
+
+
+Classify the packets - which packet goes to which class
+Manage the pakcets in que - you need to send packets at some predetermined frequency so you can guarantee
+
+You look at 5 things:
+Source address
+Destination address
+Protocol number
+Source port number
+Destination port number
+
+The class is guarenteed service vs loaded something /admission controll I think??
+
+The fundemental problem with integrated services is scalability
+
+In best effort service model th erouter doesnt store.
+
+As the internet grows it has to move more data and has to deal with larget routung tables.
+
+
+
+Every flow passing though a router might have a reservation.
+You have to keep track of all the reservations and it takes a shit ton of memory/effort/
+
+
+Differntiated Services:
+Here you dont do it specific flow, you do it over smaller number of classes. Currently they just diviide it into two.
+
+You need to decide whether a packet is best effort or Premium. You put this information in the header. 1 is for premium 0 is for best effort. In reality you have more than 1 bit and have different classes.
+
+
+Router at the edge of the ISP might set the bit.
+
+
+
+
+
+
+
+
+
+
+
+

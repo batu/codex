@@ -1,0 +1,10 @@
+When I look at the first 20 entries of the results from user trained POS/Parser and compare it to the gold results I see the following:
+
+Only 1/20 crude Tags were off which results in 95% accuracy in the crude tagging.
+3/20 were off when it comes to fine POS, and if we assume the error carries over this number is reduced to 2/20.
+
+When we look at the data we can see that both of the errors happen in the same case. The parser instead of chosing NOUN	NNP, chose NOUN NNPS. 
+
+One option to fix this would be to ensure in the training set there is enough data that correctly diffrentiates NOUN NNP vs NOUN NPPS. Seeing that the same the only error that happened in fine POS (assuming error was carried over from coarse) in only one type of POS, increasing its training data should in a way to differenciate between the two should hopefully affect the results in a positive way.
+
+All the errors in the parsing section happened in the words that have a hyphen ("-") included in them. Another way to look at this is to say the parsing accuracy is 0% when it comes to phrases that includes a hyphen. ("-") In order combat this problem we can selectively include more correct data that includes hyphens to the training set to target this specific deficiency of our model.
