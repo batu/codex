@@ -1,0 +1,26 @@
+In peer you implement whohas and Ihave
+
+the given code you implement a few things.
+
+
+// peers of type bt_peer. Iterate through the link list and send the WHOHAS (use the addrs to send the WHOHAS) send use spiffy sendto when sending
+
+dont touch spiffy for this part
+
+runs the STDin in one and the socket in the other one.
+
+for peer in config,peer
+
+create a struct that the main header. Offset to fill in stuff.
+
+check if you read from the file.
+consider creating a chunks linked list.
+
+he is opening the file
+f.open but_chunkfile.
+
+bitmask
+
+typedef sruct packet_header{
+unsigned int magic :16
+}s

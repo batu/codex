@@ -14,6 +14,7 @@ int giSpiffyEnabled = 0;
 long glNodeID = 0;
 struct sockaddr_in gsSpiffyRouter;
 
+//s is the socket I am going to send.
 ssize_t spiffy_sendto(int s, const void *msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen) {
 	void *newbuf = NULL;
 	spiffy_header s_head;
@@ -23,9 +24,9 @@ ssize_t spiffy_sendto(int s, const void *msg, size_t len, int flags, const struc
         }
 
 	newbuf = (void *) malloc(sizeof(spiffy_header) + len);
-	if (newbuf == NULL) { 
+	if (newbuf == NULL) {
 		errno = ENOMEM;
-		return -1; 
+		return -1;
 	}
 	if (to->sa_family == AF_INET) {
         	s_head.lDestAddr = ((struct sockaddr_in*)to)->sin_addr.s_addr;
@@ -65,9 +66,9 @@ int spiffy_recvfrom (int socket, void *buffer, size_t size, int flags, struct so
 	}
 
 	newbuf = (char *) malloc(size + sizeof(spiffy_header));
-	if (newbuf == NULL) { 
+	if (newbuf == NULL) {
 		printf("spiffy malloc failed \n");
-		return -1; 
+		return -1;
 	}
 
 	retVal = recvfrom(socket, newbuf, size + sizeof(spiffy_header), flags, (struct sockaddr *) &sRecvAddr, lengthPtr);

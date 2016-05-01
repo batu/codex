@@ -1,0 +1,42 @@
+1. Lematization
+First lematize the tokens
+use the lamatize for the alignment in lama space. But still use the main 
+
+2. Tokenization
+Preprocess arabic, tokenize and learn from there. (divide up connected words ın arabic)
+
+3. Collapse words together
+Certain  letters you dont like just delete. Example: (Delete feminine endings, look for things that exist in arabic and not english and remove them)
+
+4. Seperate the Punctuation
+
+5. '"; escapes shit, take a look. 
+
+6. Decliticize CONJ+ 
+When you segment too much you might go over the treshold and will not make it to the model.
+ENSURE you increase the max limit.
+Instead of droppign the max 100 sentences consider chopping them to 100 words.
+
+7. Use POS tags that are english like.
+
+!! To the source (arabic) you can do whatever the fuck you want. !!
+
+8. Seperate Wa/Delete.
+
+!! Less segmentation more OOV.
+!! The machine doesnt need human readable stuff. Example (if you always remove W it will learn W ait and think it maps to the same stuff which is fine)
+!! BE CONSISTENT IN YOUR CHOPPING. 
+
+9. Can use regex to do some seperation of the words
+
+10. Do not prepeare the data in one schema (BT-WT-L1 etc) and test it on a different schema
+Different schema reacts different to sizes of data.
+Even in the genre differences.
+
+11. For OOV if you know nothign about it, consider replacing it with something looks similar.
+Dangerous!
+
+12. Learn rules regrding the morphology. If you get a OOV apply the rule to see if the change puts it into something you know.
+
+
+

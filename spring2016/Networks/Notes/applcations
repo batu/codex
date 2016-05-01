@@ -1,0 +1,65 @@
+There is one with part that interracts with the OS/User
+There is also a part that interacts with the network.
+
+WWW / Email
+They requre request reply.
+
+These are built on top of TCP
+
+HTTP is an example application protocol. This is not the application itself. (it is the browser) They use the protocl internally. They use the same standart so they are compatible with eachother.
+
+
+SMTP is used to exchange email.
+HTTP is  used to communicate between web browsers and web servers.
+
+EMAIL (SMTP, MIME, IMAP)
+There is a difference between the interface and the protocol!
+
+RFC 822 was text only initially, MIME expanded on that.
+
+RFC822 defines messages to have two parts: a header and a body.
+Both parts are represented in ASCII Text. You encode everything in ASCII even images etc.
+
+
+MIME aguments 
+version
+content description
+content type
+content transfer
+
+
+find a boundary that is unique that doesnt exist in the message part.
+
+SMTP(simple message transfer protocol) is still important but there ar eothers
+IMAP(internet message access protcols)
+POP (post office protocol)
+
+
+There is the application
+There is a mail deamin running on each host that holds a mailbox
+
+
+This is called a message transfer agent, 
+
+
+You really dont drop the messages. Keep trying for days.
+
+
+Periodically you go to your mailbox and check it.
+
+
+
+
+WWW
+
+The internet is not the WWW. WWW is facilitated by the net. Internet is the conneciton of the hosts. Access any machine anywhere in the world. The WWW uses the internet to retrieve data from these machines.
+
+Get the DNS fırst from the local ISP. Domain Name Server
+
+
+
+Start line headers
+GET (fetch the specified Web Page)
+HEAD (fetch status information about the specified Web Page)
+
+

@@ -1,0 +1,200 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACK	./peer.c	33;"	d	file:
+BT_CHUNK_SIZE	./chunk.h	16;"	d
+BT_FILENAME_LEN	./bt_parse.h	19;"	d
+BT_MAX_PEERS	./bt_parse.h	20;"	d
+BUFLEN	./client.c	10;"	d	file:
+BUFLEN	./peer.c	210;"	d	file:
+BUFLEN	./server.c	11;"	d	file:
+BYTESWAP	./sha.c	75;"	d	file:
+BYTESWAP	./sha.c	80;"	d	file:
+BYTESWAP	./sha.c	95;"	d	file:
+BYTESWAP64	./sha.c	76;"	d	file:
+BYTESWAP64	./sha.c	82;"	d	file:
+BYTESWAP64	./sha.c	96;"	d	file:
+DATA	./peer.c	32;"	d	file:
+DEBUG_ALL	./debug.h	31;"	d
+DEBUG_ERRS	./debug.h	25;"	d
+DEBUG_INIT	./debug.h	26;"	d
+DEBUG_NONE	./debug.h	24;"	d
+DEBUG_PERROR	./debug.h	11;"	d
+DEBUG_PERROR	./debug.h	15;"	d
+DEBUG_PROCESSES	./debug.h	28;"	d
+DEBUG_SOCKETS	./debug.h	27;"	d
+DEBUG_SPIFFY	./debug.h	29;"	d
+DENIED	./peer.c	34;"	d	file:
+DO_ROUND	./sha.c	57;"	d	file:
+DPRINTF	./debug.h	14;"	d
+DPRINTF	./debug.h	9;"	d
+F_0_19	./sha.c	52;"	d	file:
+F_20_39	./sha.c	53;"	d	file:
+F_40_59	./sha.c	54;"	d	file:
+F_60_79	./sha.c	55;"	d	file:
+GET	./peer.c	31;"	d	file:
+ID	./spiffy.h	/^	int ID;$/;"	m	struct:spiffy_header_s
+IHAVE	./peer.c	30;"	d	file:
+K_0_19	./sha.c	66;"	d	file:
+K_20_39	./sha.c	67;"	d	file:
+K_40_59	./sha.c	68;"	d	file:
+K_60_79	./sha.c	69;"	d	file:
+MAGIC_NUMBER	./peer.c	27;"	d	file:
+PACKETLEN	./client.c	9;"	d	file:
+PACKETLEN	./server.c	10;"	d	file:
+ROTL	./sha.c	49;"	d	file:
+ROTR	./sha.c	50;"	d	file:
+SHA1Context	./sha.h	/^typedef struct _SHA1Context SHA1Context;$/;"	t	typeref:struct:_SHA1Context
+SHA1Final	./sha.c	/^SHA1Final (SHA1Context *sc, uint8_t hash[SHA1_HASH_SIZE])$/;"	f
+SHA1Guts	./sha.c	/^SHA1Guts (SHA1Context *sc, const uint32_t *cbuf)$/;"	f	file:
+SHA1Init	./sha.c	/^SHA1Init (SHA1Context *sc)$/;"	f
+SHA1Update	./sha.c	/^SHA1Update (SHA1Context *sc, const void *vdata, uint32_t len)$/;"	f
+SHA1_HASH_SIZE	./sha.h	34;"	d
+SHA1_HASH_WORDS	./sha.h	37;"	d
+SHA1_UNROLL	./sha.c	211;"	d	file:
+USERBUF_SIZE	./input_buffer.h	6;"	d
+WHOHAS	./peer.c	29;"	d	file:
+_BT_PARSE_H_	./bt_parse.h	13;"	d
+_BYTESWAP	./sha.c	98;"	d	file:
+_BYTESWAP64	./sha.c	100;"	d	file:
+_CHUNK_H_	./chunk.h	12;"	d
+_DEBUG_H_	./debug.h	2;"	d
+_SHA1Context	./sha.h	/^struct _SHA1Context {$/;"	s
+_SHA1_H	./sha.h	30;"	d
+_SPIFFY_H_	./spiffy.h	2;"	d
+__byteswap64	./sha.c	/^static inline uint64_t __byteswap64(uint64_t x)$/;"	f	file:
+_bt_optstring	./bt_parse.c	/^static const char* const _bt_optstring = "p:c:f:m:i:d:h";$/;"	v	file:
+_byteswap	./sha.c	/^static inline uint32_t _byteswap(int littleEndian, uint32_t x)$/;"	f	file:
+_byteswap64	./sha.c	/^static inline uint64_t _byteswap64(int littleEndian, uint64_t x)$/;"	f	file:
+_byteswap64	./sha.c	/^static inline uint64_t _byteswap64(uint64_t x)$/;"	f	file:
+_hex2binary	./chunk.c	/^static uint8_t _hex2binary(char hex)$/;"	f	file:
+ack_num	./client.c	/^  u_int ack_num;$/;"	m	struct:header_s	file:
+ack_num	./packetheader.h	/^    int32_t   ack_num;       \/\/: 32; 4$/;"	m	struct:packet_header_t
+ack_num	./server.c	/^  u_int ack_num;$/;"	m	struct:header_s	file:
+addr	./bt_parse.h	/^  struct sockaddr_in addr;$/;"	m	struct:bt_peer_s	typeref:struct:bt_peer_s::sockaddr_in
+argc	./bt_parse.h	/^  int argc;$/;"	m	struct:bt_config_s
+argv	./bt_parse.h	/^  char **argv;$/;"	m	struct:bt_config_s
+ascii2hex	./chunk.h	18;"	d
+binary2hex	./chunk.c	/^void binary2hex(uint8_t *buf, int len, char *hex) {$/;"	f
+bt_config_s	./bt_parse.h	/^struct bt_config_s {$/;"	s
+bt_config_t	./bt_parse.h	/^typedef struct bt_config_s bt_config_t;$/;"	t	typeref:struct:bt_config_s
+bt_dump_config	./bt_parse.c	/^void bt_dump_config(bt_config_t *config) {$/;"	f
+bt_help	./bt_parse.c	/^void bt_help() {$/;"	f
+bt_init	./bt_parse.c	/^void bt_init(bt_config_t *config, int argc, char **argv) {$/;"	f
+bt_parse_command_line	./bt_parse.c	/^void bt_parse_command_line(bt_config_t *config) {$/;"	f
+bt_parse_peer_list	./bt_parse.c	/^void bt_parse_peer_list(bt_config_t *config) {$/;"	f
+bt_peer_info	./bt_parse.c	/^bt_peer_t *bt_peer_info(const bt_config_t *config, int peer_id)$/;"	f
+bt_peer_s	./bt_parse.h	/^typedef struct bt_peer_s {$/;"	s
+bt_peer_t	./bt_parse.h	/^} bt_peer_t;$/;"	t	typeref:struct:bt_peer_s
+bt_usage	./bt_parse.c	/^void bt_usage() {$/;"	f
+buf	./input_buffer.h	/^  char *buf;$/;"	m	struct:user_iobuf
+buffer	./sha.h	/^  } buffer;$/;"	m	struct:_SHA1Context	typeref:union:_SHA1Context::__anon1
+bufferLength	./sha.h	/^  uint32_t bufferLength;$/;"	m	struct:_SHA1Context
+burnStack	./sha.c	/^burnStack (int size)$/;"	f	file:
+bytes	./sha.h	/^    uint8_t bytes[64];$/;"	m	union:_SHA1Context::__anon1
+chunk_file	./bt_parse.h	/^  char  chunk_file[BT_FILENAME_LEN];$/;"	m	struct:bt_config_s
+config	./peer.c	/^bt_config_t config;$/;"	v
+create_package	./peer.c	/^packet_t* create_package(int packet_type){$/;"	f
+create_userbuf	./input_buffer.c	/^struct user_iobuf *create_userbuf() {$/;"	f
+cur	./input_buffer.h	/^  unsigned int cur;$/;"	m	struct:user_iobuf
+data	./client.c	/^  char data[BUFLEN];$/;"	m	struct:data_packet	file:
+data	./server.c	/^  char data[BUFLEN];$/;"	m	struct:data_packet	file:
+data_packet	./client.c	/^typedef struct data_packet {$/;"	s	file:
+data_packet	./server.c	/^typedef struct data_packet {$/;"	s	file:
+data_packet_t	./client.c	/^} data_packet_t;$/;"	t	typeref:struct:data_packet	file:
+data_packet_t	./server.c	/^} data_packet_t;$/;"	t	typeref:struct:data_packet	file:
+debug	./debug.c	/^unsigned int debug = 0;$/;"	v
+debug_def	./debug.c	/^    char *debug_def;$/;"	m	struct:debug_def	file:
+debug_def	./debug.c	/^struct debug_def {$/;"	s	file:
+debug_val	./debug.c	/^    int debug_val;$/;"	m	struct:debug_def	file:
+debugs	./debug.c	/^struct debug_def debugs[] = {$/;"	v	typeref:struct:debug_def	file:
+endianSwap_Host_to_Network	./peer.c	/^void endianSwap_Host_to_Network(packet_t *packet){$/;"	f
+endianSwap_Network_to_Host	./peer.c	/^void endianSwap_Network_to_Host(packet_t *packet){$/;"	f
+get_numchunks	./make_chunks.c	/^int get_numchunks(char *filename) {$/;"	f
+giSpiffyEnabled	./spiffy.c	/^int giSpiffyEnabled = 0;$/;"	v
+glNodeID	./spiffy.c	/^long glNodeID = 0;$/;"	v
+glSrcAddr	./spiffy.c	/^long glSrcAddr = 0;$/;"	v
+gsSpiffyRouter	./spiffy.c	/^struct sockaddr_in gsSpiffyRouter;$/;"	v	typeref:struct:sockaddr_in
+gsSrcPort	./spiffy.c	/^short gsSrcPort = 0;$/;"	v
+handle_user_input	./peer.c	/^void handle_user_input(char *line, void *cbdata) {$/;"	f
+has_chunk_file	./bt_parse.h	/^  char  has_chunk_file[BT_FILENAME_LEN];$/;"	m	struct:bt_config_s
+hash	./sha.h	/^  uint32_t hash[SHA1_HASH_WORDS];$/;"	m	struct:_SHA1Context
+header	./client.c	/^  header_t header;$/;"	m	struct:data_packet	file:
+header	./server.c	/^  header_t header;$/;"	m	struct:data_packet	file:
+header_len	./client.c	/^  short header_len;$/;"	m	struct:header_s	file:
+header_len	./packetheader.h	/^    short header_len;        \/\/: 16; 2$/;"	m	struct:packet_header_t
+header_len	./server.c	/^  short header_len;$/;"	m	struct:header_s	file:
+header_s	./client.c	/^typedef struct header_s {$/;"	s	file:
+header_s	./server.c	/^typedef struct header_s {$/;"	s	file:
+header_t	./client.c	/^} header_t;  $/;"	t	typeref:struct:header_s	file:
+header_t	./server.c	/^} header_t;  $/;"	t	typeref:struct:header_s	file:
+hex2ascii	./chunk.h	19;"	d
+hex2binary	./chunk.c	/^void hex2binary(char *hex, int len, uint8_t*buf) {$/;"	f
+id	./bt_parse.h	/^  short  id;$/;"	m	struct:bt_peer_s
+identity	./bt_parse.h	/^  short identity;$/;"	m	struct:bt_config_s
+lDestAddr	./spiffy.h	/^	int lDestAddr;$/;"	m	struct:spiffy_header_s
+lDestPort	./spiffy.h	/^	short lDestPort;$/;"	m	struct:spiffy_header_s
+lSrcAddr	./spiffy.h	/^	int lSrcAddr;$/;"	m	struct:spiffy_header_s
+lSrcPort	./spiffy.h	/^	short lSrcPort;$/;"	m	struct:spiffy_header_s
+littleEndian	./sha.h	/^  int littleEndian;$/;"	m	struct:_SHA1Context
+magic_num	./packetheader.h	/^    short magic_num;         \/\/: 16; 2$/;"	m	struct:packet_header_t
+magicnum	./client.c	/^  short magicnum;$/;"	m	struct:header_s	file:
+magicnum	./server.c	/^  short magicnum;$/;"	m	struct:header_s	file:
+main	./chunk.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	./client.c	/^int main(int argc, char **argv) {$/;"	f
+main	./debug.c	/^int main() {$/;"	f
+main	./make_chunks.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	./peer.c	/^int main(int argc, char **argv) {$/;"	f
+main	./server.c	/^int main(int argc, char **argv) {$/;"	f
+main	./sha.c	/^main (int argc, char *argv[])$/;"	f
+main	./test_input_buffer.c	/^int main() {$/;"	f
+make_chunks	./chunk.c	/^int make_chunks(FILE *fp, uint8_t *chunk_hashes[]) {$/;"	f
+max_conn	./bt_parse.h	/^  int   max_conn;$/;"	m	struct:bt_config_s
+myport	./bt_parse.h	/^  unsigned short myport;$/;"	m	struct:bt_config_s
+next	./bt_parse.h	/^  struct bt_peer_s *next;$/;"	m	struct:bt_peer_s	typeref:struct:bt_peer_s::bt_peer_s
+output_file	./bt_parse.h	/^  char  output_file[BT_FILENAME_LEN];$/;"	m	struct:bt_config_s
+packet_header	./packetheader.h	/^    packet_header_t packet_header;$/;"	m	struct:packet_t
+packet_header_t	./packetheader.h	/^typedef struct packet_header_t{$/;"	s
+packet_header_t	./packetheader.h	/^}packet_header_t;$/;"	t	typeref:struct:packet_header_t
+packet_len	./client.c	/^  short packet_len; $/;"	m	struct:header_s	file:
+packet_len	./packetheader.h	/^    short packet_len;        \/\/: 16; 2$/;"	m	struct:packet_header_t
+packet_len	./server.c	/^  short packet_len; $/;"	m	struct:header_s	file:
+packet_t	./packetheader.h	/^typedef struct packet_t{$/;"	s
+packet_t	./packetheader.h	/^}packet_t;$/;"	t	typeref:struct:packet_t
+packet_type	./client.c	/^  char packet_type;$/;"	m	struct:header_s	file:
+packet_type	./packetheader.h	/^    char  packet_type;       \/\/: 8; 1$/;"	m	struct:packet_header_t
+packet_type	./server.c	/^  char packet_type;$/;"	m	struct:header_s	file:
+padding	./sha.c	/^static const uint8_t padding[64] = {$/;"	v	file:
+payload	./packetheader.h	/^    char payload[1400];$/;"	m	struct:packet_t
+peer_list_file	./bt_parse.h	/^  char  peer_list_file[BT_FILENAME_LEN];$/;"	m	struct:bt_config_s
+peer_run	./peer.c	/^void peer_run(bt_config_t *config) {$/;"	f
+peers	./bt_parse.h	/^  bt_peer_t *peers;$/;"	m	struct:bt_config_s
+printline	./test_input_buffer.c	/^void printline(char *line, void *cbdata) {$/;"	f
+process_get	./peer.c	/^void process_get(char *chunkfile, char *outputfile) {$/;"	f
+process_inbound_udp	./peer.c	/^void process_inbound_udp(int sock) {$/;"	f
+process_user_input	./input_buffer.c	/^void process_user_input(int fd, struct user_iobuf *userbuf, $/;"	f
+rcsid	./sha.c	/^static const char rcsid[] =$/;"	v	file:
+receive_payload	./peer.c	/^packet_t* receive_payload(char *buf){$/;"	f
+send_WHOHAS_to_all	./peer.c	/^void send_WHOHAS_to_all(char *hash_values){$/;"	f
+seq_num	./client.c	/^  u_int seq_num;$/;"	m	struct:header_s	file:
+seq_num	./packetheader.h	/^    short seq_num;           \/\/: 16; 2$/;"	m	struct:packet_header_t
+seq_num	./server.c	/^  u_int seq_num;$/;"	m	struct:header_s	file:
+setEndian	./sha.c	/^static inline void setEndian(int *littleEndianp)$/;"	f	file:
+set_debug	./debug.c	/^int set_debug(char *arg)$/;"	f
+shahash	./chunk.c	/^void shahash(uint8_t *str, int len, uint8_t *hash) {$/;"	f
+sock	./bt_parse.h	/^  int   sock;$/;"	m	struct:bt_config_s
+spiffy_header	./spiffy.h	/^typedef struct spiffy_header_s spiffy_header;$/;"	t	typeref:struct:spiffy_header_s
+spiffy_header_s	./spiffy.h	/^struct spiffy_header_s {$/;"	s
+spiffy_init	./spiffy.c	/^int spiffy_init (long lNodeID, const struct sockaddr *addr, socklen_t addrlen) {$/;"	f
+spiffy_recvfrom	./spiffy.c	/^int spiffy_recvfrom (int socket, void *buffer, size_t size, int flags, struct sockaddr *addr, socklen_t *lengthPtr) {$/;"	f
+spiffy_sendto	./spiffy.c	/^ssize_t spiffy_sendto(int s, const void *msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen) {$/;"	f
+test	./packetheader.h	/^    char  test[8];  \/\/ test prints correctly$/;"	m	struct:packet_header_t
+totalLength	./sha.h	/^  uint64_t totalLength;$/;"	m	struct:_SHA1Context
+user_iobuf	./input_buffer.h	/^struct user_iobuf {$/;"	s
+version	./client.c	/^  char version;$/;"	m	struct:header_s	file:
+version	./server.c	/^  char version;$/;"	m	struct:header_s	file:
+version_num	./packetheader.h	/^    char  version_num;       \/\/: 8; 1$/;"	m	struct:packet_header_t
+words	./sha.h	/^    uint32_t words[16];$/;"	m	union:_SHA1Context::__anon1

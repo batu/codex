@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="assignment_2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/assignment_2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/assignment_2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../../Assignment_2/Project 2.pdf" />
+		<Unit filename="../../Assignment_2/project2_starter_code/Makefile" />
+		<Unit filename="../../Assignment_2/project2_starter_code/PROJ2_HOWTO" />
+		<Unit filename="../../Assignment_2/project2_starter_code/bt_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/bt_parse.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/chunk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/chunk.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/debug-text.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/debug.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/debugparse.pl" />
+		<Unit filename="../../Assignment_2/project2_starter_code/example/A.gif" />
+		<Unit filename="../../Assignment_2/project2_starter_code/example/B.gif" />
+		<Unit filename="../../Assignment_2/project2_starter_code/hupsim.pl" />
+		<Unit filename="../../Assignment_2/project2_starter_code/input_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/input_buffer.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/make-chunks" />
+		<Unit filename="../../Assignment_2/project2_starter_code/make_chunks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/nodes.map" />
+		<Unit filename="../../Assignment_2/project2_starter_code/packetheader.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/peer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/sha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/sha.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/spiffy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/spiffy.h" />
+		<Unit filename="../../Assignment_2/project2_starter_code/test_input_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Assignment_2/project2_starter_code/topo.map" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

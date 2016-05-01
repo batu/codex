@@ -25,7 +25,10 @@ typedef struct bt_peer_s {
   struct bt_peer_s *next;
 } bt_peer_t;
 
+// peers of type bt_peer. Iterate through the link list and send the WHOHAS (use the addrs to send the WHOHAS) send use spiffy sendto when sending
+// pass the config file to the GET
 struct bt_config_s {
+  int   sock;
   char  chunk_file[BT_FILENAME_LEN];
   char  has_chunk_file[BT_FILENAME_LEN];
   char  output_file[BT_FILENAME_LEN];
@@ -34,7 +37,7 @@ struct bt_config_s {
   short identity;
   unsigned short myport;
 
-  int argc; 
+  int argc;
   char **argv;
 
   bt_peer_t *peers;

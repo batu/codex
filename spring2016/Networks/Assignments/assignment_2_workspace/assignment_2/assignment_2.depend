@@ -1,0 +1,137 @@
+# depslib dependency file v1.0
+1130474313 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/bt_parse.c
+	<assert.h>
+	<netdb.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"bt_parse.h"
+	"debug.h"
+
+1461526761 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/bt_parse.h
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+
+1130474313 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/debug.h
+	<stdio.h>
+	<sys/types.h>
+
+1130474313 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/chunk.c
+	"sha.h"
+	"chunk.h"
+	<ctype.h>
+	<assert.h>
+	<stdlib.h>
+	<string.h>
+
+1130474320 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/sha.h
+	<inttypes.h>
+
+1130474313 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/chunk.h
+	<stdio.h>
+	<inttypes.h>
+
+1270102670 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/client.c
+	<assert.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<string.h>
+	<netinet/in.h>
+	<stdio.h>
+	<arpa/inet.h>
+
+1130474313 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/debug.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"debug.h"
+	"debug-text.h"
+
+1206725755 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/debug-text.h
+
+1162190077 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/input_buffer.c
+	<stdio.h>
+	<string.h>
+	<assert.h>
+	"input_buffer.h"
+
+1130474320 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/input_buffer.h
+	<stdlib.h>
+	<sys/types.h>
+	<sys/uio.h>
+	<unistd.h>
+
+1130474320 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/make_chunks.c
+	<errno.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+	<stdlib.h>
+	"sha.h"
+	"chunk.h"
+
+1270102676 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/server.c
+	<assert.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<string.h>
+	<netinet/in.h>
+	<stdio.h>
+	"spiffy.h"
+
+1270446809 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/spiffy.h
+	<sys/types.h>
+	<sys/socket.h>
+	"debug.h"
+
+1130474320 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/sha.c
+	<inttypes.h>
+	<string.h>
+	"sha.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1461501082 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/spiffy.c
+	<sys/types.h>
+	<netinet/in.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<errno.h>
+	<arpa/inet.h>
+	"spiffy.h"
+
+1130474320 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/test_input_buffer.c
+	<stdio.h>
+	<assert.h>
+	<stdlib.h>
+	<unistd.h>
+	"input_buffer.h"
+
+1461522015 source:/home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/peer.c
+	<sys/types.h>
+	<arpa/inet.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"debug.h"
+	"spiffy.h"
+	"bt_parse.h"
+	"input_buffer.h"
+	"packetheader.h"
+
+1461520770 /home/batu/Desktop/codex/spring2016/Networks/Assignments/Assignment_2/project2_starter_code/packetheader.h
+
