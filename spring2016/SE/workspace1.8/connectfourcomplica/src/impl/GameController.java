@@ -28,7 +28,6 @@ public class GameController implements Controller{
 	}
 	
 	
-	@Override
 	public void handleSetWidth(int row, int col, int width) {
 		this.view.board[row][col].setStrokeWidth(width);
 	}

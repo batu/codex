@@ -20,31 +20,31 @@ public abstract class MNKgame extends Game{
 		Chip redPlayer = new Chip(Color.RED);
 		Chip bluePlayer = new Chip(Color.BLUE);
 		Circle[][] board;
+		public static Chip[][] surface;
 		
-		static int rowCount;
-		static int columnCount;
+		static int rowCount = 4;
+		static int columnCount = 7;
 		
 		void setController(GameController controller){
 			this.controller = controller;
 		}
 		
 		
-		public void MNKgameSetUp(int rowCount, int columnCount){
+		public void MNKgameSetUp(){
 			
 			currentPlayer = redPlayer;
 			
-			super.setRowsColumns(rowCount, columnCount);
 			this.surface = new Chip[rowCount][columnCount];
 			
-			for(int row = 0; row < super.getRows(); row++){
-				for(int column = 0; column < super.getColumns(); column++){
-					super.surface[row][column] = new Chip();
+			for(int row = 0; row < rowCount; row++){
+				for(int column = 0; column < columnCount; column++){
+					this.surface[row][column] = new Chip();
 				}
 			}
 			
 			//Initialize the board with EMPTY
-			for (int row = 0; row < this.getRows(); row++) {
-	            for (int col = 0; col < this.getColumns(); col++) {
+			for (int row = 0; row < rowCount; row++) {
+	            for (int col = 0; col < columnCount; col++) {
 	                this.surface[row][col].set(Color.TRANSPARENT);
 	            }
 	        }
@@ -57,12 +57,12 @@ public abstract class MNKgame extends Game{
 		    	return;
 		    }	
 		    
-			if (col >= this.getColumns() || col < 0){
+			if (col >= columnCount || col < 0){
 				throw new IllegalMoveException();
 			} 
 			
 			
-			int currentRow = this.getRows() - 1;
+			int currentRow = rowCount - 1;
 			for (; currentRow >= 0; currentRow--){
 				Chip currentChip = this.surface[currentRow][col];
 				if (currentChip.is(Color.TRANSPARENT)){
@@ -103,12 +103,12 @@ public abstract class MNKgame extends Game{
 		    	return;
 		    }	
 		    
-			if (col >= this.getColumns() || col < 0){
+			if (col >= columnCount || col < 0){
 				throw new IllegalMoveException();
 			} 
 			
 			Color tempToken = null, tempToken2 = null;
-			int currentRow = this.getRows() - 1;
+			int currentRow = rowCount - 1;
 	
 			for (; currentRow >= 0; currentRow--){
 				Chip currentChip = this.surface[currentRow][col];
@@ -128,7 +128,7 @@ public abstract class MNKgame extends Game{
 				this.surface[currentRow][col].set(currentPlayer.getValue());
 				controller.handleFillColor(currentRow, col, currentPlayer.getValue());
 				currentRow++;
-				for (; currentRow < this.getRows(); currentRow++){
+				for (; currentRow < rowCount; currentRow++){
 					if(currentRow % 2  == 1){
 						tempToken2 = this.surface[currentRow][col].getValue();
 						this.surface[currentRow][col].set(tempToken);
@@ -149,8 +149,8 @@ public abstract class MNKgame extends Game{
 	
 		public boolean isGameOverConnectFour() {
 			// TODO Auto-generated method stub
-			for (int row = 0; row < this.getRows(); row++) {
-	            for (int col = 0; col < this.getColumns(); col++) {
+			for (int row = 0; row < rowCount; row++) {
+	            for (int col = 0; col < columnCount; col++) {
 	                if(checkVertical(row, col) || checkHorizontal(row,  col) || checkDiagonal(row,  col)){
 	                	return true;
 	                }
@@ -164,8 +164,8 @@ public abstract class MNKgame extends Game{
 		public boolean isGameOver() {
 			// TODO Auto-generated method stub
 			int redWinCount=0, blueWinCount=0;
-			for (int row = 0; row < this.getRows(); row++) {
-	            for (int col = 0; col < this.getColumns(); col++) {
+			for (int row = 0; row < rowCount; row++) {
+	            for (int col = 0; col < columnCount; col++) {
 	                if(checkVertical(row, col) || checkHorizontal(row,  col) || checkDiagonal(row,  col)){
 	                	if(this.surface[row][col].getValue() == Color.RED){
 	                		redWinCount++;
@@ -200,7 +200,7 @@ public abstract class MNKgame extends Game{
 			Chip currentChip = surface[row][col];
 			if (currentChip.is(Color.TRANSPARENT)){return false;}	
 			try{
-				if( row < (this.getRows() - checkCount) + 1){
+				if( row < (rowCount - checkCount) + 1){
 					for(int i = 1; i < checkCount; i++){
 						if(!surface[row + i][col].is(currentChip.getValue())){
 							return false;
@@ -227,7 +227,7 @@ public abstract class MNKgame extends Game{
 			Chip currentChip = surface[row][col];
 			if (currentChip.is(Color.TRANSPARENT)){return false;}	
 			try{
-				if( col < (this.getColumns() - checkCount) + 1){
+				if( col < (columnCount - checkCount) + 1){
 					for(int i = 1; i < checkCount; i++){
 						if(!surface[row][col + i].is(currentChip.getValue())){
 							return false;

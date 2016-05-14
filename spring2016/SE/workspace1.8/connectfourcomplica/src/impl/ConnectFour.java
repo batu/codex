@@ -15,7 +15,7 @@ public class ConnectFour extends MNKgame {
 		super.rowCount = ConnectFourRowCount;
 		super.columnCount = ConnectFourColumnCount;
 		
-		super.MNKgameSetUp(ConnectFourRowCount, ConnectFourColumnCount);
+		super.MNKgameSetUp();
 	}
 
 	
@@ -54,5 +54,26 @@ public class ConnectFour extends MNKgame {
             }
         }
 		return false;
+	}
+
+
+	@Override
+	public int getRows() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getColumns() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public Chip[][] getBoard() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -3,7 +3,7 @@ CC 		= gcc
 CFLAGS		= -g -Wall -DDEBUG
 LDFLAGS		= -lm
 TESTDEFS	= -DTESTING			# comment this out to disable debugging code
-OBJS		= peer.o bt_parse.o spiffy.o debug.o input_buffer.o chunk.o sha.o
+OBJS		= peer.o bt_parse.o spiffy.o debug.o input_buffer.o chunk.o sha.o queue.o helper_functions.o
 MK_CHUNK_OBJS   = make_chunks.o chunk.o sha.o
 
 BINS            = peer make-chunks
@@ -18,8 +18,7 @@ TESTBINS        = test_debug test_input_buffer
 all: ${BINS} ${TESTBINS}
 
 run: peer_run
-	./peer_run
-
+	./peer_runo
 test: peer_test
 	./peer_test
 

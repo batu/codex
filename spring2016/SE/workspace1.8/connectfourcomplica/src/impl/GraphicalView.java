@@ -36,7 +36,7 @@ public class GraphicalView extends Application{
     	
     	
     	if(gameName == "complica"){
-        	game = new Complica();
+        	game = new ComplicaGame();
             rowCount = MNKgame.rowCount;
             columnCount = MNKgame.columnCount;
     	} else if ( gameName == "connectfour"){

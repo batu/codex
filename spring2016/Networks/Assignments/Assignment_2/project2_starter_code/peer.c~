@@ -1,0 +1,482 @@
+/*
+ * peer.c
+ *
+ * Authors: Ed Bardsley <ebardsle+441@andrew.cmu.edu>,
+ *          Dave Andersen
+ * Class: 15-441 (Spring 2005)
+ *
+ * Skeleton for 15-441 Project 2.
+ *
+ */
+
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "debug.h"
+#include "spiffy.h"
+#include "bt_parse.h"
+#include "input_buffer.h"
+
+
+
+// User created content.
+#include "packetheader.h"
+#include "queue.h"
+
+#define MAGIC_NUMBER 15441
+#define CHUNK_DATA_SIZE (512*1024)
+#define WHOHAS  0
+#define IHAVE   1
+#define GET     2
+#define DATA    3
+#define ACK     4
+#define DENIED  5
+
+void peer_run(bt_config_t *config);
+
+// Define the peer scoped config. It will be used in get process. Should change it to be passed through the function.
+bt_config_t config;
+
+void trim_string(char* string){
+    char* newlineLocation = strstr(string, "\n");
+    if (newlineLocation != NULL){
+        strncpy(newlineLocation -1, "\0", 1);
+    }
+}
+
+// Host to Network and Network to Host funcitons swap the from big/little endian to ensure there are no problems on 64bit systems.
+void endianSwap_Host_to_Network(packet_t *packet){
+    packet->packet_header.magic_num     = htons(packet->packet_header.magic_num);
+    packet->packet_header.header_len    = htons(packet->packet_header.header_len);
+    packet->packet_header.seq_num       = htons(packet->packet_header.seq_num);
+	  packet->packet_header.ack_num       = htonl(packet->packet_header.ack_num);
+    packet->packet_header.packet_len    = htons(packet->packet_header.packet_len);
+}
+
+void endianSwap_Network_to_Host(packet_t *packet){
+    packet->packet_header.magic_num     = ntohs(packet->packet_header.magic_num);
+    packet->packet_header.header_len    = ntohs(packet->packet_header.header_len);
+    packet->packet_header.seq_num       = ntohs(packet->packet_header.seq_num);
+	  packet->packet_header.ack_num       = ntohl(packet->packet_header.ack_num);
+    packet->packet_header.packet_len    = ntohs(packet->packet_header.packet_len);
+}
+
+// Takes the package type and creates packet based on the type.
+packet_t* create_package(int packet_type){
+
+    struct packet_t *packet;
+
+    packet = (struct packet_t *)malloc(sizeof(struct packet_t));
+
+    packet->packet_header.magic_num = MAGIC_NUMBER;
+    packet->packet_header.version_num = 1;
+    packet->packet_header.packet_type = packet_type;
+    packet->packet_header.header_len = 16;
+    packet->packet_header.seq_num = 1;
+	  packet->packet_header.ack_num = 0;
+
+    //endianSwap_Host_to_Network(packet);
+
+    return packet;
+}
+
+// Handler fucntion for cleaner sending.
+void send_packet(packet_t *packet, int target_socket){
+
+  spiffy_sendto(target_socket, packet, sizeof(*packet), 0, (struct sockaddr *) &config.peers[0].addr, sizeof(config.peers[0].addr));
+
+}
+
+// receives the bit stream and creates the correct package.
+packet_t* receive_payload(char *buf){
+
+    // Convert the payload from char buf to the packet data structure.
+    packet_t *packet = (packet_t*) buf;
+    //endianSwap_Network_to_Host(packet);
+    packet_header_t *header = &packet->packet_header;
+
+
+    if(header->magic_num != MAGIC_NUMBER){
+        printf("Magic number is corrupted!\n");
+        return NULL;
+    }
+    return packet;
+
+}
+
+
+char* handle_file(char *buffer, char *path){
+
+    FILE *file_descriptor;
+    file_descriptor = fopen(path, "rb");
+
+    if (!file_descriptor){
+        printf("Failed to open file.\n");
+        return NULL;
+    } else{
+        //printf("Opened the file at %s.\n", path);
+    }
+
+    // CODE FROM STACK OVERFLOW
+    // --------------------------------------------------------------
+
+    if (fseek(file_descriptor, 0L, SEEK_END) == 0) {
+        /* Get the size of the file. */
+        long bufsize = ftell(file_descriptor);
+
+        if (bufsize == -1)
+            fputs("Buffsize is not correct.\n", stderr);
+
+        /* Allocate our buffer to that size. */
+        buffer = malloc(sizeof(char) * (bufsize + 1));
+
+        /* Go back to the start of the file. */
+        if (fseek(file_descriptor, 0L, SEEK_SET) != 0) { /* Error */ }
+
+        /* Read the entire file into memory. */
+        size_t newLen = fread(buffer, sizeof(char), bufsize, file_descriptor);
+        if (newLen == 0) {
+            fputs("Error reading file\n", stderr);
+        } else {
+            buffer[newLen++] = '\0'; /* Just to be safe. */
+        }
+    }
+    fclose(file_descriptor);
+    // --------------------------------------------------------------
+    return buffer;
+
+}
+
+void check_IHAVE(const char **requested_chunks_list, int list_len){
+    
+    packet_t *IHAVEPACKET = create_package(IHAVE);
+    
+    char *chunk_values = 0;
+    chunk_values = handle_file(chunk_values, config.has_chunk_file);    
+
+
+    const char *chunks_list[20];
+    int index = 0;
+    while ((chunks_list[index] = strsep(&chunk_values, "\n")) != NULL){
+        index++;
+    }
+
+    int present_chunks_list_len = index - 1;
+    int i, j;
+    for (i = 0; i < list_len; ++i){
+      requested_chunks_list[i]++;
+      requested_chunks_list[i]++;
+      for (j = 0; j < present_chunks_list_len; ++j){
+        chunks_list[j]++;
+        chunks_list[j]++; 
+
+        if(strcmp(requested_chunks_list[i], chunks_list[j]) == 0){
+          //printf("Printing the comparison |%s| and |%s| \n",requested_chunks_list[i], chunks_list[j] );
+          chunks_list[j]--;
+          chunks_list[j]--;
+          strcpy(IHAVEPACKET->payload, chunks_list[j]);
+          send_packet(IHAVEPACKET, config.sock);
+        }
+        chunks_list[j]--;
+        chunks_list[j]--;
+      }
+      requested_chunks_list[i]--;
+      requested_chunks_list[i]--;
+    }
+
+    if (IHAVEPACKET == 0){
+      free(IHAVEPACKET);
+    }
+}
+
+
+void handle_get(packet_t *packet){
+
+
+  printf("The config.chunk|%s|\n", config.chunk_file);
+
+  char *data_location;
+  size_t len = 0;
+  FILE *file_descriptor;
+  if((file_descriptor = fopen(config.chunk_file, "rb")) == 0) printf("Failed to open file.\n");
+
+  getline(&data_location, &len, file_descriptor);
+  data_location = data_location + 6;
+  trim_string(data_location);
+  fclose(file_descriptor);
+
+  
+  int chunk_sequence = atoi(&packet->payload[0]);
+
+
+  FILE* data_file = fopen(data_location, "r");
+    if(data_file == NULL){
+      printf("Failed to open the data numbered <%d>, in path <%s>\n", 
+          chunk_sequence, data_location);
+      return;
+    }
+
+    char data_buffer[CHUNK_DATA_SIZE];
+    int offset = chunk_sequence * CHUNK_DATA_SIZE;
+    fseek(data_file, offset, SEEK_SET);
+    int read_size = fread(data_buffer, sizeof(char), CHUNK_DATA_SIZE, data_file);
+    if(read_size != CHUNK_DATA_SIZE){
+      printf("Failed to load the data numbered <%d>, in path <%s>\n", 
+          chunk_sequence, data_location);
+      return;
+    }
+    printf("Load chunk <%d> from file <%s> successfully\n", chunk_sequence, data_location);
+    fclose(data_file);
+
+	// Something here is going wrong. Data not being loaded fully.
+    int counter = 0;
+    while(counter < 367){
+      packet_t *DATAPACKET = create_package(DATA);
+      char temp[1400];
+      strncpy(temp, data_buffer, 1400);
+      memmove(data_buffer, data_buffer+1400, sizeof data_buffer - sizeof *data_buffer);
+      strcpy(DATAPACKET->payload, temp);
+      send_packet(DATAPACKET,config.sock);
+      counter++;
+      }
+
+  printf("printing data chunks|%s|\n", data_buffer);
+
+
+}
+// Given a package decides how to react.
+void respond_packet(packet_t *packet){
+
+    // packet denotes the received package.
+    switch(packet->packet_header.packet_type) {
+
+        case (WHOHAS):
+            printf("Received WHOHAS.\n");
+            //printf("Printing the payload |%s|\n", packet->payload);
+
+            char *payload = packet->payload;
+            const char *chunks_list[20];
+
+            int index = 0;
+            while ((chunks_list[index] = strsep(&payload, "\n")) != NULL){
+                index++;
+            }
+            int chunks_list_len = index - 1;
+
+            check_IHAVE(chunks_list, chunks_list_len);
+            break;
+
+       case (IHAVE):
+
+
+            printf("Received IHAVE.\n");
+
+            // Handle one hash at a time.
+            packet_t *GETPACKET = create_package(GET);
+            strcpy(GETPACKET->payload, packet->payload);
+            send_packet(GETPACKET, config.sock);
+
+            Queue *chunks_queue = createQueue();
+            enQueue(chunks_queue, "Test");
+            QNode *temp = deQueue(chunks_queue);
+            printf("Printing temp: |%s|\n", temp->chunks);
+
+
+            break;
+       case (GET):
+            printf("Received GET.\n");
+            handle_get(packet);
+            break;
+
+       case (DATA):
+
+            printf("Received DATA.\n");
+            FILE *file_descriptor;
+            file_descriptor = fopen("/tmp/newB.tar", "a+");
+
+            if (!file_descriptor){
+                printf("Failed to open file.\n");
+                return;
+            } else{
+                printf("Opened the file at %s.\n", config.output_file );
+            }
+     
+            fprintf(file_descriptor, "%s", packet->payload);
+            fclose(file_descriptor);
+          
+
+            break;
+       case (ACK):
+            printf("Received ACK.\n");
+            break;
+       case (DENIED):
+            printf("Received DENIED\n");
+            break;
+       default:
+            printf("Packet type is corrupted!\n");
+            return;
+    }
+
+}
+
+// starts the request.
+void send_WHOHAS_to_all(char *hash_values){
+
+    // Create the who has package.
+    packet_t *WHOHAS_packet = create_package(WHOHAS);
+
+    // Load the payload with hash values.
+    strcpy(WHOHAS_packet->payload, hash_values);
+
+    struct bt_peer_s* active_peer = config.peers;
+
+    // Send who has to all peers but ones self.
+    while(active_peer != NULL) {
+        if (active_peer->id != config.identity) {
+            //spiffy_sendto(active_peer->addr.sin_addr.s_addr, WHOHAS_packet, sizeof(packet_t), 0, (struct sockaddr *) &config.peers[0].addr, sizeof(config.peers[0].addr));
+            send_packet(WHOHAS_packet, config.sock);
+            //spiffy_sendto(config.sock, WHOHAS_packet, sizeof(*WHOHAS_packet), 0, (struct sockaddr *) &config.peers[0].addr, sizeof(config.peers[0].addr));
+        }
+        active_peer = active_peer->next;
+    }
+}
+
+
+
+// Pre defined functions
+// --------------------------------------------------------------------------
+int main(int argc, char **argv) {
+
+  // moved it to global
+  //bt_config_t config;
+
+  bt_init(&config, argc, argv);
+
+  DPRINTF(DEBUG_INIT, "peer.c main beginning\n");
+
+#ifdef TESTING
+  config.identity = 1; // your group number here
+  strcpy(config.chunk_file, "chunkfile");
+  strcpy(config.has_chunk_file, "haschunks");
+#endif
+
+  bt_parse_command_line(&config);
+
+#ifdef DEBUG
+  if (debug & DEBUG_INIT) {
+    bt_dump_config(&config);
+  }
+#endif
+
+  peer_run(&config);
+  return 0;
+}
+
+void process_inbound_udp(int sock) {
+    packet_t* packet;
+
+    #define BUFLEN 1500
+    struct sockaddr_in from;
+    socklen_t fromlen;
+    char buf[BUFLEN];
+
+    fromlen = sizeof(from);
+    spiffy_recvfrom(sock, buf, BUFLEN, 0, (struct sockaddr *) &from, &fromlen);
+
+    // Packet is received and formatted correctly.
+    packet = receive_payload(buf);
+
+    if (packet == 0) {
+        printf("The packet couldnt be received.\n");
+        return;
+  }
+
+   // Based on the which packet it is the required response is given.
+   respond_packet(packet);
+
+
+}
+
+//In here send the who has command. To everyone in my peer.map WHOHAS Request.
+void process_get(char *chunkfile, char *outputfile) {
+
+    //chunkfiles is get arg 1 outputfile is get arg 2
+    //printf("Printing chunkfile |%s| and outputfile |%s|.\n", chunkfile, outputfile);
+
+    char *hash_values = 0;
+    hash_values = handle_file(hash_values, chunkfile);
+    send_WHOHAS_to_all(hash_values);
+
+    }
+
+//If its get, it goes to process_get.
+void handle_user_input(char *line, void *cbdata) {
+  char chunkf[128], outf[128];
+
+  bzero(chunkf, sizeof(chunkf));
+  bzero(outf, sizeof(outf));
+
+  if (sscanf(line, "GET %120s %120s", chunkf, outf)) {
+    if (strlen(outf) > 0) {
+      process_get(chunkf, outf);
+    }
+  }
+}
+
+void peer_run(bt_config_t *config) {
+  int sock;
+  struct sockaddr_in myaddr;
+  fd_set readfds;
+  struct user_iobuf *userbuf;
+
+  if ((userbuf = create_userbuf()) == NULL) {
+    perror("peer_run could not allocate userbuf");
+    exit(-1);
+  }
+
+  if ((sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP)) == -1) {
+    perror("peer_run could not create socket");
+    exit(-1);
+  }
+
+  // Set the socket on config.
+  config->sock = sock;
+
+  bzero(&myaddr, sizeof(myaddr));
+  myaddr.sin_family = AF_INET;
+  myaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+  myaddr.sin_port = htons(config->myport);
+
+  if (bind(sock, (struct sockaddr *) &myaddr, sizeof(myaddr)) == -1) {
+    perror("peer_run could not bind socket");
+    exit(-1);
+  }
+
+  //here is the config.
+  spiffy_init(config->identity, (struct sockaddr *)&myaddr, sizeof(myaddr));
+
+  while (1) {
+    int nfds;
+    FD_SET(STDIN_FILENO, &readfds);
+    FD_SET(sock, &readfds);
+
+    nfds = select(sock+1, &readfds, NULL, NULL, NULL);
+
+    // When one peer gets STDIN, it sends out WHOHAS to all in bt_something.peers.addr. it comes here, responds in IHAVE etc...
+    if (nfds > 0) {
+      if (FD_ISSET(sock, &readfds)) {
+	process_inbound_udp(sock);
+      }
+
+      //listening to STDIN and sockets. Think about passing in config. GET comes in here.
+      if (FD_ISSET(STDIN_FILENO, &readfds)) {
+	process_user_input(STDIN_FILENO, userbuf, handle_user_input,
+			   "Currently unused");
+      }
+    }
+  }
+}
