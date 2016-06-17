@@ -1,0 +1,91 @@
+12:
+POS Start
+
+15: POS Tagging
+Rule Based
+Stochastic
+	Hidden Markov Model
+	Markov Chains
+	Viterbi
+Eval and Analysis
+Morphological Ambiguity
+
+16: Syntax
+Constituency
+Dependency
+Parsing
+Agreement and Extension
+CFG
+
+17: TreeBanks and Parsing
+Phrase Structure Parsing 64
+	Top Down
+	Bottom Up
+
+18: CKY
+Probabilistic CKY
+Dependency Structure 19
+Transition Based Dependency Parse
+
+19: More Parsing
+Projectivity
+Phrase Chunking
+
+20: MT
+MT Pyramid 34
+
+21: Word Alignment
+Phrase Based model
+Evaluation
+Precision and Recall
+
+22: MT Pipeline
+Language Model
+Turkish
+
+23: MT Phrase Based Model
+Tuning
+The Dynamic Programming Picking Phrases Shit
+
+24: Fix Problems in ML
+PreProcessing
+OOV
+MT Challenges 42
+Pivoting
+
+25: Lexical Semantics
+Wordnet
+Hyponym and all that good jazz
+Sense
+Word Similarity
+
+26: Similarity
+Path Based
+Probabilistic Room Number
+Resnik
+Dekang Lin
+Evaluating Similarity
+Term Document Matrix 
+TF-IDF
+Cosine Similarity
+
+27: Information Retreival
+Boolean Rerieval
+Precision and Recall
+
+28: Summarization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

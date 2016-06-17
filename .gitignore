@@ -1,6 +1,6 @@
 .metadata/
 .recommenders/
-_3.fdt
+_4.fdt
 502732891.index
 1256467289.index
 9930e212a159b0b45c274e211cf59bcf63cfbb
@@ -11,6 +11,7 @@ _1.fdt
 chapter2b.pdf
 Chapter1.pdf
 Chapter2a.pdf
+NYUAD-CS-AD-220-S2016-Session-20.pdf
 fst.o
 libfst.so.2.0.5
 intersect.o
