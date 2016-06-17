@@ -1,3 +1,0 @@
-java -jar -Xmx5000m -Xms5000m ../maltparser-1.8.1/maltparser-1.8.1.jar -c parser-stackproj -i en-universal-dev.conll -o Q4gold-result.conll -m parse
-
-java -jar -Xmx5000m -Xms5000m ../maltparser-1.8.1/maltparser-1.8.1.jar -c parser-stackproj -i non-gold-dev.conll -o Q4batu-tagger-result.conll -m parse

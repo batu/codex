@@ -1,0 +1,29 @@
+The sender realizes the congestion when there is a timout.
+Fo every ack you get you are going to send a new package (bugger seq number from the lost one)
+The ack for the lost package wont come.
+1 is lost but it got from 2-50.
+So the receiver never sends the 2-50 acks as it is waiting for.
+When the sender timesout and resends the first package the receiver will ack the whole 50 package.
+When the sender receives the 50 acks it immediately sends another 50 burst. So in this case you set the t shold to half and start with slow start.
+
+The problem with timeout is very clunky.
+
+Fast Retransmit and Fast Recovery
+You can send what you need with the ack itself.
+It would be an indication that the given packet is los.
+Everytime you get an out of sequence packet you will transmit an duplicate ACK of what you want.
+
+5-6-7-8-9 If you miss 6 and get the other ones you will Send 6-6-6-6 when you get 3 duplicates you retransmit. 
+
+FastRecovery
+Instead of setting it 1 you just cut it in half and start from there with additive increase.
+
+you can still have timeout and slowstart.
+
+Congestion Avoidance
+DEC-Bit / ECN (put a flag when shit is going down)
+
+Random Early Detection (RED)
+
+If you have burst discards it can lead to timeouts. However if you only have one single packet drop half your window and fast recovrey fast retransmit and slowly increase it again.
+TCP Friendly droppinga
