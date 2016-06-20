@@ -1,0 +1,14 @@
+
+
+Supervised Learning:
+    When we have the correct answers. Like house prices.
+
+Regression Problem:
+    A result in a range. [0,1]
+
+Classificaiton Problem:
+    A result in discrete options. {1,2}
+        You can use different symbols.
+
+
+You may have multiple variables that you look at when using ML.
