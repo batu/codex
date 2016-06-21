@@ -12,3 +12,29 @@ Classificaiton Problem:
 
 
 You may have multiple variables that you look at when using ML.
+
+Unsupervised learning:
+    Data points, we dont know what they are.
+    We are looking for a pattern. Clustering. 
+    Seperate the audio sources. 
+
+
+
+HΘ(x) = Θ0 + Θ1X
+
+So you are trying to fit the HΘ to the data.
+
+You are trying ti fit such that 
+
+1/2mMin(Sum[0,m](hΘ(xi) - yi)^^2)
+
+J(Θ0, Θ1) is what we have up.
+
+Minimize J(Θ0, 01) -> Cost function. Square Error Funciton.
+
+Basically different theta values give you different errors. You just want to find the smallest one.
+
+Algorithmicly minimize this. Use gradient descent.
+It is important to update simultaneously so you dont use the new value for the other calculation of the other parameter.
+
+alpha in gradient descent is the step size.
