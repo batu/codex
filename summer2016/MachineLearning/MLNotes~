@@ -38,13 +38,3 @@ Algorithmicly minimize this. Use gradient descent.
 It is important to update simultaneously so you dont use the new value for the other calculation of the other parameter.
 
 alpha in gradient descent is the step size.
-
-
-Multiple features.
-	- Make sure to scale the features. divide the features by their max.
-	- Mean normalize the features. feature - mean / max - min
-
-
-
-
-
