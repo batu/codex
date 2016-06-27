@@ -17,7 +17,7 @@ J = 0;
 % J is the sum of the errors between prediction and result.
 
 
-h = X * theta;
+h = X * theta';
 error = h - y;
 error_sqr = error .^2;
 J = 1/(2*m) * sum(error_sqr);
