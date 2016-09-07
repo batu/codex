@@ -1,0 +1,81 @@
+
+
+!!!Synchronization!!!
+
+The incremenet isnt a single instruction.
+	get
+	incremnet
+	store
+
+Race conditions. Trying ti access a shared resource.
+
+If anything shared IMMEDIATELY think to protect them.
+
+
+Locks
+	It comes down to human usage. If someone else doesnt use locks thats is pretty bad. Advisory and voluntary.
+	Also the lock isnt a atomic instruction.
+
+Sources of Concurrency. There are many
+	- Interrupts - Interrupt safe
+	- User-space preemtive. The scheduler decides. - preempt safe
+	- Kernel preemption. The kernel isteslf is a multi-threaded. - preempt-safe
+	- Sleep / Block - preempt safe
+	- SMP: Two processors can be executing teh same code at the same time. (kernel or user) - SMP - safe
+
+
+
+!!!Synchronization Primitive!!!
+
+	The hardware really needs to help you. tjere are test_and_set() instructions.
+
+lock cmpxchg %eac, lock_in_mem
+
+The Spin Lock
+
+while(1){
+	if(test_and_set(hc_busy, 1 )){
+		//do the thing.
+	}
+}
+
+so it basically returns bool and sets the bool in one operation.
+
+the problem with this is you are wasting so much stuff in the while loop.
+
+
+What if you have no hardware support?
+	Disable interrupts. (LOL NOPE PLS)
+
+cli disables interrupts, sti enabled interrupts. These still exist but only kernel space code.
+
+
+
+Petersons algorithm
+	me refers to either 0 or 1 for the SPECIFIC number of the threads.
+	Use arrays (len core#) and turn as a race condition.
+	Not sustainable for mroe than 2. It becomes too big.
+
+
+Bottom line = You can make a locks without hardware support but it is a bad idea and goes big.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

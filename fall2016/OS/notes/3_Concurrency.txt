@@ -1,0 +1,26 @@
+Concurrency Controll
+
+	Why do interrupt handlers only form the toop half of the interrupt processing?
+
+	The top half just notifies the interrupt.
+
+1) Interrupts are async: they fuck up potentially important code.
+2) You lock other interrupts. Which you dont want to do a lot.
+3) It is time critical as they deal with hardware, what if you are dealing with nukes?
+4) Something else, check the slide.
+
+Butting something to the bottom half means "Do it eventually"
+
+Rules for Top Half / Bottom Half.
+	1) Time sensitivie = top half.
+	2) Shouldnt be interrupted = top half
+	3) Hardware (slow) = bottom half
+	4) Everything else = bottom half
+
+Why not do all top half?
+	For example you need to load packet to memory. But memory hasnt been loaded! So you hang the whole system because you are in tio half. So yeah...
+
+
+It really doesnt hurt interactivity anyhow...
+
+
