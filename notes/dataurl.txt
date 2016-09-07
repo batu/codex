@@ -1,0 +1,19 @@
+Music **
+Multiple Genetic Algortihm. 
+    Benchmarking. 
+    Write some genetic algorithm.   
+    
+Integration of the music
+    Don't starve music.
+    
+
+Procedural generate story from Wikipedia. - Libgdx 
+  No sound - get it and test
+  Interface: UI and UX design
+  Tutorial: Need to get that done.
+  Local Server: Work with Docker ? 
+  
+
+Tool: 
+- Sprite Cook 
+  

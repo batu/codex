@@ -1,0 +1,133 @@
+Bootloader
+
+When you boot up you load the first sector. 0x07c00
+
+
+BIOS checks stuff, such as ram and keyboard.
+
+Then bootlader loads from it loads. Whether it be from disk, usb, floppy.
+
+There are set of BIOS calls that you can utilize. From there you load the rest of the kernel.
+
+Before you jump from bootloader to kernel you need to set a stack.
+
+1 sector is 512 bytes. 
+the space between kernel and bootlader is 54
+if you are loading more than 54 sectors it overwrites bootloader. So you need to move the bootloader beneath the kernel.
+This is how bios works, always goes to  0x07c00
+
+Range you can use for your program = 0xA00(right above bios data) / 0xA0000(Up until Kernel Stamp)
+
+when you reload the bootloader you resume from the same instruction.
+
+Utilize RDP instructions. ( you can read from the list or copy the instructions from the current place to below the kernel)
+
+Word refers to the size of your processor. (in 64 bit archithecture it is 64) 
+In our case it is 16 bits.
+
+CS Register - Code Segment
+CSx16 +  IP
+DS Register- Data Segment
+
+AT&T Syntax
+instr sr, dest
+When you are writing the code you have AT&T Sytnax = src to dest
+When you are debugging the code you have NASM Syntax = dest to src
+
+put dollar signs before 1
+movb is the move one byte
+
+AX is 16 bits so you can either access the lower byte or upper byte.
+
+The status word is set when you do a comparrison. 
+
+B for byte, w for word (16 bits), l for long (32 bits)
+
+If you wabt ti repeat MVSB use REP.
+
+
+!! Memory Addressing
+Valid address range: 0x00000 - 0xfffff
+
+ds + offset (for data)
+cs + offset (for code)
+
+you cant load to CS register.
+
+(long jump)
+ljmb segment, offset (where you will be jumping to)
+
+(just to jump within segments in the current location)
+jmb segment
+
+20 - 4 = 16;
+
+Assembly Program Structure data section and text;
+comments with #.
+
+.code16
+below thisone you cant use more than 16bits.
+
+
+
+In bios you willbe using the Cylinder (0-c), Head(0-H), Sector(1-S) addressing (CHS)
+Sector addresing starts from 1 because the 1instruction has different  is reserved for the bios.
+
+
+The same track in multiple platers becomes a cylinder. 
+Sector size means number of sectors to tracks. 
+You have multiple tracks per plate. 
+
+BIOS has some preset funcitons defined in.
+INT 13 goes to the table and loads whatever it is in that point to CS register and IP is set to 0.
+
+so each instruction have different functions
+
+if you want the second function in INT 13 for example
+you need to load 2 to the al register.
+
+mov $2, %al
+
+and you need to set some other shit such as dl = drive number etc. Look at slides.
+
+adress reference shift by one. 
+
+es = 0
+bx - 0x1000
+
+some information is written in the image. 
+
+
+When you complie your code there are two main sections. Data and text
+bootloader and kernel code are two seperate things. But they need to combined. You are loading this image to the image.
+boot loader no data section
+in the kernel there is a data section. 
+
+ELF executable linkable format
+
+fill the gap between text and data with 0.
+do not modify kernel.
+change bootblock.s then change createimage.c
+
+guest edition for VB
+boot in single user mode.
+press e.
+e
+space
+-s
+
+od dump command
+the first one is the jimp insturction
+the others are the two words that are preserved
+
+write the second offset write the kernel size.
+
+
+When the kernel is loaded the kernel should update the .word 0 the actual size of the kernel.
+
+
+~/318/bin/bochsdbg
+
+put a breakpoint to 0x7c00
+
+
