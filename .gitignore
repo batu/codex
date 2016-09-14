@@ -1,5 +1,10 @@
 .metadata/
 .recommenders/
+jmusic.tmp
+tools.jar
+_1.tis
+2426646370.index
+_1.tis
 _4.fdt
 502732891.index
 1256467289.index
@@ -44,3 +49,4 @@ train_double.txt
 parser-stackproj.mco
 uncorpus.eng.txt
 uncorpora.tmx
+Game Programming Gems 1.pdf
