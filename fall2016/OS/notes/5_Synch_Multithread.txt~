@@ -1,0 +1,58 @@
+ Please check the slides!
+
+ Prioirty Inversion Problems:
+
+    High Priority wants to take something that is locked by Low Priority. So it just waits. One way to fux this is increasing the priority when you have a lock so everyone else waits until it finishes. 
+
+    Please READ 
+        Bankers Algorithm
+        Dining Philospher
+        Deadlock avoidance
+        monitors
+
+
+Processs
+	A thread of executuion
+	Program counter, registers, stack
+	Adress Space	
+	Resource managed by the kernel
+
+
+Case Study: Server 
+
+	SErver with several process is generally a bad idea.
+		Expensive context switching		
+		Independent Adress spaces (different caches
+		Hard limit on # processes
+
+
+	Check slides and learn what is different between process swtiching and thread switching
+
+
+
+
+User-level threads vs Kernel-lvel threads
+	User -> Kernel thinks you are one process/thread
+		This is problematic because if you ake a sytem call all process is blocked
+
+	Kernel-> The kernel switches threads.
+
+
+Asynchronous IO
+	The OS can provide non-blocking IO calls.
+	Event driven stuff. 
+		The OS is helping.
+
+
+Event Driven vs Multithreaded
+	1995 - Threads are a bad idea Ousterhout
+	2003 - Why events are a bad idea?
+
+1995
+	The multiprocessor boom wasnt there
+
+
+Which one is easier to program.
+	Events: They sound nice but it gets messy when interrupts come into play. Allowing other events to preemt is hard. There is no linear flow of events.
+
+	Multi: Harder to debug. 
