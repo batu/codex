@@ -1,0 +1,70 @@
+Process Scheduling
+
+Mostly you wait for IO but not necesarily. (you can wait for another process, lcoks?)
+
+new - Ready > Runnning > Blocked - done
+
+Ready = Ready to run.
+Blocked = waiting for something.
+
+Multitasking = Os interleaves execution of more than one process. 
+    Preemptive ones:
+        A timer that often cause an interrupt that caused at a certain time slice such that the kernel decides whether to switch or run
+    Cooperative ones
+        It is not going to force things out but will wait for the threads to call yield. Gives you fine controll.
+            
+
+Browser
+    
+
+You need policies.
+    IO Bound (interactice process) Most of the time spent is blocking calls and then they run for very little. GUIs, text editors
+    CPU Bound (Batch Process / Processors Hogs) Most of the time is spent executing code: MATLAB, ssh-keygen
+    Real Time Process: SHUT THE REACTOR NOW!
+
+
+    Give priority to IO bound ones. 
+
+    schedule 1:
+        100 + 150 + 180
+
+    schedule 2: 
+        30 + 80 + 180
+
+        Balance between high throughput vs Low Latency
+            Overhead of context switching
+            most schediling policies favour latency
+
+        Other Goals
+            High priority
+            Fairness : low processes do not starve
+            Resource utilization: Keep disk busy 100% keep all processors busy
+            Predictibilyu: Scheduler Guarantees: eg process x will run once every x
+    
+        When you bring things back it might now go immediately. YOu migh tneed to bring stuff to memory for example.
+
+    Algoritms:
+        FCFS (FIFO) Queue
+            1) Throughput : Maximum 
+            2) Response Time: Bad
+            3) Fainress: Pretty fair, no possibilty of starvation.
+        
+        Round Robin / Everyone works for x ms and then switches
+            1) Throughput : Reduced
+            2) Response time: Pretty bad
+            3) Fairness : Fair (questions about the longest running ones)
+
+        In round robin the time slice is very important.
+            too short
+                Wasted overhead on context switch
+                CPU bound need long time slices to keep caches hot
+            Too long
+                IO bound dont need long time slices
+                Wait around for the hogs to use up their slices!
+
+            Usually OSs keep them low.
+
+
+        IN THE HYBRIDS ARE ALMOST ALWAYS BETTER SLIDE THE TIME SLICE IS 40ms
+
+
