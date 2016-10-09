@@ -2,3 +2,42 @@ sync
 interrupt handling
 know your latency numbers
 
+Overview
+
+    OS includes kernel, boot loader device drivers command shell basic file and system util
+
+    Kernel
+        Interrupt handling
+        Process scheduling
+        memeory management to manage process address space
+        interprocess communication
+        system services such as file system and nterworking
+
+    User process run in user space vs kernel space under kernel mode privilages
+
+    1) What are the purpose of rings. How many rings modes does linux support?
+        protection levels. Ring 0 highest access
+            usually CPU and Memoery
+        x86 supporrts 0123
+    2) In x86, how can the processor tell if an instruction requires privelege?   
+        It is set in the code segment register.
+
+    Contexts
+There are three possible contexts:
+    1) User-Space executing user code
+    2) kernel-space in process context
+        executing on behalf of specific process
+    3) Kernel-space in interrupt context
+        not associated with a process but handling an interrupt
+
+    CPP
+    Preprocessor
+        Gets C code and outputs more C code.
+            Bascially parses the Definitions into C and replaces some other shortcuts. This is architecture independent
+
+    Compilers
+        These get the preprocessed C code and outputs assembly code
+        
+    Assembler 
+        Takes the assembly code and translates into machine code. The result is architecture specific
+
