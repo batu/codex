@@ -1,0 +1,54 @@
+If you timeslices are really low then the context switch can be up to 30micro seconds and which could result in 3% overhead.
+
+Priority scheduling
+    Each process gets a priority
+    highest runs first, can preempt the currently running process and take its place if hihger priority
+    priorities can server other purposes 
+        interactive gets high
+        CPU bound getw low
+
+Approach 1:
+    Multo level feedback queue
+    Task starts at the highest priority. But the time slice is very small. 
+    If I finish my timeslice I get demoted in priority but I am given a bigger timeslice
+    If I interrupt before my timeslice ends then I get a smaller timeslice and get given higher priority.
+    If I hog the CPU I get higher timeslice but low prioirty.
+
+    Does not handle user based priority.
+
+
+Approach 2:
+    Higher the nice value the lower the priority.
+        High priority means higher timeslices. Which is weird?
+    
+    There is a differnece between expired and not expired. Well duh. Read it again.
+
+    Time tick is when control is given to the kernel periodically.
+    Sleeper gest higher prioirty
+
+The Completly Fair Schedule
+    Compound interest vs Continious interest
+    The size of your timeslice is a factor of your priority and everybodyelses as well
+        10 / 20 -> 10/30 and 20/30 so the time scale distribution is 1/3 and 2/3
+    You make sure everyone runs a little bit in the timeslice so the following doesnt happen:
+    9 process of 10ms runs but the 10th doesnt. The best would be 10 of the running 9 each.
+    They measure how much you stay in the processor. If you are running for more you dont get that much attention.
+        If you are CPU bound you get less attention. If you are IO bound you get more attention as you run less on the CPU.
+    Virtual Runtime is the "priority" for attention. The more you have slept the higher virtual runtime priority you have.
+
+Lottery Scheduling
+    Each job gets a set of tuckets
+    Randomly pick a set of tickets
+    Schedule those who have those tickets
+
+    Why?
+        1. Priority-> MORE TICKETS
+        2. Promoting shorter jobs-> MAOAR TICKEETS
+        3. Allowing Cooperation -> When you are blocked help your bro out
+        4. Prevent Starvation -> probabilistic (the more you wait the more tickets you get)
+
+
+        priority inversion: High needs the lock and thus blocks. Low pri has it. but low pri never runs and thus high never runs.
+        Priority inheritance: When a thread holds a lock that other threads are wiaitng on, give that thread the priority of the highest prriority thread waiting to get the lock
+
+        Convoy Thread: When a low priority thread locks and it switches out other high priority threads can wait behind it with a long conwoy.

@@ -1,0 +1,52 @@
+can you swap out?
+    1) User level
+        yes
+    2) Kernel code
+        Mostly yes, you will get shat on in your performance
+        You CANNOT swap out code that handles swapping
+    3) Page tables
+        Yes but it is very dangerous
+
+
+The for loop trick
+
+Hardware Optimizations to Paging
+
+    Learn about virtual memory
+
+TLB - Fully Associative Cache
+        Just the translation of your address
+    It is designed that when you get a memory you check things in paralel
+    Small: 16-64
+        Constrained by money and the level of specialization
+    up to 99% hit ratio
+        Because of locality
+
+    all you need is virtual to physcial mapping
+
+    Valid bit != present bit
+    on a context switch you you make everything invalid.
+        If you dont have a process tag (hardware dependent) TLB gets flushed on every context switch
+    
+
+    ask about inverted page tables: 
+        These have one limitation
+            no matter what I need to map virtual to physcial. What if they are not mapped anywhere in memory.
+            An addditional mapping exists
+            You cant share pages between processes 
+                zero page
+                resource sharing etc   
+        
+
+    Zeroing pages:
+        Security reasons
+        Reading memory dumps
+
+    Kernel has to be careful about internel fragmentation
+        Dude to constrained memory
+
+    kernel memory managemnet is different   
+        hardware has buffers that they write to 
+        there is a pool of data structures
+            trees nodes etc
+

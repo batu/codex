@@ -1,0 +1,91 @@
+Swapping
+
+There is a difference between swapping and freeing memory.
+    Basically If I know the address of the item we can just free it and reload it at some point. 
+    However if this is something dybaically created we need to swap it out.
+
+    You want to swap things in contegiously. 
+        Cheaper write and read.
+    Which page are you going to kick out.
+        Page replacement algorithms. You dont wait until the last minute to swap things out. 
+        There is always a swapper thread. 
+    If you havent touched it in the last 100ms then it is unlikely that you will use it again soon.
+
+Page Replacement Algorithms
+    This decision is made on a per process level. You look at a process, check if you can kick a page out. If not switch to a different process. Usually. 
+        We looked at systems where you have a page table per process.
+        It can be a single page table for all processes.
+            You need to identify which page belongs to which process
+    
+
+
+one algo is better when it has less page faults
+Deciding which process to swap a page out from.
+    Linux Way -> Survivors
+        You are deciding who you are going to eat. It picks the fattest process.
+
+Oracle:
+    Knows whats coming
+
+FIFO:
+    Evict the one that was put in last.
+    Preeety bad as it doesnt care about recently used
+    Might be helpful in one pass, such as kernels
+        Sometimes restricting mem size increases the performance.
+            Lucky module arithmetic?
+
+Second Chance:
+    Whenever you touch a page you set ACESSED to 1. 
+    Whenever you check to kick it out if it is ACCESSED set it to 0 and go to the next one.
+    Basically if you recently have been accesesed you are fine. 
+        If everyone has been accessed then it becomes FIFO
+
+Clock Algorithm:    
+    Same but doesnt use the queue. It just organizes everything in a cyclical structure and it moves around.
+    So an optimization gives the dirty bit another chance.
+
+Dirty bit is also important. If you are moving this page, make sure the disk is updated.
+    If you swap out the dirty bi there is extra io.
+
+Where does the request come from?
+    Interrupt handler can be saying Free a Page! Ask about this. IO Stuff is important. Cant free an io bound stuff because there is an interrupt handler?
+
+Least Recently Used:
+    Pros:  
+        Best approximaiton
+        based on the bset predictor for tomorrows weather
+        Most heavyly used not most heavily used in the future
+    Cons:
+        Requires hardware support ot supply time.
+        
+    Use a counter.
+        but stil needs hardware support
+
+Aging - Not Recently Used;
+    we increment a counter if a page was referenced at least once in the last time space eg 20ms
+    Shift 1 bit every single time to the side. 1 if accessed in teh last timeframe 0 if you have been accesed in the last itmeframe;
+
+Law of diminishing returns
+    Give the processes the correct number of pages to balance page faults vs given memory
+
+
+    Program Behaviour
+        Spacial and Temporal locality
+            For loop X[i] we know that X is accessed many time. also i+1
+
+What are the things the process needs?
+    WORKING SET!
+
+The working set clock
+    
+
+Underutilized CPU -> Add more processes -> Utiliziation increazes -> ADD MOAR -> Util dips. Now you are trashing.
+    Download more RAM
+    Remove proceses
+
+    Isolating the process isnt a good idea
+        locks up the page in and out queue
+    Use page fault rates to estimate the size of the working size.
+        If you are page faulting too much then give you more pages.
+        If youare page faulting too little take away some of the pages
+        

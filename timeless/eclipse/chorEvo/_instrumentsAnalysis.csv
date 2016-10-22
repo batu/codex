@@ -1,0 +1,112 @@
+10, Music Box,0.0,0.0
+100, FX 5 (brightness),0.0,0.0
+103, FX 8 (sci-fi),0.0,0.0
+105, Banjo,0.0,0.0
+106, Shamisen,0.0,0.0
+107, Koto,0.0,0.0
+108, Kalimba,0.0,0.0
+109, Bag pipe,0.0,0.0
+11, Vibraphone,0.0,0.0
+110, Fiddle,0.0,0.0
+111, Shanai,0.0,0.0
+12, Marimba,0.0,0.0
+17, Percussive Organ,0.0,0.0
+18, Rock Organ,0.0,0.0
+20, Reed Organ,0.0,0.0
+22, Harmonica,0.0,0.0
+3, Honky-tonk Piano,0.0,0.0
+31, Guitar harmonics,0.0,0.0
+39, Synth Bass 2,0.0,0.0
+41, Viola,0.0,0.0
+43, Contrabass,0.0,0.0
+49, String Ensemble 2,0.0,0.0
+50, Synth Strings 1,0.0,0.0
+51, Synth Strings 2,0.0,0.0
+52, Choir Aahs,0.0,0.0
+54, Synth Voice,0.0,0.0
+55, Orchestra Hit,0.0,0.0
+62, Synth Brass 1,0.0,0.0
+63, Synth Brass 2,0.0,0.0
+77, Shakuhachi,0.0,0.0
+78, Whistle,0.0,0.0
+81, Lead 2 (sawtooth),0.0,0.0
+82, Lead 3 (calliope),0.0,0.0
+83, Lead 4 (chiff),0.0,0.0
+85, Lead 6 (voice),0.0,0.0
+86, Lead 7 (fifths),0.0,0.0
+87, Lead 8 (bass + lead),0.0,0.0
+89, Pad 2 (warm),0.0,0.0
+90, Pad 3 (polysynth),0.0,0.0
+91, Pad 4 (choir),0.0,0.0
+92, Pad 5 (bowed),0.0,0.0
+93, Pad 6 (metallic),0.0,0.0
+96, FX 1 (rain),0.0,0.0
+97, FX 2 (soundtrack),0.0,0.0
+99, FX 4 (atmosphere),0.0,0.0
+45, Pizzicato Strings,4.151,4.081
+79, Ocarina,5.307,3.906
+36, Slap Bass 1,5.358,7.282
+8, Celesta,5.693,3.39
+53, Voice Oohs,5.761,4.191
+74, Recorder,5.766,4.199
+47, Timpani,5.87,9.123
+46, Orchestral Harp,5.893,4.342
+4, Electric Piano 1,6.383,4.742
+9, Glockenspiel,6.994,8.536
+5, Electric Piano 2,7.036,5.354
+76, Blown Bottle,7.172,9.794
+101, FX 6 (goblins),7.201,3.441
+6, Harpsichord,7.201,11.55
+28, Electric Guitar (muted),7.476,6.0
+60, French Horn,7.506,6.48
+13, Xylophone,7.694,6.932
+32, Acoustic Bass,7.784,5.778
+58, Tuba,7.923,6.087
+16, Drawbar Organ,8.063,5.87
+38, Synth Bass 1,8.262,6.611
+0, Acoustic Grand Piano,8.548,6.772
+35, Fretless Bass,9.66,7.032
+72, Piccolo,9.789,8.007
+88, Pad 1 (new age),10.26,6.827
+25, Acoustic Guitar (steel),10.43,11.04
+64, Soprano Sax,10.83,9.555
+33, Electric Bass (finger),11.34,8.322
+94, Pad 7 (halo),11.98,6.912
+71, Clarinet,12.25,9.996
+80, Lead 1 (square),12.28,10.93
+75, Pan Flute,12.38,10.06
+73, Flute,12.78,9.463
+70, Bassoon,12.87,9.325
+26, Electric Guitar (jazz),12.91,11.18
+24, Acoustic Guitar (nylon),12.99,12.31
+14, Tubular Bells,13.1,6.11
+34, Electric Bass (pick),13.74,9.999
+21, Accordion,14.0,10.95
+2, Electric Grand Piano,14.26,11.13
+37, Slap Bass 2,14.84,11.34
+98, FX 3 (crystal),15.08,10.12
+84, Lead 5 (charang),15.27,11.85
+40, Violin,15.48,12.25
+95, Pad 8 (sweep),15.69,11.77
+29, Overdriven Guitar,15.77,11.61
+30, Distortion Guitar,15.82,11.95
+61, Brass Section,15.9,12.74
+15, Dulcimer,16.96,17.1
+66, Tenor Sax,16.96,12.68
+102, FX 7 (echoes),17.13,9.683
+69, English Horn,17.33,13.17
+44, Tremolo Strings,17.43,14.1
+1, Bright Acoustic Piano,17.88,16.31
+42, Cello,19.01,14.52
+27, Electric Guitar (clean),20.08,15.9
+57, Trombone,20.98,15.48
+56, Trumpet,22.1,16.18
+48, String Ensemble 1,22.26,13.69
+67, Baritone Sax,23.3,19.42
+7, Clavinet,23.3,18.74
+19, Church Organ,26.53,20.96
+68, Oboe,27.14,19.76
+59, Muted Trumpet,29.83,31.37
+23, Tango Accordion,30.61,22.55
+104, Sitar,37.3,18.57
+65, Alto Sax,38.33,28.22

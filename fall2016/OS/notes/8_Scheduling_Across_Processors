@@ -1,0 +1,65 @@
+Sometimes the scheduler can become the bottleneck.
+1) Centralized scheduling
+    A dedicated master scheduler processor
+2) Distributed Scheduling
+    Every processor will have its own scheduler thread with its own queues.
+    Load Balancing
+        Job Pushing
+        Work Stealing
+    Sometimes certain caches are set up for tasks so you want the certain processor to do the job
+    
+    Multiple Queue
+        You can controll process affinity better
+    Single Queue
+        Less variance
+        But you are also sharing this data structure
+
+--------------------------------------------------------
+
+Memory Hierarchy
+
+Processors
+    Registers - Time it takes between instructions. Clock speed
+    L1 - Very fast
+    L2 - Slower but its bigger.
+    Someimtes L3
+    RAM - everything in cache they are in RAM too. Fall through from L1 to over.
+    DISK
+
+
+Initially lets just divy up memory and code work with physical address.
+    Second step was to give it relative bounds to check each time.
+
+What if you dont have enouch space for all processes.
+    Fully Swap everything! Extremely slow about disk access.
+        Its load time is preventing other things from running
+        It can cause fragmentation.
+    
+What happens if the process  grows?
+    Give em more in fear of them growing
+        but now you are wasting
+    What if the process needs more memeory than you have in RAM
+
+What do we want?
+    We want simplicity:
+        Tell a process that you have everything. A flat address space from 0 to 2^32/64
+    Flexibility:
+        You dont know how much is on disk vs memory
+    Efficientcy:
+        80/20. Most is on memory.
+
+
+Virtual Memory:
+    You do not map byte to byte
+        Too granular
+    Not at code segment to segment
+        Too broad
+    So we map at page level
+
+
+Virtual Page number 20 bits
+    Each value is an index to the table 
+    12 bits is for the offset
+
+
+

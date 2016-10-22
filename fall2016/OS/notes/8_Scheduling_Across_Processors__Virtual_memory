@@ -1,0 +1,15 @@
+Sometimes the scheduler can become the bottleneck.
+1) Centralized scheduling
+    A dedicated master scheduler processor
+2) Distributed Scheduling
+    Every processor will have its own scheduler thread with its own queues.
+    Load Balancing
+        Job Pushing
+        Work Stealing
+    Sometimes certain caches are set up for tasks so you want the certain processor to do the job
+    
+    Multiple Queue
+        You can controll process affinity better
+    Single Queue
+        Less variance
+        But you are also sharing this data structure

@@ -1,0 +1,70 @@
+    Virtual Memory.
+        Having a one to one mapping is not smart.
+
+
+    Multi level paging.
+
+    For every process you store in cr3 your root directory.
+    Root dir is just a page table.
+        
+    Kernel always lies about memory. It is deffering physical memory allocation until later.
+
+    Kernel is not going to trust user process. If they ask for 10  million bytes it might allocate much less
+
+    It also needs to make sense that you are asking for things that actually belong for you.
+    It adds a layer of indirection. It gives the process an address interval. (you got this linear address interval) 
+    If you call exec you need to create a new set. 
+    Memory mapping file to disk.
+    When kernel was giving you intervals it made sure to give you contigious groups
+
+
+    COMMON QUESTION
+        SHOW PAGE TABLE:
+            ANSWER THE QUESTIONS ON 8!!!
+
+    you can give me the offset bits which would give you 
+
+    size of the page table == size of the page 
+        Because page table is data to the kernel. Kernel can decide whether to swap in and out of the pages. By setting the size of the page table to the size of the page then it makes the life of the kernel easier when it is swapping in and out. in X86 10 bits page table.
+
+        10 bits of table index
+        2^10 entires in a 4kb page
+
+        2^12 / 2^10 = 4 Bytes for each 
+
+        Flags
+            P -> Present: if it exists, return the value if not throw a fault. Kernel will take care of it.
+            W -> Writeable: If you try to modify this part it will throw a page error
+            There is a single 0 page. If you ever are reading 0s you read from the single page but writing you get your own.
+            U -> User vs Kernel
+            WT -> Write Through / Write Bcak: If a page is a memory mapping of a file, does the every update write immediately (write through) or in chunks (write backs)
+            CD -> Cache Disabled: Ignore the caches entirely. If you dont trust your caches. 
+            A -> Accessed: Whether the process touched it Reading 
+            D -> Dirty: Has this page been modified. 
+            7 and 8: too detailed
+            9-11 -> AVL: Available for system use. Whatever the OS Does with it.
+
+            When a page fault happens we jump into page fault exception handler.
+
+            Two ways P can be 0:
+               1) Never accessed it before   
+                    Anon regions: Due to expanding stuff(?)regions.
+               2) Page was swapped out. 
+                    It has to store on the disk where it has thrown it out on disk. So the flag bits will not be empty but instead it will hold the address in disk
+
+Swapping
+    You want to use disk as an extension of Memory.
+        The size you decide it when you install your os.
+    This is preeeety bad. The kernel will swap as last resort
+        You can only swap dynamic places that belong to the anonymous memory region.
+            Heap
+            Stack
+        Private memory mapping: stuff that only changes in memory.
+        Pages belonging to a shared memory region used for inter process communicatoin11
+
+
+        You dont swap out static things because you know where they live in the disk. So just load from there if needed. 
+
+We dont care if pages are contigious in ram.
+But in swap space in disk you want them to be contigious because YOU REALLY DONT WANT TO SEEK
+

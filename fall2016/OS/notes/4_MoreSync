@@ -1,0 +1,57 @@
+Class 4: More Syncronizations!
+
+Mutex : The sleeping version of a spin lock;
+It uses yield();
+
+The producer / consumer problem. It requires a bounded buffer.
+    It is not infinite so you can think of it as a circle.
+    The in is where you can put in next, out is where you should read. There is a wrap around
+
+
+Sol 1 :
+    Kind of a spin lock.   
+    Only works with 1 producer / consumer.
+    
+If you use a library but only at the user process level (not connected to kernel) you cant preemt and do something.
+
+!!Protect the data not the code.!!
+
+
+Sempahore:
+    We use a queue because we want to conserver the ordering
+
+
+Spin Lock vs Semaphore:
+    If you are going to hold it for a very short time use a spin lock.
+        If you use a sephamore there is a lot of overhead.
+
+
+Compilers can do out of order instructions
+
+Barriers
+    Everything before the barrier has to happen. And THEN stuff after the barrier has to happen
+    Within the thread!
+
+Starvation
+    Task wait indefinetly. 
+    Deadlocks  cause starvation but not ever starvation is because of a deadlock
+
+
+Deadlock - All conditions must exist
+    1) Mutual Exclusion 
+        You have to have some variable/data that is mutually exclusive. Only one thread can be in it . If there is no mutual exclusion there wont be a need for lock.
+    2) Hold and Wait
+        You are holding something but waiting for something else to move forward.
+        Resources mean CPU too.
+    3) No Preemption
+        Nobody can boot you out. If you are holding you are holding.
+        Take it and give it to someone.
+    4) Circular Wait
+        You are holding A waiting B
+        He is holding B waiting A.
+        This circular notion fucks things up.
+
+
+Soluition to 2)I dont know ahead of time I dont know what I need
+
+
