@@ -1,0 +1,47 @@
+Non preemptive system 
+	The process itself controls the flow.
+		Yield or Exit 
+
+do_yield is kernel routine
+yield is sytem call
+
+You cant call kernel_entry from the process.
+
+from kernel.c you can call any function. 
+but from the process that is not possible.
+you can do system calls to fix this.
+
+implement the system call.
+
+store the address of the function in a preset location.
+from the process call the address/
+
+char *p;  addrs 1000
+char *p+1; addrs 1001
+char (*p)();  function pointer
+int *p[10]; array of pointers
+
+
+p = 1000
+char (*p)(); you will be executing instructions that are at 1000 memory address.
+maybe (**p)();
+
+so at 1000 there is the address of the function entry.
+Double dereferencing. The first one to the adress we know, the second one is the pointer at the address we know which leads us into the funciton.
+
+
+when you call yield just increment and print in kernel module. Execute process one and call yield which should print a counter.
+
+
+PCB structure. Save something at the address. Modify SP to the context block and the psb sp to
+
+kernel_entry_helper: when you call yield syscall_exit; under do_exit. Somehow you need to reach that block. for that you can use syslib.s
+
+in .global kernel
+you need to call the kernel_entry helper function
+
+Just run process one from kernel.s
+then implement system call
+Create a schematic diagram for the contex switches. how to save? Maintain the QUeue, 
+
+start with a small program. 

@@ -1,0 +1,67 @@
+Custom Game vs Self Built Game
+
+Focused on single player game in Unity.
+	Allows us to extract a better metrics.
+	In PVP zero sum kind of game which allows us to look at win percentages which means in our small sample case would be problematic.
+	In singleplayer we can use "time spent alive" which can result in much better showing of our tuning.
+
+
+Current Metric is Time.
+
+
+Tournament and Live Tuning
+	
+
+Tournament Problems:
+	1) Matchmaking
+		- People with different skills
+	
+
+Experiment Procedure
+	Allow players to play with each character as test drive.
+	Ask players to play each character 5 times. 
+	
+
+Idea 1:
+	Objective:
+		Test responses to tuning
+		How do people respond to nerfing / buffing to chars
+		Test the quality of the algorithm.
+	Method:
+		Things are out of tune to begin with. 
+		Play 3 games with each.
+		Survey	
+		Tune
+		Another three games with each.
+		Survey.
+
+Idea 2:
+	Objective:
+		Test autotuning over time.
+	Problems:
+		We need lots of data.
+		People would need to play concurrently and recurringly.
+	Method:
+		Set a leader board as means to get long running play sessions.
+			Can assume player be not the same.
+			Players can sign up for the calendar. And tune it over a timeline. 
+				Players are staggered so there is equal amount of time between players. 
+			Surveys after every sessions.
+				How did it feel.
+				Check the metrics.
+	
+
+Idea 3:
+	Obejctive
+		Analyse existing patch notes.
+		See how literature does it, (for objective)
+
+We want to test:
+ 	Fairness
+		perceived or numerical
+ 	Oscillation
+		As our algo works do things go up and down?
+	Sandbag / Cheat
+		People lose with it so they can play with it next week.
+
+
