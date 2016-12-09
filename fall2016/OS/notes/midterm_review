@@ -1,0 +1,147 @@
+2014 question
+
+True False:
+    
+    1) False
+        Non preemtpive kernel and disabling of all the interrupts is the only way you cant be context switched
+        We moved away form this technique. 
+            You can only disable interrupts ion a single process.
+    2) True
+        Shared memory is better performance
+
+    3) False
+        Trashing is getting to point that you saturate the memory. You can keep everything in memory.
+        Generally not because your policy is bad but too much multithread
+        Get less stuff
+
+    4) True
+        You never know who is gonna gets to the lock first. The threads, 
+
+    5) True
+        Clock / Second chance gives em a second chance
+
+    6)  True 
+        It depends. Explain. Give workload
+            Stack order might make it true:
+        Fifo is bad at repeated sequence of actions.
+        
+    7) True
+        When the overhead of using resources like CPU and memory to compile the code outweight any benefir of runtime optimization
+
+
+    Short Question
+
+    1) GO TO THIS QUESTION AFTER CLASS
+        Interrpt
+        Exception
+        Yield
+        Exit1
+        System Call
+
+        You need to know what the state is, important:w
+        You need to look at the state and decide
+
+    Scheduling
+
+    1) 
+        a)Illegal, the scheduler selects threads to run from the list of ready threads. A blcoked thread must first be placed in the ready queue before
+
+        b) Legal, you just try to get a locked lock, or until IO call, wait on a thread
+
+        c) Illegal
+            YOu need to be running and Then be blocked
+
+    2) 
+        We are decreasing throughput if there is no need for interactivity.
+        It adds context switch overhead
+
+
+    Locking
+
+    1) Pay attention to processor numbers
+        Because there is a uniprocessor spin lock can fuck everything up
+        If this was a multoprocessor a spin lock does not incur of the overhead of teh queue switch. If time spent on the critical section is very short it is ok. But as this is a uniprocessor you want to yield
+        
+        If you are on single processor and you will only unlock when the other thread runs. Because things can move forward only when you are context switched out. 
+        If low lock intention
+            too much overwhead
+                then you would use spin locks
+
+    Multithreading
+1) thread 1 and 2 race at updating
+
+    Page Replacement
+1) 
+    You dont want to write because it incurs a write. 
+    You might be overfavouring a page that hasnt been accessed in a long time
+
+Process creation and mem management
+
+a) 
+    None
+        The very first call is a fork. Trick question. Until it loads the code it doesnt do anything
+
+b)
+    The code page must be mapped in and the stack page for the reference.
+        Kernel is lazy
+
+c) 
+    None again
+
+d) 
+    A memory exception is taken.
+
+TLB
+
+    a)
+        Sharing something
+
+    b)
+        TLB is shared across two proceses.
+
+    c)
+        Yes
+        You need the TLB to have the process tag. In both cases the TLB does not support the process tag, if they are different processes you need something else
+
+
+System questions
+
+    a) Trashing
+    b) I would look at the page fault rate
+    c) Have less multithreading
+
+    a) Priority inversion
+    b) High pri threads arent doing work etc. while  Debugg
+    c) prioirty inheritance
+
+    a) accesing data 
+
+
+
+2015 
+
+true false
+
+1) True
+    If a user level process was allowed to modify its own page table entries then it could acces physcial memory being used by ither process ir the OS kernel.
+
+2) False
+    Recall Belday's anomaly but true is ok too
+
+4) false:
+    nothing is strict
+
+5) True
+    
+
+6) false
+
+Short questions
+
+ l2         10n
+me acces    100ns
+
+hit rate
+
+
+You will get code

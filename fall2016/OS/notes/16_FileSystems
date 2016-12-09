@@ -1,0 +1,85 @@
+You dont store the file name as inode. Instead you have a directory.
+
+a directory is just a file in it it is a list of names.
+
+home inode#
+
+/home/azza/nyudos.txt
+
+read the inode -> figure out the content -> find the inode -> read the inode till you go to the file
+
+cwd -> current working directory. is in memory
+the higher up directories are usually in memory
+
+eachh pcb hs a pointer to a file descriptor table
+this file node descriptor has the inode 
+proc  directory stores all the info about processes
+
+FFS:
+
+1) 512 bytes seemed big enough for the time. If the block sizes are too big there might be too much overhead. With Inodes the smallest unit of blocks you can allocate is 1. As in, you cant divide the block. 
+
+(now block sizes go up) 
+
+2) Inodes on the outermost:
+    fit in more.
+    This is kinda bad:
+        Inode -> data -> inode -> data
+        out - in - out - in  (Lots of seeks)
+        never versions keep it close
+
+3) Linked list
+    It just allocated the stuff in. This created a lot of fragmentation.
+
+Issues:
+    1) Large index 
+        You need a lot of blocks
+    2) Fixed number of files
+        The outermost cylinder was a physical level of how many files you could have.
+    3) Answered on 2 ^
+    4)
+
+
+Data structures it keeps - functionality
+
+
+Caching!
+
+block size / page size can be different
+
+The disk cache: Page Cache
+in memory we deal in pages
+
+
+two seperate files can not share the same block
+
+superblock has information about what your filesystem is/has
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

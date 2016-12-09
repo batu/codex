@@ -1,0 +1,196 @@
+Storage Devices
+    RAID
+    FAT file system
+    Bit map
+    Disk Algorithms
+        Elevator
+        Scan
+File Systems / IO
+    Inodes
+        Hard links/ soft links
+    Protection
+        Capabilities / access control lists
+    Estimates for seek rotational delay and bandwith
+        4ms
+        4ms
+        125mb/s
+    Berkeley FFS
+Caching Recovery
+    Caching
+Journaling
+    Lamports logical clock
+LFS
+Distributed Systems
+    Two Phased Commit
+Virtualization
+    Paravirtualization
+    Major benefits of virtualization
+   
+
+
+FAT:
+    FAT serves as the glue that ties files together. 
+    Directory file tells where the start is.
+
+Bitmap:
+    Is a string of n binary digits that can be used to represent the status of n items.
+Midterm Exam:
+
+Buffer Cache:
+    http://www.tldp.org/LDP/sag/html/buffer-cache.html
+    https://www.quora.com/What-is-the-major-difference-between-the-buffer-cache-and-the-page-cache
+
+Lampert:
+    Associate a time stamp with every event.
+    Counter - Event
+        This monotonically increases.
+
+
+1 True False & Explain
+
+1.1) T
+    Paravirtualization stands for modifying the source code of the guest OS, so that certain system calls can directly use the hardware.
+
+1.2) T
+    FAT file system index table contains where the next block of a file is. Having this knowledge easily accesable (aka keeping it in memory) will increase access to a file.
+
+1.3) F
+    On the contrary as the storage sizes grow you might be forced to spend more and more time scanning the map.
+
+1.4) F
+    This is true if and only if a and b are on the same processor or a is the send message event and b is the corresponding receive event
+
+1.5) T
+Assuming you only have 2.1 mb of memory and the page cache and the buffer cache is not unified. Increaseong the buffer cache to 2mb might only leave an extremely small space for the page cache which would cause a serious slow down.
+
+1.6) PAXOS / Probably questions based on Singularity / Nova and Corey
+
+1.7)
+    1.7.A) F
+        Not necesarily. Node A might have received the commit message (After the the master receiving "ready" from all nodes and sending the commit) however this doesnt guarantee that all other nodes also get the commit message. It can be lost.
+    
+    1.7.B) T
+        Depends on the implementation but either all nodes will commit due to the procedure working or they will time out  (when not receivivng any further instructions for example) and abort.
+
+    1.7.C) F
+        It released the locks too early as the commit hasnt been executed. 
+
+    1.7.D) F
+        The coordinator must wait untill all nodes respond either ready or fail. Depends on the implementation the node can time out.
+
+
+2. Short Questions
+
+2.1 IO
+
+1)
+    a) A spinlock should be used as the incrementation step is very short and thus the overhead of using a semphore would be unnecesary.
+
+    b) A semaphore would be better used here as the wait times can be relatively long and the spinlock would waste time.
+
+2)
+    As you read from n - 1 disks I would implement a sectioned elevator algorithm such that ith  disk would start reading from i / n - 1 and would read 1 / n - 1 of the total value. (n-1 because of the parity disk) Basically queue per arm.
+
+2.2 File Systems
+
+3)
+    soft link points to the name, hard link points to data. Which means that if you delete a hard link you would need to decrement the "pointed to" section in the inode however the soft link is just pointing to the location.
+
+4)
+    Capabilities - the user keeps the list of files that it can access.
+    ACL - The file keeps the list of accessable users.
+
+    I have a hunch that map reduce would be useful in this problem:
+        Go through all the users and emit which of the files the users have access to
+        Reduce such that each file ends up having a list of users that has access to it.
+
+5)
+    a) 4ms
+    b) 4ms
+    c) 125mb/s
+
+    4ms + 4ms + 4000mb /  125mb/s
+    = 32 seconds and some
+
+    400.000 * (4ms + 4ms + 0.01mb / 125mb/s
+    = 3228 seconds
+
+    The difference results from sequantial reads being VERY fast compared to reading a bit seeking reading a bit seeking etc. 
+    (The assumption that 4GB can be read sequentially is made)
+
+2.3 Crashing and Recovery
+
+6) 
+    A naive way would be to recreate the bitmap by going over all the inodes starting from the root directory and comparing the new bitamp to the old one until an incosistency is found. 
+
+7)
+    a) Too low is worse. If in reality there are 2 links pointing to an inode but the inode thinks its only 1. When you delete one of the files, knowing (or assuming) that there a copy of it, the file system will think all the links poining to the inode has been removed and thus reclaim the space effectively deleting your file. 
+    I have a question Azza! Online I found one possible answer saying that this may cause security holes as this block can be added to the free list and be given to a user process but would the FS zero the block out before giving to a user anyway?
+
+    b) Too high is bad, but not bad as losing your work. In the worst case scenario is that even if all the links are deleted (effectively deleting the file) as the inode thinks someone is pointing to it that space is never claimed, forever to be lost.
+
+2.4 Logging
+8)
+Because we have logging we can push the be generous with our cache size as in case of a crash we have the logs to help us recover. 
+
+Question for Azza: Is it possible to diffrenciate policies for different writes? Logs VS data? If that is the case does the following make sense:
+
+It could be in our best interest to write the logs themselves ASAP to ensure we have our consistency check ready. As the log sizes are small compared to the actual data buffering the data for large sequantial writes and using write through for logs should give us a good balance balance between performance and recovery.
+
+9) ...?
+    a) No. It is probably using a write back buffer and write call dosent necesarily guarantee a physical write.
+    b) Yes. This in most cases forces a flush.
+    c) Maybe, assuming the inode is also flushed.  
+    d) Maybe, assuming the data is also flushed.
+    e) Dont remeber what a segment is. But yes, inode flushing +doing something else seems about right.
+    f) Yes, assuming the data is also written. (if it is an update in the checkpoint region, I am assuming everything is done)
+
+2.5 Virtualization
+
+10)
+    1) You can freeze them at any given time to restart them later. Enables amazon fine grain control over what runs when, and a fast option for it to get back on track. This also makes them much easier to move.
+    2) Granularity. Instead of assigning one physical machine to only one user with VMs you can divide the resources of one machine among many customers.
+    3) Security. Amazon can have a higher level controll over that the guest OS can do.
+
+11)
+    a) Because of the VM accesses the actual hardware that VMM is using it can cause serious problems and break virtualization. VM can set the interrupt disable flag to affect the VMM itself which should never happen.
+    b) Because of security reasons. We can not allow the VM to access data reserved for the VMM. On another note this would break virtualiztion if one VM could access information about another VM or the VMM.
+
+12)
+    A kernel instruction that would take a long time in hardware, such as dealing with the network card. In VMs instead of actually using the hardware as it deals with the virtual network card things can be much faster for that given instruction itself.
+
+3 Desing Questions
+
+1.
+    Even though technically possible this is a very VERY expensive venture even though there are cheaper alternatives that would give similar results.
+    First lets look at reliability. Gonzalez claims that because there are replicas (which are also in memory) the data is safe. This assumption might probabilistically hold true (just with any replica, if the world explodes no data is safe) based on the amount of replicas yet it is an incredible overkill. The main problems with this could be solved with using a non volatile main memory such as SSDs, HDDs, or even NVMMs.
+        1) Expensive. Would be much cheaper to use other alternatives.
+        2) Volatile memory is volatile for a reason. A power outage is much more likely than a disk crashing.
+        3) Energy expenditure. By definition you need to keep supplying energy to your memory to keep them up.
+        4) Heat. Using more energy causes more heat which requires more money invested in cooling (?)
+
+    Another problem with this set up is its lack of flexibility. If you see that some data is not being used for an extended period of time there is no place store it. Gonzales will have to keep it in memory, keep paying for the electricty cost and use less cost efficient storage. (at this point we assume that data is not being used so storing it in RAM is much more expensive compared to storing it in HDD with no added benefit)
+
+    Overall this approach goes againt the whole memory hierarchy understanding we have in almost all architectures and fails to have a balanced approach to performance / storage. (even if he had A LOT of money, with the same money he could  have had offered much bigger storage with not that much reduced performance)
+
+2) I am not sure here what "Case" I am making.
+
+    Virtual memory.
+    Storage System 
+        Inodes
+        Freeblock
+    IP addresses
+    Simple DB Key Value Stores
+
+
+    Problem 1: What happens when names cannot be resolved? 
+        This is an error that needs to be handled based on the system. In some cases there is a fall back plan. When in virtual memory you can not find the page you want in memory, a page fault happens and you load it from disk. In other systems however there can be no fallback plan and thıs may result in errors with not next step. If you try to access a value in a DB and the value doesnt exists that is an error. Similarly if you try to reach and IP address and it is invalid, same
+        deal. Similar situations go for file systems as well (which are better at handling this due to consistency checks)
+
+    Problem 2: When names can be synonyms?
+        This can cause problems in syncronization. One example that comes to mind is virtual memory. Technically it is possible that two virtual addresses point to the same physical address. Problems arise when one decides to update the physical address, some solutions could be locks, or making a copy. Simular situations arise in freeblock mappings and inodes.  Synonyms can cause problems when uniqueness is enforced such as some configuraitons of databases. Another option could be grouped IP addressed that use domain masking is could be another example.
+    
+    Problem 3: What happens when name mapping is inconsistent?
+        This is when the representation of the mapping does not fit the actual mapping. The most common example would be the file systems and we have developed consistency checking algorithms to make sure systems stays consistent. The same can be said for Databases. We developed transactional systems and logging to, in part, help with consistency. In distributed system, based on what you value in ACID, consistency can be temporarily forgone and thus we have developed systems to keep
+things up to date. (Example being facebook, you are my friend but I am not your friend. Or item cloning in multiplayer games)
+

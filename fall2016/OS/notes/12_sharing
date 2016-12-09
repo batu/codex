@@ -1,0 +1,44 @@
+When you use paging you can actually share very easily.
+
+PTE = Page Table Entry
+
+What do you share?
+    1) You can share code:
+        Libraries
+    2) Communication
+        Area in shared memory that can put messages
+        Some RPC's
+    3)Shared files
+        Read only
+
+Problems:
+    What if a process dies.
+    What if a process wants to evict it (but if it is shared)
+
+Question:
+    Where does the shared memory live? In one process stack?
+
+Linux also keeps a process table:
+    They have counters
+    it doesnt have a list of what processes are accesing it
+
+
+
+You dont want to pin it indefintely.
+    
+Working sets:
+    The minimum amount for a process to work
+
+
+Swap Cache: a data strucutre of pointers in memory
+    Linked list of pointers for pages that it is going to swap out
+        these pages remain in memory if at least 1 is using it
+    Swap Area = it is in disk
+
+    kernel stack on the process actually lives in kernel memory space
+        Whenever you make a system call your kernel needs to take charge. User stack can not be used so 
+    
+
+        You also have the kernel code section, local variables shared amongts kernel threads. OSs are multiple kernel threads.
+
+        

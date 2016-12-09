@@ -1,0 +1,63 @@
+The reads are guaranteed to have 500ms
+vs writes that guranteed to have 5s
+
+The reasons for this is:
+    1) Reads are more urgent. the process depends on this to proceed
+    2) Writes usually have a copy of it in memory
+    3) for writes you need to read anyway
+
+
+Give preference to the sorted queue (this is sorted on space) howver if the deadline for the read or write is approaching go to those
+
+Antipiatory IO Scheduler
+    Just chill in the neighborhood to see if things that use the similar resrouces come. You expect the reads (spacial locality, temporal locality) to be similar. (they try to ensure contigious storage)
+
+(Inter viewving you are overruning the disk buffer if you are FULLY CONTIGIOUS but they are still nearby)
+
+NOOP Scheduler
+    Does nothing
+    What if you have SSD
+
+
+SSDs
+    empty block is all 1s. You can only flip to 0 inidividually
+    A sector and a page has the same number of butes
+    
+    Erasing takes too long because you have set the WHOLE BLOCK to 1
+
+Getting non volitale ram will change the whole balancing systems. There iwll be MOAR CORES
+
+RAID - Redundant array of independent disk
+    RAID 0 you get a whole bunch of disks
+    You get an aggregate bandwith
+        ABCD EDFG
+
+    Raid 1 is mirroring
+        ABCD ABCD 
+        You get redundancy which gives you reliability
+
+    Raid 2 & 3 never used
+
+    Raid 4
+        if you have 10 disk 9 will be to store data and the 10th will be the parody disk
+            If you lose disk 1 you can take the parody and xor with the rest to get the data back
+            This gives you the same reliablity if you lose one disk up to losing one disk
+
+    Raid 5
+        Instead of having a single parody disk you distribute it across all the blocks
+
+        In this one in recreation you are not bottlenecked by only one disk instead it is distributed over all disks
+
+Question - 8 disks
+    Raid 0 - no redundancy
+    Raid 1 - mirroring
+    Raid 5 - parody
+
+
+1) R0 = 8, R1 = 4, R5 = 7
+2) R0 = 800, R1 = 800, R5 = 800 (assuming you shard the data properly)
+3) R0 = 800, R1 = 400, R5 = 100/200 (because you need to calculate the XOR which means to read)  Read all the blocks and recompute
+    A B P 
+    P XOR A -> P/A XOR A' = P' 200
+    A' XOR B -> P' 100
+

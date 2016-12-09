@@ -2,3 +2,366 @@ sync
 interrupt handling
 know your latency numbers
 
+Overview
+
+    OS includes kernel, boot loader device drivers command shell basic file and system util
+
+    Kernel
+        Interrupt handling
+        Process scheduling
+        memeory management to manage process address space
+        interprocess communication
+        system services such as file system and nterworking
+
+    User process run in user space vs kernel space under kernel mode privilages
+
+    1) What are the purpose of rings. How many rings modes does linux support?
+        protection levels. Ring 0 highest access
+            usually CPU and Memoery
+        x86 supporrts 0123
+    2) In x86, how can the processor tell if an instruction requires privelege?   
+        It is set in the code segment register.
+
+    Contexts
+There are three possible contexts:
+    1) User-Space executing user code
+    2) kernel-space in process context
+        executing on behalf of specific process
+    3) Kernel-space in interrupt context
+        not associated with a process but handling an interrupt
+
+    CPP
+    Preprocessor
+        Gets C code and outputs more C code.
+            Bascially parses the Definitions into C and replaces some other shortcuts. This is architecture independent
+
+    Compilers
+        These get the preprocessed C code and outputs assembly code
+        
+    Assembler 
+        Takes the assembly code and translates into machine code. The result is architecture specific
+		Can not assigne absolute memory locations just gives notes
+
+    Linker
+	Assigns absolute mem locations and resolves unresolved references		
+
+
+Process:
+	Provides with a private memory system
+	Own CPU time to execute instructions
+	Kernel maintains state for each process
+	Eech process has two stacks
+		user stack (kernel doesnt care)
+		Kernel stack (user space can not modify kernel stack, only kernel code can)
+
+	Either the kernel or the hardware can maintain the task state
+
+Why do we need a layer between hardware & user space
+	1) Abstraction, read and write regardless of disk network filesystems
+	2) Security, kernel controls access based on permissions, user, resources etc
+	3) Virtualization, multitasking, virtual memory etc.
+
+
+User Space = ring 3
+kernel space = ring 0 -
+
+
+System Call 
+	User space can not execute kernel code
+		So it asks help from the kernel
+	push the corresponding number to a register and start an interrupt
+
+	The cycle:
+		you call int $x80
+		$x80 points to the kernel entry point for system call handles
+		%eip has data about whether we are in user space or kernel space
+		If it is in user space save user stack registsers
+			If it is from kernel space no need to save it
+		Load kernel stack registers from task state segment
+		push onto the stack user info
+		clean the stuff
+
+		After int 80
+			The system call handles uses a system call table to determine the function
+			does whatever it does and returns the val to %eax
+			Reverse and give control to user process
+
+Interrupts
+	Mostly comes from the hardware (can come from network and timer as well) 
+	Halts the processor
+		and this disables further unterruptss
+	saves the state
+	jump into interrupt handling entrypoint
+	then it calls functions to handle the interrupts
+	cleans up and returns
+
+Interrupts vs System Calls
+	System Calls happen at the end of command
+	Interrupts can happen anytime	
+	Kernel executes a system call in process context, not interrupt context
+	Interrupt handles still use the kernel stack of the interrupted process
+	A system call can block sleep, interrupt handler routines cannot
+
+	Interrupt handles in linux divide labor into a fast op half and a bottom half that can be rescheduled later and has access to blocking calls.
+	Why do interrupt handles only form the top half of interrupt processing.
+		Get the fast notification out of the way and the longer bottom call later if needed.
+		You might be interrupting something very important
+		You can be stopping further interrupts
+		
+	Example top half bottom half:
+		network interrupt when packet is received
+		top half acks and copies data into mem
+			time sensitive network card buffer is small and must free it quickly
+		the bottom half then takes care of enqueing the packet for hte reciving app
+			is not time sensitive
+
+
+SYNCRONIZATION
+
+	Increment isnt single instruction
+		get
+		increment
+		write
+
+
+Sources of Concurrency. There are many
+	- Interrupts - Interrupt safe
+	- User-space preemtive. The scheduler decides. - preempt safe
+	- Kernel preemption. The kernel isteslf is a multi-threaded. - preempt-safe
+	- Sleep / Block - preempt safe
+	- SMP: Two processors can be executing teh same code at the same time. (kernel or user) - SMP - safe
+
+	Synchroinzation Primitivies
+		Hardware really needs to help you.
+		Test and set instructions is atomic.
+		in single core machines you can disable interrupts on unicprocessors
+	
+
+	if the other is not waiting grab it.
+
+one before peterson algorithms can be deadlock
+
+Petersons algortihm fixes the deadlock
+
+MUTEX
+	instead of testing again and again as a spin lock
+	yield and go to sleep!
+
+
+
+Bounded buffer, cyclic buffer. 
+	Producer and consumer
+
+sol 1:
+	a spinlock that consumes when there is more in than out.
+	The problem with sol 1:
+		Single producer/consumer
+	Spin lock solution
+		dedicated CPU for producer consumer
+
+sol 2: 
+	mutex solution
+	Nightmare 
+	Buffer is empty, consumer checks,
+	producer puts shit in wakes up consumer
+	consumer sleeps
+	and they sleep forever
+		
+
+
+
+Strictly speaking, a mutex is locking mechanism used to synchronize access to a resource. Only one task (can be a thread or process based on OS abstraction) can acquire the mutex. It means there is ownership associated with mutex, and only the owner can release the lock (mutex).
+
+Semaphore is signaling mechanism (“I am done, you can carry on” kind of signal). For example, if you are listening songs (assume it as one task) on your mobile and at the same time your friend calls you, an interrupt is triggered upon which an interrupt service routine (ISR) signals the call processing task to wakeup.
+
+
+Starvation things waiting indefintely.
+
+All conditions must hold for a deadlock
+
+1. Mutual Exclusion
+Read only files; Resource Partitioning;
+Lock free data structures
+
+2. Hold and Wait
+One resource only at a time; Consolidate into one; Request all at
+once (Issues?)
+	starvation
+
+3. No Preemption
+Allow preemption helps with Priority Inversion Problems;
+Rollback to safe state
+
+4. Circular Wait
+Require process to grab resources according to some order
+(Issues?)
+
+
+Barriers are blocking steps
+
+	there is a counter 
+	when counter > threads you stop waiting
+
+
+Process
+	a thread of execution
+	program counter, registers, stack
+	adress space
+	resources managed by kernel	
+		pointer to system resources
+		privilage users
+		current working dir
+		bookkeeping stuff
+
+User-level threads vs Kernel-lvel threads
+	User -> Kernel thinks you are one process/thread
+		This is problematic because if you ake a sytem call all process is blocked
+
+
+Case Study Server:
+		SErver with several process is generally a bad idea.
+		Expensive context switching		
+		Independent Adress spaces (different caches
+		Hard limit on # processes
+
+	Event driver
+		one person sits in the control seat and fires off functinos
+
+
+PRocess Life Cycle
+
+	Preemtive: Kernel decides to switch
+	Cooperative: You decide to switch
+
+
+Two types:	
+	IO Bound(interactive Procs)
+		These dont run long, but they make blocking calls, usually IO
+		GUI, text editor	
+	CPU Bound:
+		Most of time spent executing code
+		Image Processing
+
+100 + 150 + 180
+vs
+30 + 80 + 180
+
+latency vs throughput
+latency = response time
+throughput = the shit you do 
+            Overhead of context switching
+            most schediling policies favour latency
+
+Goals of scheduler
+	High priority runs more
+	fairness: low pri doesnt die
+	keep the resources utilized
+	predictability, gives guarantees
+
+
+Examples
+FCFS (FIFO) Queue
+            1) Throughput : Maximum 
+            2) Response Time: Bad
+            3) Fainress: Pretty fair, no possibilty of starvation.
+        
+		Non Preemptive
+		Maximum Thrughp
+
+        Round Robin / Everyone works for x ms and then switches
+            1) Throughput : Reduced
+            2) Response time: Pretty bad
+            3) Fairness : Fair (questions about the longest running ones)
+
+        In round robin the time slice is very important.
+            too short
+                Wasted overhead on context switch
+                CPU bound need long time slices to keep caches hot
+            Too long
+                IO bound dont need long time slices
+                Wait around for the hogs to use up their slices!
+
+        IN THE HYBRIDS ARE ALMOST ALWAYS BETTER SLIDE THE TIME SLICE IS 40ms
+
+	Hybrid
+		??
+
+Priority
+	Highest runs first
+	Can preempt the current running
+		Interactive gets high pri
+		CPU bound gets low pri
+
+Aprroach 1:
+	    Multi level feedback queue
+    Task starts at the highest priority. But the time slice is very small. 
+    If I finish my timeslice I get demoted in priority but I am given a bigger timeslice
+    If I interrupt before my timeslice ends then I get a smaller timeslice and get given higher priority.
+    If I hog the CPU I get higher timeslice but low prioirty.
+
+    Does not handle user based priority.
+
+
+Approach 2:
+    Higher the nice value the lower the priority.
+        High priority means higher timeslices. Which is weird?
+    
+    There is a differnece between expired and not expired. Well duh. Read it again.
+
+    Time tick is when control is given to the kernel periodically.
+    Sleeper gest higher prioirty
+
+
+The Completly Fair Schedule
+    Compound interest vs Continious interest
+    The size of your timeslice is a factor of your priority and everybodyelses as well
+        10 / 20 -> 10/30 and 20/30 so the time scale distribution is 1/3 and 2/3
+    You make sure everyone runs a little bit in the timeslice so the following doesnt happen:
+    9 process of 10ms runs but the 10th doesnt. The best would be 10 of the running 9 each.
+    They measure how much you stay in the processor. If you are running for more you dont get that much attention.
+        If you are CPU bound you get less attention. If you are IO bound you get more attention as you run less on the CPU.
+    Virtual Runtime is the "priority" for attention. The more you have slept the higher virtual runtime priority you have.
+
+
+Lottery Scheduling
+    Each job gets a set of tuckets
+    Randomly pick a set of tickets
+    Schedule those who have those tickets
+
+    Why?
+        1. Priority-> MORE TICKETS
+        2. Promoting shorter jobs-> MAOAR TICKEETS
+        3. Allowing Cooperation -> When you are blocked help your bro out
+        4. Prevent Starvation -> probabilistic (the more you wait the more tickets you get)
+
+        priority inversion: High needs the lock and thus blocks. Low pri has it. but low pri never runs and thus high never runs.
+        Priority inheritance: When a thread holds a lock that other threads are wiaitng on, give that thread the priority of the highest prriority thread waiting to get the lock
+
+     Convoy Thread: When a low priority thread locks and it switches out other high priority threads can wait behind it with a long conwoy.
+
+
+
+
+Sometimes the scheduler can become the bottleneck.
+1) Centralized scheduling
+    A dedicated master scheduler processor
+2) Distributed Scheduling
+    Every processor will have its own scheduler thread with its own queues.
+    Load Balancing
+        Job Pushing
+        Work Stealing
+    Sometimes certain caches are set up for tasks so you want the certain processor to do the job
+    
+    Multiple Queue
+        You can controll process affinity better
+    Single Queue
+        Less variance
+        But you are also sharing this data structure
+
+--------------------------------------------------------
+L1 			0.5ns
+L2 			7ns
+Main Mem 	100ns
+SSd			150.000ns    
+
+

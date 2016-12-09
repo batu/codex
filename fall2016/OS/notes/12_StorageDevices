@@ -1,0 +1,58 @@
+Critique:
+
+Give the summary
+Three weak points
+Three strong points
+
+Evaluation
+Assumptions
+
+Operating systems do scale. Assumptions are exaggurated
+
+
+Cost of 10x slower to write. 
+
+no longer the OS takes care of stuff. Now the harddisks ship with a controller
+Controller is like a tiny processor on the storage device.
+
+Disk -> Controller -> Cache -> Interface
+
+There are multople disk interfaces
+
+Disk controllers takes care of blacklisting constantly corrupted places (for example wear and tear)
+
+    It has error correcting code. If few bits get flipped it might fix it.
+
+    It can schedule when to read and write.
+    They interleave write read because if you consequtively read you can fill up the buffer.
+
+
+How to read or write from a sector?
+    C-H-S (mostly obsolete) LBA (logical block addressing) allows it to be multiplatfor
+    The arm seeks to the right cylinder
+    Waits until the sector comes below the head, reads from/ writes to
+
+Disk Formatting:
+    Wipes out your disk.
+    Re creates Preambles/Headers
+
+
+Disks also come with spare sectors that are used when things get corrupted. 
+
+
+7200 full rotation is 8ms
+expected rotation is 4ms
+
+the seek cost is about 4-10ms
+
+40-125MB/s transfer bandwith
+
+Seek + Rotational Delay + Transfer
+
+4ms + 4ms + 1kb/125mbs/s 
+
+our effective transfer rate is 1kb/8.007ms = 125KB/s = 1/1000th 
+
+
+
+
